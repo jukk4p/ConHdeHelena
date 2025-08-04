@@ -6,7 +6,7 @@ import Image from "next/image";
 import { AnimatedItem } from "@/components/animated-section";
 import { motion } from "framer-motion";
 
-const services = [
+const products = [
     {
         title: "Bolas de Navidad",
         description: "Adorna tu árbol con bolas de Navidad personalizadas con nombres o fechas.",
@@ -45,7 +45,7 @@ const services = [
     }
 ];
 
-function ServiceCard({ title, description, imageUrl, imageHint }: { title: string, description: string, imageUrl: string, imageHint: string }) {
+function ProductCard({ title, description, imageUrl, imageHint }: { title: string, description: string, imageUrl: string, imageHint: string }) {
     return (
         <AnimatedItem>
             <motion.div whileHover={{ y: -5 }} className="h-full">
@@ -80,13 +80,13 @@ export function ProductListSection() {
                     </AnimatedItem>
                 </div>
                 <div className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {services.map((service) => (
-                        <ServiceCard 
-                            key={service.title}
-                            title={service.title} 
-                            description={service.description} 
-                            imageUrl={service.imageUrl}
-                            imageHint={service.imageHint}
+                    {products.map((product) => (
+                        <ProductCard 
+                            key={product.title}
+                            title={product.title} 
+                            description={product.description} 
+                            imageUrl={product.imageUrl}
+                            imageHint={product.imageHint}
                         />
                     ))}
                 </div>
@@ -94,3 +94,4 @@ export function ProductListSection() {
         </section>
     );
 }
+
