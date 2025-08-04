@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CupSoda, Shirt, Sticker, Mail } from "lucide-react";
+import { Wine, Brush, Baby, CircleDot, KeyRound, Scissors } from "lucide-react";
 import Image from "next/image";
 
 function ServiceCard({ icon, title, description, imageUrl, imageHint }: { icon: React.ReactNode, title: string, description: string, imageUrl: string, imageHint: string }) {
@@ -31,34 +31,48 @@ export function ServicesSection() {
                         Desde un detalle para un amigo hasta la decoración de tu evento. La tecnología nos permite ofrecer una amplia gama de productos con una precisión increíble.
                     </p>
                 </div>
-                <div className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pt-12">
+                <div className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-12">
                     <ServiceCard 
-                        icon={<CupSoda className="w-10 h-10 text-primary" />} 
-                        title="Tazas y Vasos" 
-                        description="Personaliza tazas, termos y vasos para cualquier ocasión." 
-                        imageUrl="https://images.pexels.com/photos/302904/pexels-photo-302904.jpeg"
-                        imageHint="custom mug" 
+                        icon={<Wine className="w-10 h-10 text-primary" />} 
+                        title="Copas Personalizadas" 
+                        description="Celebra momentos especiales con copas de vino o cava grabadas con tu diseño." 
+                        imageUrl="https://images.pexels.com/photos/327228/pexels-photo-327228.jpeg"
+                        imageHint="engraved wine glass"
                     />
                     <ServiceCard 
-                        icon={<Shirt className="w-10 h-10 text-primary" />} 
-                        title="Textiles" 
-                        description="Camisetas, sudaderas y bolsas de tela con tu diseño favorito." 
-                        imageUrl="https://images.pexels.com/photos/769733/pexels-photo-769733.jpeg"
-                        imageHint="custom tshirt" 
+                        icon={<Brush className="w-10 h-10 text-primary" />} 
+                        title="Peines Personalizados" 
+                        description="Un regalo original y práctico. Peines de madera grabados con nombres o frases." 
+                        imageUrl="https://images.pexels.com/photos/897262/pexels-photo-897262.jpeg"
+                        imageHint="wooden comb"
                     />
                     <ServiceCard 
-                        icon={<Mail className="w-10 h-10 text-primary" />} 
-                        title="Invitaciones" 
-                        description="Diseños únicos para bodas, bautizos y eventos especiales." 
-                        imageUrl="https://images.pexels.com/photos/169190/pexels-photo-169190.jpeg"
-                        imageHint="wedding invitation" 
+                        icon={<Baby className="w-10 h-10 text-primary" />} 
+                        title="Pack Nacimiento" 
+                        description="Kits de bienvenida para bebés con artículos personalizados y únicos." 
+                        imageUrl="https://images.pexels.com/photos/1648377/pexels-photo-1648377.jpeg"
+                        imageHint="newborn gift set"
                     />
                     <ServiceCard 
-                        icon={<Sticker className="w-10 h-10 text-primary" />} 
-                        title="Vinilos Decorativos" 
-                        description="Decora paredes, portátiles y más con vinilos personalizados." 
-                        imageUrl="https://images.pexels.com/photos/6633934/pexels-photo-6633934.jpeg"
-                        imageHint="vinyl decal" 
+                        icon={<CircleDot className="w-10 h-10 text-primary" />} 
+                        title="Bolas de Navidad" 
+                        description="Adorna tu árbol con bolas de Navidad personalizadas con nombres o fechas." 
+                        imageUrl="https://images.pexels.com/photos/3229279/pexels-photo-3229279.jpeg"
+                        imageHint="custom christmas ornament"
+                    />
+                    <ServiceCard 
+                        icon={<KeyRound className="w-10 h-10 text-primary" />} 
+                        title="Llaveros Personalizados" 
+                        description="Lleva un recuerdo contigo. Llaveros de madera o acrílico con el diseño que elijas." 
+                        imageUrl="https://images.pexels.com/photos/2078071/pexels-photo-2078071.jpeg"
+                        imageHint="custom keychain"
+                    />
+                    <ServiceCard 
+                        icon={<Scissors className="w-10 h-10 text-primary" />} 
+                        title="Perchas Personalizadas" 
+                        description="Un detalle elegante para bodas y eventos. Perchas grabadas para trajes y vestidos." 
+                        imageUrl="https://images.pexels.com/photos/1209978/pexels-photo-1209978.jpeg"
+                        imageHint="custom clothes hanger"
                     />
                 </div>
             </div>
