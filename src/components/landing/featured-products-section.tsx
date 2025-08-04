@@ -34,7 +34,7 @@ const products = [
     {
         title: "Llaveros Personalizados",
         description: "Lleva un recuerdo contigo. Llaveros de madera o acrílico con el diseño que elijas.",
-        imageUrl: "/Llavero-personalizado-con-bolsita.webp",
+        imageUrl: "/Llavero-personalizado-dia-del-padre.webp",
         imageHint: "custom keychain"
     },
     {
