@@ -13,7 +13,7 @@ export function HeroSection() {
                             ConhdeHelena: Arte en Cada Detalle
                         </h1>
                         <p className="max-w-[600px] text-muted-foreground md:text-xl">
-                            Transformamos tus ideas en regalos inolvidables. Cada pieza es diseñada con pasión y precisión, utilizando herramientas profesionales como Cricut para un acabado perfecto.
+                            Transformamos tus ideas en regalos inolvidables. Cada pieza es diseñada con pasión y precisión, utilizando herramientas profesionales para un acabado perfecto.
                         </p>
                         <Button asChild size="lg">
                             <Link href="/servicios">Explora Nuestros Servicios</Link>

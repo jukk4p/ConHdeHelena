@@ -26,7 +26,7 @@ export function ServicesSection() {
                 <div className="flex flex-col items-center justify-center space-y-4 text-center">
                     <h2 className="text-3xl font-bold tracking-tighter md:text-4xl font-headline">Servicios de Personalización</h2>
                     <p className="max-w-[900px] text-muted-foreground md:text-xl">
-                        Desde un detalle para un amigo hasta la decoración de tu evento. La tecnología Cricut nos permite ofrecer una amplia gama de productos con una precisión increíble.
+                        Desde un detalle para un amigo hasta la decoración de tu evento. La tecnología nos permite ofrecer una amplia gama de productos con una precisión increíble.
                     </p>
                 </div>
                 <div className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pt-12">

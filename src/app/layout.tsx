@@ -7,7 +7,7 @@ import { Toaster } from '@/components/ui/toaster'
 export const metadata: Metadata = {
   title: 'ConhdeHelena - Regalos Personalizados',
   description:
-    'Creamos regalos personalizados y únicos para toda ocasión con diseño y tecnología Cricut.',
+    'Creamos regalos personalizados y únicos para toda ocasión.',
 }
 
 export default function RootLayout({
