@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,8 +9,8 @@ export function HeroSection() {
     return (
         <section id="inicio" className="w-full py-20 md:py-32 bg-accent/50 overflow-hidden">
             <div className="container px-4 md:px-6">
-                <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
-                    <div className="space-y-4">
+                <div className="grid gap-6 lg:grid-cols-1 lg:gap-12 items-center">
+                    <div className="space-y-4 text-center">
                         <AnimatedItem>
                             <div className="inline-block rounded-lg bg-primary/20 px-3 py-1 text-sm text-primary-foreground font-medium">Regalos con Alma</div>
                         </AnimatedItem>
@@ -18,7 +20,7 @@ export function HeroSection() {
                             </h1>
                         </AnimatedItem>
                         <AnimatedItem>
-                            <p className="max-w-[600px] text-muted-foreground md:text-xl">
+                            <p className="max-w-[600px] mx-auto text-muted-foreground md:text-xl">
                                 Transformamos tus ideas en regalos inolvidables. Cada pieza es diseñada con pasión y precisión, utilizando herramientas profesionales para un acabado perfecto.
                             </p>
                         </AnimatedItem>
@@ -28,19 +30,8 @@ export function HeroSection() {
                             </Button>
                         </AnimatedItem>
                     </div>
-                    <AnimatedItem>
-                        <Image
-                            src="https://images.pexels.com/photos/3768131/pexels-photo-3768131.jpeg"
-                            width="600"
-                            height="400"
-                            alt="Regalos personalizados"
-                            data-ai-hint="crafting workspace personalized"
-                            className="mx-auto aspect-video overflow-hidden rounded-xl object-cover"
-                        />
-                    </AnimatedItem>
                 </div>
             </div>
         </section>
     );
 }
-    
