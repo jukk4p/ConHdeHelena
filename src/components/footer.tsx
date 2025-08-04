@@ -1,9 +1,10 @@
 "use client";
 
-import { Instagram, Youtube } from 'lucide-react';
 import { Logo } from './logo';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInstagram, faYoutube, faTiktok, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 const SocialIcon = ({ href, target, rel, label, children }: { href: string, target?: string, rel?: string, label: string, children: React.ReactNode }) => (
     <motion.div whileHover={{ scale: 1.2, y: -2 }} transition={{ duration: 0.2 }}>
@@ -12,20 +13,6 @@ const SocialIcon = ({ href, target, rel, label, children }: { href: string, targ
         </Link>
     </motion.div>
 );
-
-const TikTokIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6">
-        <path d="M12 12a4 4 0 1 0 4 4V8a8 8 0 1 0-8 8" />
-    </svg>
-);
-
-
-const WhatsAppIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6">
-        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-    </svg>
-);
-
 
 export function Footer() {
   return (
@@ -55,10 +42,10 @@ export function Footer() {
           <div>
              <h3 className="font-semibold font-headline text-lg mb-4">Síguenos</h3>
             <div className="flex space-x-4">
-              <SocialIcon href="https://www.instagram.com/conh_dehelena" target="_blank" rel="noopener noreferrer" label="Instagram"><Instagram /></SocialIcon>
-              <SocialIcon href="#" label="YouTube"><Youtube /></SocialIcon>
-              <SocialIcon href="#" label="TikTok"><TikTokIcon /></SocialIcon>
-              <SocialIcon href="#" label="WhatsApp"><WhatsAppIcon /></SocialIcon>
+              <SocialIcon href="https://www.instagram.com/conh_dehelena" target="_blank" rel="noopener noreferrer" label="Instagram"><FontAwesomeIcon icon={faInstagram} className="h-6 w-6" /></SocialIcon>
+              <SocialIcon href="#" label="YouTube"><FontAwesomeIcon icon={faYoutube} className="h-6 w-6" /></SocialIcon>
+              <SocialIcon href="#" label="TikTok"><FontAwesomeIcon icon={faTiktok} className="h-6 w-6" /></SocialIcon>
+              <SocialIcon href="#" label="WhatsApp"><FontAwesomeIcon icon={faWhatsapp} className="h-6 w-6" /></SocialIcon>
             </div>
           </div>
         </div>
