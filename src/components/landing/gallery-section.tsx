@@ -95,8 +95,7 @@ export function GallerySection() {
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
         >
         {filteredItems.map((item) => (
-            <div key={item.title}>
-            <Dialog>
+            <Dialog key={item.title}>
                 <DialogTrigger asChild>
                     <Card className="overflow-hidden h-full cursor-pointer hover:shadow-lg transition-shadow duration-300">
                     <CardContent className="p-0">
@@ -131,7 +130,6 @@ export function GallerySection() {
                     </Button>
                 </DialogContent>
             </Dialog>
-            </div>
         ))}
         </div>
     </div>
