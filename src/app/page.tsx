@@ -5,10 +5,10 @@ import { AnimatedSection } from "@/components/animated-section";
 export default function Home() {
   return (
     <>
-      <AnimatedSection>
+      <AnimatedSection key="hero">
         <HeroSection />
       </AnimatedSection>
-      <AnimatedSection>
+      <AnimatedSection key="featured-products">
         <FeaturedProductsSection />
       </AnimatedSection>
     </>
