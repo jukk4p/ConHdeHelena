@@ -6,7 +6,7 @@ import { AnimatedItem } from "@/components/animated-section";
 
 export function HeroSection() {
     return (
-        <section id="inicio" className="w-full py-20 md:py-32 bg-accent/50 overflow-hidden">
+        <section id="inicio" className="w-full pt-20 md:pt-32 pb-10 bg-accent/50 overflow-hidden">
             <div className="container px-4 md:px-6">
                 <div className="grid gap-6 lg:grid-cols-1 lg:gap-12 items-center">
                     <div className="space-y-4 text-center">
