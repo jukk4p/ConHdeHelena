@@ -13,7 +13,7 @@ function ServiceCard({ icon, title, description, imageUrl, imageHint }: { icon: 
             </CardHeader>
             <CardContent className="flex flex-col flex-grow">
                 <div className="relative w-full h-48 mb-4 rounded-md overflow-hidden">
-                    <Image src={imageUrl} alt={title} layout="fill" className="object-cover" data-ai-hint={imageHint} />
+                    <Image src={imageUrl} alt={title} fill className="object-cover" data-ai-hint={imageHint} />
                 </div>
                 <p className="text-sm text-muted-foreground flex-grow">{description}</p>
             </CardContent>
