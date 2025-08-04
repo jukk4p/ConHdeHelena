@@ -1,34 +1,18 @@
+"use client";
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
+import { AnimatedItem } from "@/components/animated-section";
+import { motion } from "framer-motion";
+import { Gift, Baby, Combine, GlassWater, KeyRound, Hanger } from "lucide-react";
 
-function ServiceCard({ title, description, imageUrl, imageHint }: { title: string, description: string, imageUrl: string, imageHint: string }) {
-    return (
-        <Card className="text-center hover:shadow-lg transition-shadow duration-300 flex flex-col">
-            <CardHeader>
-                <CardTitle className="font-headline">{title}</CardTitle>
-            </CardHeader>
-            <CardContent className="flex flex-col flex-grow items-center">
-                <div className="w-full h-48 mb-4 rounded-md overflow-hidden relative">
-                    <Image src={imageUrl} alt={title} width={300} height={200} className="object-cover w-full h-full" data-ai-hint={imageHint} />
-                </div>
-                <p className="text-sm text-muted-foreground flex-grow">{description}</p>
-            </CardContent>
-        </Card>
-    )
-}
 
 const services = [
     {
-        title: "Copas Personalizadas",
-        description: "Celebra momentos especiales con copas de vino o cava grabadas con tu diseño.",
+        title: "Bolas de Navidad",
+        description: "Adorna tu árbol con bolas de Navidad personalizadas con nombres o fechas.",
         imageUrl: "https://placehold.co/300x200.png",
-        imageHint: "engraved wine glass"
-    },
-    {
-        title: "Peines Personalizados",
-        description: "Un regalo original y práctico. Peines de madera grabados con nombres o frases.",
-        imageUrl: "https://placehold.co/300x200.png",
-        imageHint: "wooden comb"
+        imageHint: "custom christmas ornament"
     },
     {
         title: "Pack Nacimiento",
@@ -37,10 +21,16 @@ const services = [
         imageHint: "newborn gift set"
     },
     {
-        title: "Bolas de Navidad",
-        description: "Adorna tu árbol con bolas de Navidad personalizadas con nombres o fechas.",
+        title: "Peines Personalizados",
+        description: "Un regalo original y práctico. Peines de madera grabados con nombres o frases.",
         imageUrl: "https://placehold.co/300x200.png",
-        imageHint: "custom christmas ornament"
+        imageHint: "wooden comb"
+    },
+    {
+        title: "Copas Personalizadas",
+        description: "Celebra momentos especiales con copas de vino o cava grabadas con tu diseño.",
+        imageUrl: "https://placehold.co/300x200.png",
+        imageHint: "engraved wine glass"
     },
     {
         title: "Llaveros Personalizados",
@@ -56,15 +46,39 @@ const services = [
     }
 ];
 
+function ServiceCard({ title, description, imageUrl, imageHint }: { title: string, description: string, imageUrl: string, imageHint: string }) {
+    return (
+        <AnimatedItem>
+            <motion.div whileHover={{ y: -5 }} className="h-full">
+                <Card className="text-center hover:shadow-lg transition-shadow duration-300 flex flex-col h-full">
+                    <CardHeader>
+                        <CardTitle className="font-headline">{title}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="flex flex-col flex-grow items-center">
+                        <div className="w-full h-48 mb-4 rounded-md overflow-hidden relative">
+                            <Image src={imageUrl} alt={title} width={300} height={200} className="object-cover w-full h-full" data-ai-hint={imageHint} />
+                        </div>
+                        <p className="text-sm text-muted-foreground flex-grow">{description}</p>
+                    </CardContent>
+                </Card>
+            </motion.div>
+        </AnimatedItem>
+    )
+}
+
 export function ServicesSection() {
     return (
         <section id="servicios" className="w-full py-20 md:py-32 bg-accent/50">
             <div className="container px-4 md:px-6">
                 <div className="flex flex-col items-center justify-center space-y-4 text-center">
-                    <h2 className="text-3xl font-bold tracking-tighter md:text-4xl font-headline">Servicios de Personalización</h2>
-                    <p className="max-w-[900px] text-muted-foreground md:text-xl">
-                        Desde un detalle para un amigo hasta la decoración de tu evento. La tecnología nos permite ofrecer una amplia gama de productos con una precisión increíble.
-                    </p>
+                    <AnimatedItem>
+                        <h2 className="text-3xl font-bold tracking-tighter md:text-4xl font-headline">Servicios de Personalización</h2>
+                    </AnimatedItem>
+                     <AnimatedItem>
+                        <p className="max-w-[900px] text-muted-foreground md:text-xl">
+                            Desde un detalle para un amigo hasta la decoración de tu evento. La tecnología nos permite ofrecer una amplia gama de productos con una precisión increíble.
+                        </p>
+                    </AnimatedItem>
                 </div>
                 <div className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-12">
                     {services.map((service) => (

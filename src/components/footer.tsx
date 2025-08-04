@@ -1,6 +1,17 @@
+"use client";
+
 import { Facebook, Instagram, Twitter } from 'lucide-react';
 import { Logo } from './logo';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
+
+const SocialIcon = ({ href, target, rel, label, children }: { href: string, target?: string, rel?: string, label: string, children: React.ReactNode }) => (
+    <motion.div whileHover={{ scale: 1.2, y: -2 }} transition={{ duration: 0.2 }}>
+        <Link href={href} target={target} rel={rel} aria-label={label} className="text-muted-foreground hover:text-primary">
+            {children}
+        </Link>
+    </motion.div>
+);
 
 export function Footer() {
   return (
@@ -30,9 +41,9 @@ export function Footer() {
           <div>
              <h3 className="font-semibold font-headline text-lg mb-4">Síguenos</h3>
             <div className="flex space-x-4">
-              <Link href="#" aria-label="Facebook" className="text-muted-foreground hover:text-primary"><Facebook /></Link>
-              <Link href="https://www.instagram.com/conh_dehelena" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-muted-foreground hover:text-primary"><Instagram /></Link>
-              <Link href="#" aria-label="Twitter" className="text-muted-foreground hover:text-primary"><Twitter /></Link>
+              <SocialIcon href="#" label="Facebook"><Facebook /></SocialIcon>
+              <SocialIcon href="https://www.instagram.com/conh_dehelena" target="_blank" rel="noopener noreferrer" label="Instagram"><Instagram /></SocialIcon>
+              <SocialIcon href="#" label="Twitter"><Twitter /></SocialIcon>
             </div>
           </div>
         </div>
