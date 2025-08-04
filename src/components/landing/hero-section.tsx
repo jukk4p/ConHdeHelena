@@ -20,7 +20,7 @@ export function HeroSection() {
                         </Button>
                     </div>
                     <Image
-                        src="https://placehold.co/600x400.png"
+                        src="https://images.unsplash.com/photo-1522120691854-5339f0143501?q=80&w=1770&auto=format&fit=crop"
                         width="600"
                         height="400"
                         alt="Regalos personalizados"
