@@ -1,5 +1,5 @@
 import { HeroSection } from "@/components/landing/hero-section";
-import { ServicesSection } from "@/components/landing/services-section";
+import { FeaturedProductsSection } from "@/components/landing/featured-products-section";
 import { AnimatedSection } from "@/components/animated-section";
 
 export default function Home() {
@@ -9,10 +9,8 @@ export default function Home() {
         <HeroSection />
       </AnimatedSection>
       <AnimatedSection>
-        <ServicesSection />
+        <FeaturedProductsSection />
       </AnimatedSection>
     </>
   );
 }
-
-    

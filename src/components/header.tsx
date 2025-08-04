@@ -11,7 +11,7 @@ import { motion } from 'framer-motion';
 const navLinks = [
   { href: '/', label: 'Inicio' },
   { href: '/sobre-nosotros', label: 'Sobre Nosotros' },
-  { href: '/servicios', label: 'Servicios' },
+  { href: '/productos', label: 'Productos' },
   { href: '/contacto', label: 'Contacto' },
 ];
 
@@ -72,4 +72,3 @@ export function Header() {
     </header>
   );
 }
-    

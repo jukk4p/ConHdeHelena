@@ -6,7 +6,7 @@ import Image from "next/image";
 import { AnimatedItem } from "@/components/animated-section";
 import { motion } from "framer-motion";
 
-const services = [
+const products = [
     {
         title: "Bolas de Navidad",
         description: "Adorna tu árbol con bolas de Navidad personalizadas con nombres o fechas.",
@@ -45,7 +45,7 @@ const services = [
     }
 ];
 
-function ServiceCard({ title, description, imageUrl, imageHint }: { title: string, description: string, imageUrl: string, imageHint: string }) {
+function ProductCard({ title, description, imageUrl, imageHint }: { title: string, description: string, imageUrl: string, imageHint: string }) {
     return (
         <AnimatedItem>
             <motion.div whileHover={{ y: -5 }} className="h-full">
@@ -65,28 +65,28 @@ function ServiceCard({ title, description, imageUrl, imageHint }: { title: strin
     )
 }
 
-export function ServicesSection() {
+export function FeaturedProductsSection() {
     return (
-        <section id="servicios" className="w-full pb-20 md:pb-32">
+        <section id="productos-destacados" className="w-full py-20 md:py-32 bg-accent/50">
             <div className="container px-4 md:px-6">
-                 <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+                <div className="flex flex-col items-center justify-center space-y-4 text-center">
                     <AnimatedItem>
-                        <h2 className="text-3xl font-bold tracking-tighter md:text-4xl font-headline">Nuestros Servicios de Personalización</h2>
+                        <h2 className="text-3xl font-bold tracking-tighter md:text-4xl font-headline">Productos Destacados</h2>
                     </AnimatedItem>
                      <AnimatedItem>
                         <p className="max-w-[900px] text-muted-foreground md:text-xl">
-                            Ofrecemos una amplia gama de productos que podemos personalizar a tu gusto. Aquí tienes algunos ejemplos:
+                            Desde un detalle para un amigo hasta la decoración de tu evento. La tecnología nos permite ofrecer una amplia gama de productos con una precisión increíble.
                         </p>
                     </AnimatedItem>
                 </div>
-                <div className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {services.map((service) => (
-                        <ServiceCard 
-                            key={service.title}
-                            title={service.title} 
-                            description={service.description} 
-                            imageUrl={service.imageUrl}
-                            imageHint={service.imageHint}
+                <div className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-12">
+                    {products.map((product) => (
+                        <ProductCard 
+                            key={product.title}
+                            title={product.title} 
+                            description={product.description} 
+                            imageUrl={product.imageUrl}
+                            imageHint={product.imageHint}
                         />
                     ))}
                 </div>
@@ -94,3 +94,4 @@ export function ServicesSection() {
         </section>
     );
 }
+
