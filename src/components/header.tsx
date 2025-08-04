@@ -12,7 +12,6 @@ const navLinks = [
   { href: '/', label: 'Inicio' },
   { href: '/sobre-nosotros', label: 'Sobre Nosotros' },
   { href: '/productos', label: 'Productos' },
-  { href: '/galeria', label: 'Galería' },
   { href: '/personaliza', label: 'Personaliza' },
   { href: '/contacto', label: 'Contacto' },
 ];
