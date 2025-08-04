@@ -13,7 +13,7 @@ function ServiceCard({ icon, title, description, imageUrl, imageHint }: { icon: 
             </CardHeader>
             <CardContent className="flex flex-col flex-grow items-center">
                 <div className="w-full h-48 mb-4 rounded-md overflow-hidden relative">
-                    <Image src={imageUrl} alt={title} layout="fill" className="object-cover" data-ai-hint={imageHint} />
+                    <Image src={imageUrl} alt={title} fill className="object-cover" data-ai-hint={imageHint} />
                 </div>
                 <p className="text-sm text-muted-foreground flex-grow">{description}</p>
             </CardContent>
@@ -36,7 +36,7 @@ export function ServicesSection() {
                         icon={<CupSoda className="w-10 h-10 text-primary" />} 
                         title="Tazas y Vasos" 
                         description="Personaliza tazas, termos y vasos para cualquier ocasión." 
-                        imageUrl="https://images.unsplash.com/photo-1595434193323-e64e18585481?q=80&w=774&auto=format&fit=crop"
+                        imageUrl="https://images.pexels.com/photos/1579233/pexels-photo-1579233.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                         imageHint="custom mug" 
                     />
                     <ServiceCard 
@@ -50,14 +50,14 @@ export function ServicesSection() {
                         icon={<Mail className="w-10 h-10 text-primary" />} 
                         title="Invitaciones" 
                         description="Diseños únicos para bodas, bautizos y eventos especiales." 
-                        imageUrl="https://images.unsplash.com/photo-1598951820689-32d94b8e0427?q=80&w=774&auto=format&fit=crop"
+                        imageUrl="https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                         imageHint="wedding invitation" 
                     />
                     <ServiceCard 
                         icon={<Sticker className="w-10 h-10 text-primary" />} 
                         title="Vinilos Decorativos" 
                         description="Decora paredes, portátiles y más con vinilos personalizados." 
-                        imageUrl="https://images.unsplash.com/photo-1619472653835-2a0d69a65f83?q=80&w=870&auto=format&fit=crop"
+                        imageUrl="https://images.pexels.com/photos/4057738/pexels-photo-4057738.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                         imageHint="vinyl decal" 
                     />
                 </div>
