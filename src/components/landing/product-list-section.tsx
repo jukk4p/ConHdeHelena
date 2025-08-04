@@ -3,7 +3,6 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
-import { AnimatedItem, AnimatedSection } from "@/components/animated-section";
 import { motion } from "framer-motion";
 
 const products = [
@@ -47,52 +46,44 @@ const products = [
 
 function ProductCard({ title, description, imageUrl, imageHint }: { title: string, description: string, imageUrl: string, imageHint: string }) {
     return (
-        <AnimatedItem>
-            <motion.div whileHover={{ y: -5 }} className="h-full">
-                <Card className="text-center hover:shadow-lg transition-shadow duration-300 flex flex-col h-full">
-                    <CardHeader>
-                        <CardTitle className="font-headline">{title}</CardTitle>
-                    </CardHeader>
-                    <CardContent className="flex flex-col flex-grow items-center">
-                        <div className="w-full h-48 mb-4 rounded-md overflow-hidden relative">
-                            <Image src={imageUrl} alt={title} width={300} height={200} className="object-cover w-full h-full" data-ai-hint={imageHint} />
-                        </div>
-                        <p className="text-sm text-muted-foreground flex-grow">{description}</p>
-                    </CardContent>
-                </Card>
-            </motion.div>
-        </AnimatedItem>
+        <motion.div whileHover={{ y: -5 }} className="h-full">
+            <Card className="text-center hover:shadow-lg transition-shadow duration-300 flex flex-col h-full">
+                <CardHeader>
+                    <CardTitle className="font-headline">{title}</CardTitle>
+                </CardHeader>
+                <CardContent className="flex flex-col flex-grow items-center">
+                    <div className="w-full h-48 mb-4 rounded-md overflow-hidden relative">
+                        <Image src={imageUrl} alt={title} width={300} height={200} className="object-cover w-full h-full" data-ai-hint={imageHint} />
+                    </div>
+                    <p className="text-sm text-muted-foreground flex-grow">{description}</p>
+                </CardContent>
+            </Card>
+        </motion.div>
     )
 }
 
 export function ProductListSection() {
     return (
-        <AnimatedSection>
-            <section id="productos" className="w-full pb-20 md:pb-32">
-                <div className="container px-4 md:px-6">
-                    <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-                        <AnimatedItem>
-                            <h2 className="text-3xl font-bold tracking-tighter md:text-4xl font-headline">Todos Nuestros Productos</h2>
-                        </AnimatedItem>
-                        <AnimatedItem>
-                            <p className="max-w-[900px] text-muted-foreground md:text-xl">
-                                Ofrecemos una amplia gama de productos que podemos personalizar a tu gusto. Aquí tienes algunos ejemplos:
-                            </p>
-                        </AnimatedItem>
-                    </div>
-                    <div className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {products.map((product) => (
-                            <ProductCard 
-                                key={product.title}
-                                title={product.title} 
-                                description={product.description} 
-                                imageUrl={product.imageUrl}
-                                imageHint={product.imageHint}
-                            />
-                        ))}
-                    </div>
+        <section id="productos" className="w-full pb-20 md:pb-32">
+            <div className="container px-4 md:px-6">
+                <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+                    <h2 className="text-3xl font-bold tracking-tighter md:text-4xl font-headline">Todos Nuestros Productos</h2>
+                    <p className="max-w-[900px] text-muted-foreground md:text-xl">
+                        Ofrecemos una amplia gama de productos que podemos personalizar a tu gusto. Aquí tienes algunos ejemplos:
+                    </p>
                 </div>
-            </section>
-        </AnimatedSection>
+                <div className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {products.map((product) => (
+                        <ProductCard 
+                            key={product.title}
+                            title={product.title} 
+                            description={product.description} 
+                            imageUrl={product.imageUrl}
+                            imageHint={product.imageHint}
+                        />
+                    ))}
+                </div>
+            </div>
+        </section>
     );
 }
