@@ -11,9 +11,9 @@ function ServiceCard({ icon, title, description, imageUrl, imageHint }: { icon: 
                 </div>
                 <CardTitle className="font-headline">{title}</CardTitle>
             </CardHeader>
-            <CardContent className="flex flex-col flex-grow">
-                <div className="relative w-full h-48 mb-4 rounded-md overflow-hidden">
-                    <Image src={imageUrl} alt={title} fill className="object-cover" data-ai-hint={imageHint} />
+            <CardContent className="flex flex-col flex-grow items-center">
+                <div className="w-full h-48 mb-4 rounded-md overflow-hidden">
+                    <Image src={imageUrl} alt={title} width={300} height={200} className="w-full h-full object-cover" data-ai-hint={imageHint} />
                 </div>
                 <p className="text-sm text-muted-foreground flex-grow">{description}</p>
             </CardContent>
