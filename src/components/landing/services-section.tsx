@@ -4,16 +4,18 @@ import Image from "next/image";
 
 function ServiceCard({ icon, title, description, imageUrl, imageHint }: { icon: React.ReactNode, title: string, description: string, imageUrl: string, imageHint: string }) {
     return (
-        <Card className="text-center hover:shadow-lg transition-shadow duration-300">
+        <Card className="text-center hover:shadow-lg transition-shadow duration-300 flex flex-col">
             <CardHeader>
                 <div className="mx-auto bg-primary/20 rounded-full p-4 w-fit mb-4">
                     {icon}
                 </div>
                 <CardTitle className="font-headline">{title}</CardTitle>
             </CardHeader>
-            <CardContent>
-                <Image src={imageUrl} alt={title} width={300} height={200} className="rounded-md mb-4 mx-auto object-cover" data-ai-hint={imageHint} />
-                <p className="text-sm text-muted-foreground">{description}</p>
+            <CardContent className="flex flex-col flex-grow">
+                <div className="relative w-full h-48 mb-4 rounded-md overflow-hidden">
+                    <Image src={imageUrl} alt={title} layout="fill" className="object-cover" data-ai-hint={imageHint} />
+                </div>
+                <p className="text-sm text-muted-foreground flex-grow">{description}</p>
             </CardContent>
         </Card>
     )
