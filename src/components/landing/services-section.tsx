@@ -36,42 +36,42 @@ export function ServicesSection() {
                         icon={<GlassWater className="w-10 h-10 text-primary" />} 
                         title="Copas Personalizadas" 
                         description="Celebra momentos especiales con copas de vino o cava grabadas con tu diseño." 
-                        imageUrl="https://images.pexels.com/photos/327228/pexels-photo-327228.jpeg"
+                        imageUrl="https://placehold.co/300x200.png"
                         imageHint="engraved wine glass"
                     />
                     <ServiceCard 
                         icon={<Brush className="w-10 h-10 text-primary" />} 
                         title="Peines Personalizados" 
                         description="Un regalo original y práctico. Peines de madera grabados con nombres o frases." 
-                        imageUrl="https://images.pexels.com/photos/897262/pexels-photo-897262.jpeg"
+                        imageUrl="https://placehold.co/300x200.png"
                         imageHint="wooden comb"
                     />
                     <ServiceCard 
                         icon={<Baby className="w-10 h-10 text-primary" />} 
                         title="Pack Nacimiento" 
                         description="Kits de bienvenida para bebés con artículos personalizados y únicos." 
-                        imageUrl="https://images.pexels.com/photos/1648377/pexels-photo-1648377.jpeg"
+                        imageUrl="https://placehold.co/300x200.png"
                         imageHint="newborn gift set"
                     />
                     <ServiceCard 
                         icon={<CircleDot className="w-10 h-10 text-primary" />} 
                         title="Bolas de Navidad" 
                         description="Adorna tu árbol con bolas de Navidad personalizadas con nombres o fechas." 
-                        imageUrl="https://images.pexels.com/photos/3229279/pexels-photo-3229279.jpeg"
+                        imageUrl="https://placehold.co/300x200.png"
                         imageHint="custom christmas ornament"
                     />
                     <ServiceCard 
                         icon={<KeyRound className="w-10 h-10 text-primary" />} 
                         title="Llaveros Personalizados" 
                         description="Lleva un recuerdo contigo. Llaveros de madera o acrílico con el diseño que elijas." 
-                        imageUrl="https://images.pexels.com/photos/2078071/pexels-photo-2078071.jpeg"
+                        imageUrl="https://placehold.co/300x200.png"
                         imageHint="custom keychain"
                     />
                     <ServiceCard 
                         icon={<Scissors className="w-10 h-10 text-primary" />} 
                         title="Perchas Personalizadas" 
                         description="Un detalle elegante para bodas y eventos. Perchas grabadas para trajes y vestidos." 
-                        imageUrl="https://images.pexels.com/photos/1209978/pexels-photo-1209978.jpeg"
+                        imageUrl="https://placehold.co/300x200.png"
                         imageHint="custom clothes hanger"
                     />
                 </div>
