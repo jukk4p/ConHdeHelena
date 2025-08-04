@@ -16,7 +16,7 @@ const products = [
     {
         title: "Joyero Personalizado",
         description: "Guarda tus joyas con estilo en un joyero personalizado con tu nombre o iniciales.",
-        imageUrl: "https://placehold.co/300x200.png",
+        imageUrl: "/Joyero-personalizado.webp",
         imageHint: "custom jewelry box"
     },
     {
