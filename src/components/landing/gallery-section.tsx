@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
@@ -97,18 +96,14 @@ export function GallerySection() {
         {filteredItems.map((item) => (
             <Dialog key={item.title}>
                 <DialogTrigger asChild>
-                    <Card className="overflow-hidden h-full cursor-pointer hover:shadow-lg transition-shadow duration-300">
-                    <CardContent className="p-0">
-                        <Image
+                    <Image
                         src={item.imageUrl}
                         alt={item.title}
                         width={400}
                         height={400}
-                        className="object-cover w-full h-full"
+                        className="object-cover w-full h-full rounded-lg cursor-pointer hover:shadow-lg transition-shadow duration-300"
                         data-ai-hint={item.imageHint}
                         />
-                    </CardContent>
-                    </Card>
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-[625px]">
                 <DialogHeader>
