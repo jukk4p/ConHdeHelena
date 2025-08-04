@@ -30,10 +30,34 @@ export function ServicesSection() {
                     </p>
                 </div>
                 <div className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pt-12">
-                    <ServiceCard icon={<CupSoda className="w-10 h-10 text-primary" />} title="Tazas y Vasos" description="Personaliza tazas, termos y vasos para cualquier ocasión." imageUrl="https://placehold.co/300x200.png" imageHint="custom mug" />
-                    <ServiceCard icon={<Shirt className="w-10 h-10 text-primary" />} title="Textiles" description="Camisetas, sudaderas y bolsas de tela con tu diseño favorito." imageUrl="https://placehold.co/300x200.png" imageHint="custom tshirt" />
-                    <ServiceCard icon={<Mail className="w-10 h-10 text-primary" />} title="Invitaciones" description="Diseños únicos para bodas, bautizos y eventos especiales." imageUrl="https://placehold.co/300x200.png" imageHint="wedding invitation" />
-                    <ServiceCard icon={<Sticker className="w-10 h-10 text-primary" />} title="Vinilos Decorativos" description="Decora paredes, portátiles y más con vinilos personalizados." imageUrl="https://placehold.co/300x200.png" imageHint="vinyl decal" />
+                    <ServiceCard 
+                        icon={<CupSoda className="w-10 h-10 text-primary" />} 
+                        title="Tazas y Vasos" 
+                        description="Personaliza tazas, termos y vasos para cualquier ocasión." 
+                        imageUrl="https://images.unsplash.com/photo-1594225439768-3c35b5a26514?q=80&w=870&auto=format&fit=crop" 
+                        imageHint="custom mug" 
+                    />
+                    <ServiceCard 
+                        icon={<Shirt className="w-10 h-10 text-primary" />} 
+                        title="Textiles" 
+                        description="Camisetas, sudaderas y bolsas de tela con tu diseño favorito." 
+                        imageUrl="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?q=80&w=772&auto=format&fit=crop" 
+                        imageHint="custom tshirt" 
+                    />
+                    <ServiceCard 
+                        icon={<Mail className="w-10 h-10 text-primary" />} 
+                        title="Invitaciones" 
+                        description="Diseños únicos para bodas, bautizos y eventos especiales." 
+                        imageUrl="https://images.unsplash.com/photo-1535406203690-8e16c4a56a4b?q=80&w=870&auto=format&fit=crop" 
+                        imageHint="wedding invitation" 
+                    />
+                    <ServiceCard 
+                        icon={<Sticker className="w-10 h-10 text-primary" />} 
+                        title="Vinilos Decorativos" 
+                        description="Decora paredes, portátiles y más con vinilos personalizados." 
+                        imageUrl="https://images.unsplash.com/photo-1543974352-4283b58742a9?q=80&w=774&auto=format&fit=crop" 
+                        imageHint="vinyl decal" 
+                    />
                 </div>
             </div>
         </section>
