@@ -14,11 +14,11 @@ export function Footer() {
           <div>
             <h3 className="font-semibold font-headline text-lg mb-4">Navegación</h3>
             <ul className="space-y-2">
-              <li><Link href="#inicio" className="text-sm text-muted-foreground hover:text-primary">Inicio</Link></li>
-              <li><Link href="#sobre-nosotros" className="text-sm text-muted-foreground hover:text-primary">Sobre Nosotros</Link></li>
-              <li><Link href="#servicios" className="text-sm text-muted-foreground hover:text-primary">Servicios</Link></li>
-              <li><Link href="#blog" className="text-sm text-muted-foreground hover:text-primary">Blog</Link></li>
-              <li><Link href="#contacto" className="text-sm text-muted-foreground hover:text-primary">Contacto</Link></li>
+              <li><Link href="/" className="text-sm text-muted-foreground hover:text-primary">Inicio</Link></li>
+              <li><Link href="/sobre-nosotros" className="text-sm text-muted-foreground hover:text-primary">Sobre Nosotros</Link></li>
+              <li><Link href="/servicios" className="text-sm text-muted-foreground hover:text-primary">Servicios</Link></li>
+              <li><Link href="/blog" className="text-sm text-muted-foreground hover:text-primary">Blog</Link></li>
+              <li><Link href="/contacto" className="text-sm text-muted-foreground hover:text-primary">Contacto</Link></li>
             </ul>
           </div>
           <div>

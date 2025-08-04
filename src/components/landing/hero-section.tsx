@@ -16,7 +16,7 @@ export function HeroSection() {
                             Transformamos tus ideas en regalos inolvidables. Cada pieza es diseñada con pasión y precisión, utilizando herramientas profesionales como Cricut para un acabado perfecto.
                         </p>
                         <Button asChild size="lg">
-                            <Link href="#servicios">Explora Nuestros Servicios</Link>
+                            <Link href="/servicios">Explora Nuestros Servicios</Link>
                         </Button>
                     </div>
                     <Image

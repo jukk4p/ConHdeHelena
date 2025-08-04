@@ -8,11 +8,11 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Logo } from '@/components/logo';
 
 const navLinks = [
-  { href: '#inicio', label: 'Inicio' },
-  { href: '#sobre-nosotros', label: 'Sobre Nosotros' },
-  { href: '#servicios', label: 'Servicios' },
-  { href: '#blog', label: 'Blog' },
-  { href: '#contacto', label: 'Contacto' },
+  { href: '/', label: 'Inicio' },
+  { href: '/sobre-nosotros', label: 'Sobre Nosotros' },
+  { href: '/servicios', label: 'Servicios' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/contacto', label: 'Contacto' },
 ];
 
 export function Header() {
@@ -48,9 +48,9 @@ export function Header() {
                 </div>
                 <nav className="flex flex-col gap-4 p-4">
                   {navLinks.map((link) => (
-                    <a key={link.href} href={link.href} onClick={() => setIsOpen(false)} className="text-lg font-medium text-foreground transition-colors hover:text-primary">
+                    <Link key={link.href} href={link.href} onClick={() => setIsOpen(false)} className="text-lg font-medium text-foreground transition-colors hover:text-primary">
                       {link.label}
-                    </a>
+                    </Link>
                   ))}
                 </nav>
               </div>
