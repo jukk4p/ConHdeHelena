@@ -10,7 +10,7 @@ const products = [
     {
         title: "Bolas de Navidad",
         description: "Adorna tu árbol con bolas de Navidad personalizadas con nombres o fechas.",
-        imageUrl: "https://placehold.co/300x200.png",
+        imageUrl: "/Bolas-de-Navidad-personalizadas.webp",
         imageHint: "custom christmas ornament"
     },
     {
@@ -22,25 +22,25 @@ const products = [
     {
         title: "Peines Personalizados",
         description: "Un regalo original y práctico. Peines de madera grabados con nombres o frases.",
-        imageUrl: "https://placehold.co/300x200.png",
+        imageUrl: "/Peine-personalizado.webp",
         imageHint: "wooden comb"
     },
     {
         title: "Copas Personalizadas",
         description: "Celebra momentos especiales con copas de vino o cava grabadas con tu diseño.",
-        imageUrl: "https://placehold.co/300x200.png",
+        imageUrl: "/Copa-personalizada-cumpleaños.webp",
         imageHint: "engraved wine glass"
     },
     {
         title: "Llaveros Personalizados",
         description: "Lleva un recuerdo contigo. Llaveros de madera o acrílico con el diseño que elijas.",
-        imageUrl: "https://placehold.co/300x200.png",
+        imageUrl: "/Llavero-personalizado-con-bolsita.webp",
         imageHint: "custom keychain"
     },
     {
         title: "Perchas Personalizadas",
         description: "Un detalle elegante para bodas y eventos. Perchas grabadas para trajes y vestidos.",
-        imageUrl: "https://placehold.co/300x200.png",
+        imageUrl: "/Percha-personalizada-comunión.webp",
         imageHint: "custom clothes hanger"
     }
 ];
@@ -94,4 +94,3 @@ export function FeaturedProductsSection() {
         </section>
     );
 }
-
