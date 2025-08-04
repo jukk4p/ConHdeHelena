@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: 'ConhdeHelena - Regalos Personalizados',
   description:
     'Creamos regalos personalizados y únicos para toda ocasión.',
+  icons: {
+    icon: '/favicon.ico',
+  },
 }
 
 export default function RootLayout({
