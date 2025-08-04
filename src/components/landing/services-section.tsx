@@ -1,14 +1,10 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { GlassWater, Brush, Baby, CircleDot, KeyRound, Scissors } from "lucide-react";
 import Image from "next/image";
 
-function ServiceCard({ icon, title, description, imageUrl, imageHint }: { icon: React.ReactNode, title: string, description: string, imageUrl: string, imageHint: string }) {
+function ServiceCard({ title, description, imageUrl, imageHint }: { title: string, description: string, imageUrl: string, imageHint: string }) {
     return (
         <Card className="text-center hover:shadow-lg transition-shadow duration-300 flex flex-col">
             <CardHeader>
-                <div className="mx-auto bg-primary/20 rounded-full p-4 w-fit mb-4">
-                    {icon}
-                </div>
                 <CardTitle className="font-headline">{title}</CardTitle>
             </CardHeader>
             <CardContent className="flex flex-col flex-grow items-center">
@@ -21,6 +17,45 @@ function ServiceCard({ icon, title, description, imageUrl, imageHint }: { icon: 
     )
 }
 
+const services = [
+    {
+        title: "Copas Personalizadas",
+        description: "Celebra momentos especiales con copas de vino o cava grabadas con tu diseño.",
+        imageUrl: "https://placehold.co/300x200.png",
+        imageHint: "engraved wine glass"
+    },
+    {
+        title: "Peines Personalizados",
+        description: "Un regalo original y práctico. Peines de madera grabados con nombres o frases.",
+        imageUrl: "https://placehold.co/300x200.png",
+        imageHint: "wooden comb"
+    },
+    {
+        title: "Pack Nacimiento",
+        description: "Kits de bienvenida para bebés con artículos personalizados y únicos.",
+        imageUrl: "https://placehold.co/300x200.png",
+        imageHint: "newborn gift set"
+    },
+    {
+        title: "Bolas de Navidad",
+        description: "Adorna tu árbol con bolas de Navidad personalizadas con nombres o fechas.",
+        imageUrl: "https://placehold.co/300x200.png",
+        imageHint: "custom christmas ornament"
+    },
+    {
+        title: "Llaveros Personalizados",
+        description: "Lleva un recuerdo contigo. Llaveros de madera o acrílico con el diseño que elijas.",
+        imageUrl: "https://placehold.co/300x200.png",
+        imageHint: "custom keychain"
+    },
+    {
+        title: "Perchas Personalizadas",
+        description: "Un detalle elegante para bodas y eventos. Perchas grabadas para trajes y vestidos.",
+        imageUrl: "https://placehold.co/300x200.png",
+        imageHint: "custom clothes hanger"
+    }
+];
+
 export function ServicesSection() {
     return (
         <section id="servicios" className="w-full py-20 md:py-32 bg-accent/50">
@@ -32,48 +67,15 @@ export function ServicesSection() {
                     </p>
                 </div>
                 <div className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-12">
-                    <ServiceCard 
-                        icon={<GlassWater className="w-10 h-10 text-primary" />} 
-                        title="Copas Personalizadas" 
-                        description="Celebra momentos especiales con copas de vino o cava grabadas con tu diseño." 
-                        imageUrl="https://placehold.co/300x200.png"
-                        imageHint="engraved wine glass"
-                    />
-                    <ServiceCard 
-                        icon={<Brush className="w-10 h-10 text-primary" />} 
-                        title="Peines Personalizados" 
-                        description="Un regalo original y práctico. Peines de madera grabados con nombres o frases." 
-                        imageUrl="https://placehold.co/300x200.png"
-                        imageHint="wooden comb"
-                    />
-                    <ServiceCard 
-                        icon={<Baby className="w-10 h-10 text-primary" />} 
-                        title="Pack Nacimiento" 
-                        description="Kits de bienvenida para bebés con artículos personalizados y únicos." 
-                        imageUrl="https://placehold.co/300x200.png"
-                        imageHint="newborn gift set"
-                    />
-                    <ServiceCard 
-                        icon={<CircleDot className="w-10 h-10 text-primary" />} 
-                        title="Bolas de Navidad" 
-                        description="Adorna tu árbol con bolas de Navidad personalizadas con nombres o fechas." 
-                        imageUrl="https://placehold.co/300x200.png"
-                        imageHint="custom christmas ornament"
-                    />
-                    <ServiceCard 
-                        icon={<KeyRound className="w-10 h-10 text-primary" />} 
-                        title="Llaveros Personalizados" 
-                        description="Lleva un recuerdo contigo. Llaveros de madera o acrílico con el diseño que elijas." 
-                        imageUrl="https://placehold.co/300x200.png"
-                        imageHint="custom keychain"
-                    />
-                    <ServiceCard 
-                        icon={<Scissors className="w-10 h-10 text-primary" />} 
-                        title="Perchas Personalizadas" 
-                        description="Un detalle elegante para bodas y eventos. Perchas grabadas para trajes y vestidos." 
-                        imageUrl="https://placehold.co/300x200.png"
-                        imageHint="custom clothes hanger"
-                    />
+                    {services.map((service) => (
+                        <ServiceCard 
+                            key={service.title}
+                            title={service.title} 
+                            description={service.description} 
+                            imageUrl={service.imageUrl}
+                            imageHint={service.imageHint}
+                        />
+                    ))}
                 </div>
             </div>
         </section>
