@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { AnimatedItem, itemVariants } from "@/components/animated-section";
+import { AnimatedItem, itemVariants, AnimatedSection } from "@/components/animated-section";
 import Link from "next/link";
 import {
   Dialog,
@@ -72,86 +72,88 @@ export function GallerySection() {
     : galleryItems.filter(item => item.category === activeCategory);
 
   return (
-    <section id="galeria" className="w-full py-20 md:py-32">
-      <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-          <AnimatedItem>
-            <h2 className="text-3xl font-bold tracking-tighter md:text-4xl font-headline">Galería de Creaciones</h2>
-          </AnimatedItem>
-          <AnimatedItem>
-            <p className="max-w-[900px] text-muted-foreground md:text-xl">
-              Cada regalo es una historia y cada detalle cuenta. Aquí tienes una muestra de los trabajos que hemos realizado con toda nuestra pasión y precisión. Inspírate para tu próximo regalo único.
-            </p>
-          </AnimatedItem>
-        </div>
+    <AnimatedSection>
+        <section id="galeria" className="w-full py-20 md:py-32">
+        <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+            <AnimatedItem>
+                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl font-headline">Galería de Creaciones</h2>
+            </AnimatedItem>
+            <AnimatedItem>
+                <p className="max-w-[900px] text-muted-foreground md:text-xl">
+                Cada regalo es una historia y cada detalle cuenta. Aquí tienes una muestra de los trabajos que hemos realizado con toda nuestra pasión y precisión. Inspírate para tu próximo regalo único.
+                </p>
+            </AnimatedItem>
+            </div>
 
-        <AnimatedItem className="flex justify-center flex-wrap gap-2 mb-8">
-          {categories.map(category => (
-            <Button
-              key={category}
-              variant={activeCategory === category ? "default" : "outline"}
-              onClick={() => setActiveCategory(category)}
+            <AnimatedItem className="flex justify-center flex-wrap gap-2 mb-8">
+            {categories.map(category => (
+                <Button
+                key={category}
+                variant={activeCategory === category ? "default" : "outline"}
+                onClick={() => setActiveCategory(category)}
+                >
+                {category}
+                </Button>
+            ))}
+            </AnimatedItem>
+
+            <motion.div 
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+            variants={{
+                visible: { transition: { staggerChildren: 0.1 } }
+            }}
+            initial="hidden"
+            animate="visible"
             >
-              {category}
-            </Button>
-          ))}
-        </AnimatedItem>
-
-        <motion.div 
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
-          variants={{
-            visible: { transition: { staggerChildren: 0.1 } }
-          }}
-          initial="hidden"
-          animate="visible"
-        >
-          {filteredItems.map((item) => (
-            <motion.div key={item.title} variants={itemVariants}>
-               <Dialog>
-                <DialogTrigger asChild>
-                  <motion.div
-                    className="cursor-pointer"
-                    whileHover={{ y: -5, scale: 1.05 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                  >
-                    <Card className="overflow-hidden h-full">
-                      <CardContent className="p-0">
+            {filteredItems.map((item) => (
+                <motion.div key={item.title} variants={itemVariants}>
+                <Dialog>
+                    <DialogTrigger asChild>
+                    <motion.div
+                        className="cursor-pointer"
+                        whileHover={{ y: -5, scale: 1.05 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                    >
+                        <Card className="overflow-hidden h-full">
+                        <CardContent className="p-0">
+                            <Image
+                            src={item.imageUrl}
+                            alt={item.title}
+                            width={400}
+                            height={400}
+                            className="object-cover w-full h-full"
+                            data-ai-hint={item.imageHint}
+                            />
+                        </CardContent>
+                        </Card>
+                    </motion.div>
+                    </DialogTrigger>
+                    <DialogContent className="sm:max-w-[625px]">
+                    <DialogHeader>
+                        <DialogTitle className="font-headline text-2xl">{item.title}</DialogTitle>
+                        <DialogDescription>{item.description}</DialogDescription>
+                    </DialogHeader>
+                    <div className="py-4">
                         <Image
-                          src={item.imageUrl}
-                          alt={item.title}
-                          width={400}
-                          height={400}
-                          className="object-cover w-full h-full"
-                          data-ai-hint={item.imageHint}
+                            src={item.imageUrl.replace('400x400', '800x800')}
+                            alt={item.title}
+                            width={800}
+                            height={800}
+                            className="object-cover w-full h-full rounded-md"
+                            data-ai-hint={item.imageHint}
                         />
-                      </CardContent>
-                    </Card>
-                  </motion.div>
-                </DialogTrigger>
-                <DialogContent className="sm:max-w-[625px]">
-                  <DialogHeader>
-                    <DialogTitle className="font-headline text-2xl">{item.title}</DialogTitle>
-                    <DialogDescription>{item.description}</DialogDescription>
-                  </DialogHeader>
-                  <div className="py-4">
-                     <Image
-                        src={item.imageUrl.replace('400x400', '800x800')}
-                        alt={item.title}
-                        width={800}
-                        height={800}
-                        className="object-cover w-full h-full rounded-md"
-                        data-ai-hint={item.imageHint}
-                      />
-                  </div>
-                   <Button asChild>
-                      <Link href="/contacto">Solicitar un producto similar</Link>
-                    </Button>
-                </DialogContent>
-              </Dialog>
+                    </div>
+                    <Button asChild>
+                        <Link href="/contacto">Solicitar un producto similar</Link>
+                        </Button>
+                    </DialogContent>
+                </Dialog>
+                </motion.div>
+            ))}
             </motion.div>
-          ))}
-        </motion.div>
-      </div>
-    </section>
+        </div>
+        </section>
+    </AnimatedSection>
   );
 }

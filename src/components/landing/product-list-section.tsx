@@ -3,7 +3,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
-import { AnimatedItem } from "@/components/animated-section";
+import { AnimatedItem, AnimatedSection } from "@/components/animated-section";
 import { motion } from "framer-motion";
 
 const products = [
@@ -67,30 +67,32 @@ function ProductCard({ title, description, imageUrl, imageHint }: { title: strin
 
 export function ProductListSection() {
     return (
-        <section id="productos" className="w-full pb-20 md:pb-32">
-            <div className="container px-4 md:px-6">
-                 <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-                    <AnimatedItem>
-                        <h2 className="text-3xl font-bold tracking-tighter md:text-4xl font-headline">Todos Nuestros Productos</h2>
-                    </AnimatedItem>
-                     <AnimatedItem>
-                        <p className="max-w-[900px] text-muted-foreground md:text-xl">
-                            Ofrecemos una amplia gama de productos que podemos personalizar a tu gusto. Aquí tienes algunos ejemplos:
-                        </p>
-                    </AnimatedItem>
+        <AnimatedSection>
+            <section id="productos" className="w-full pb-20 md:pb-32">
+                <div className="container px-4 md:px-6">
+                    <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+                        <AnimatedItem>
+                            <h2 className="text-3xl font-bold tracking-tighter md:text-4xl font-headline">Todos Nuestros Productos</h2>
+                        </AnimatedItem>
+                        <AnimatedItem>
+                            <p className="max-w-[900px] text-muted-foreground md:text-xl">
+                                Ofrecemos una amplia gama de productos que podemos personalizar a tu gusto. Aquí tienes algunos ejemplos:
+                            </p>
+                        </AnimatedItem>
+                    </div>
+                    <div className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {products.map((product) => (
+                            <ProductCard 
+                                key={product.title}
+                                title={product.title} 
+                                description={product.description} 
+                                imageUrl={product.imageUrl}
+                                imageHint={product.imageHint}
+                            />
+                        ))}
+                    </div>
                 </div>
-                <div className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {products.map((product) => (
-                        <ProductCard 
-                            key={product.title}
-                            title={product.title} 
-                            description={product.description} 
-                            imageUrl={product.imageUrl}
-                            imageHint={product.imageHint}
-                        />
-                    ))}
-                </div>
-            </div>
-        </section>
+            </section>
+        </AnimatedSection>
     );
 }

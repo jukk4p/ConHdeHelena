@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-const containerVariants = {
+export const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -44,4 +44,3 @@ export function AnimatedItem({ children, className }: { children: React.ReactNod
         </motion.div>
     )
 }
-    
