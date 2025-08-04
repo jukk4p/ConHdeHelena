@@ -31,7 +31,7 @@ export function Footer() {
              <h3 className="font-semibold font-headline text-lg mb-4">Síguenos</h3>
             <div className="flex space-x-4">
               <Link href="#" aria-label="Facebook" className="text-muted-foreground hover:text-primary"><Facebook /></Link>
-              <Link href="#" aria-label="Instagram" className="text-muted-foreground hover:text-primary"><Instagram /></Link>
+              <Link href="https://www.instagram.com/conh_dehelena" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-muted-foreground hover:text-primary"><Instagram /></Link>
               <Link href="#" aria-label="Twitter" className="text-muted-foreground hover:text-primary"><Twitter /></Link>
             </div>
           </div>

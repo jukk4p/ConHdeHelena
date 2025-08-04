@@ -36,28 +36,28 @@ export function ServicesSection() {
                         icon={<CupSoda className="w-10 h-10 text-primary" />} 
                         title="Tazas y Vasos" 
                         description="Personaliza tazas, termos y vasos para cualquier ocasión." 
-                        imageUrl="https://images.pexels.com/photos/1579233/pexels-photo-1579233.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                        imageUrl="/images/service-cups.jpg"
                         imageHint="custom mug" 
                     />
                     <ServiceCard 
                         icon={<Shirt className="w-10 h-10 text-primary" />} 
                         title="Textiles" 
                         description="Camisetas, sudaderas y bolsas de tela con tu diseño favorito." 
-                        imageUrl="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?q=80&w=772&auto=format&fit=crop"
+                        imageUrl="/images/service-textiles.jpg"
                         imageHint="custom tshirt" 
                     />
                     <ServiceCard 
                         icon={<Mail className="w-10 h-10 text-primary" />} 
                         title="Invitaciones" 
                         description="Diseños únicos para bodas, bautizos y eventos especiales." 
-                        imageUrl="https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                        imageUrl="/images/service-invitations.jpg"
                         imageHint="wedding invitation" 
                     />
                     <ServiceCard 
                         icon={<Sticker className="w-10 h-10 text-primary" />} 
                         title="Vinilos Decorativos" 
                         description="Decora paredes, portátiles y más con vinilos personalizados." 
-                        imageUrl="https://images.pexels.com/photos/4057738/pexels-photo-4057738.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                        imageUrl="/images/service-vinyls.jpg"
                         imageHint="vinyl decal" 
                     />
                 </div>
