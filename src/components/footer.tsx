@@ -29,6 +29,8 @@ export function Footer() {
               <li><Link href="/" className="text-sm text-muted-foreground hover:text-primary">Inicio</Link></li>
               <li><Link href="/sobre-nosotros" className="text-sm text-muted-foreground hover:text-primary">Sobre Nosotros</Link></li>
               <li><Link href="/productos" className="text-sm text-muted-foreground hover:text-primary">Productos</Link></li>
+              <li><Link href="/galeria" className="text-sm text-muted-foreground hover:text-primary">Galería</Link></li>
+              <li><Link href="/personaliza" className="text-sm text-muted-foreground hover:text-primary">Personaliza</Link></li>
               <li><Link href="/contacto" className="text-sm text-muted-foreground hover:text-primary">Contacto</Link></li>
             </ul>
           </div>
