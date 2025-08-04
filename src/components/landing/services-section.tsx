@@ -12,8 +12,8 @@ function ServiceCard({ icon, title, description, imageUrl, imageHint }: { icon: 
                 <CardTitle className="font-headline">{title}</CardTitle>
             </CardHeader>
             <CardContent className="flex flex-col flex-grow items-center">
-                <div className="w-full h-48 mb-4 rounded-md overflow-hidden">
-                    <Image src={imageUrl} alt={title} width={300} height={200} className="w-full h-full object-cover" data-ai-hint={imageHint} />
+                <div className="w-full h-48 mb-4 rounded-md overflow-hidden relative">
+                    <Image src={imageUrl} alt={title} layout="fill" className="object-cover" data-ai-hint={imageHint} />
                 </div>
                 <p className="text-sm text-muted-foreground flex-grow">{description}</p>
             </CardContent>
@@ -22,7 +22,6 @@ function ServiceCard({ icon, title, description, imageUrl, imageHint }: { icon: 
 }
 
 export function ServicesSection() {
-    const workingImageUrl = "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?q=80&w=772&auto=format&fit=crop";
     return (
         <section id="servicios" className="w-full py-20 md:py-32 bg-accent/50">
             <div className="container px-4 md:px-6">
@@ -37,28 +36,28 @@ export function ServicesSection() {
                         icon={<CupSoda className="w-10 h-10 text-primary" />} 
                         title="Tazas y Vasos" 
                         description="Personaliza tazas, termos y vasos para cualquier ocasión." 
-                        imageUrl={workingImageUrl}
+                        imageUrl="https://images.unsplash.com/photo-1595434193323-e64e18585481?q=80&w=774&auto=format&fit=crop"
                         imageHint="custom mug" 
                     />
                     <ServiceCard 
                         icon={<Shirt className="w-10 h-10 text-primary" />} 
                         title="Textiles" 
                         description="Camisetas, sudaderas y bolsas de tela con tu diseño favorito." 
-                        imageUrl={workingImageUrl}
+                        imageUrl="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?q=80&w=772&auto=format&fit=crop"
                         imageHint="custom tshirt" 
                     />
                     <ServiceCard 
                         icon={<Mail className="w-10 h-10 text-primary" />} 
                         title="Invitaciones" 
                         description="Diseños únicos para bodas, bautizos y eventos especiales." 
-                        imageUrl={workingImageUrl}
+                        imageUrl="https://images.unsplash.com/photo-1598951820689-32d94b8e0427?q=80&w=774&auto=format&fit=crop"
                         imageHint="wedding invitation" 
                     />
                     <ServiceCard 
                         icon={<Sticker className="w-10 h-10 text-primary" />} 
                         title="Vinilos Decorativos" 
                         description="Decora paredes, portátiles y más con vinilos personalizados." 
-                        imageUrl={workingImageUrl}
+                        imageUrl="https://images.unsplash.com/photo-1619472653835-2a0d69a65f83?q=80&w=870&auto=format&fit=crop"
                         imageHint="vinyl decal" 
                     />
                 </div>
