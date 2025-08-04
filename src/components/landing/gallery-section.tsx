@@ -4,7 +4,6 @@ import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import Link from "next/link";
 import {
   Dialog,
@@ -99,12 +98,7 @@ export function GallerySection() {
             <div key={item.title}>
             <Dialog>
                 <DialogTrigger asChild>
-                <motion.div
-                    className="cursor-pointer"
-                    whileHover={{ y: -5, scale: 1.05 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                >
-                    <Card className="overflow-hidden h-full">
+                    <Card className="overflow-hidden h-full cursor-pointer hover:shadow-lg transition-shadow duration-300">
                     <CardContent className="p-0">
                         <Image
                         src={item.imageUrl}
@@ -116,7 +110,6 @@ export function GallerySection() {
                         />
                     </CardContent>
                     </Card>
-                </motion.div>
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-[625px]">
                 <DialogHeader>
