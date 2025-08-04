@@ -14,10 +14,10 @@ const products = [
         imageHint: "custom christmas ornament"
     },
     {
-        title: "Pack Nacimiento",
-        description: "Kits de bienvenida para bebés con artículos personalizados y únicos.",
+        title: "Joyero Personalizado",
+        description: "Guarda tus joyas con estilo en un joyero personalizado con tu nombre o iniciales.",
         imageUrl: "https://placehold.co/300x200.png",
-        imageHint: "newborn gift set"
+        imageHint: "custom jewelry box"
     },
     {
         title: "Peines Personalizados",
