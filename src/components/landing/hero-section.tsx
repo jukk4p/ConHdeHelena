@@ -20,7 +20,7 @@ export function HeroSection() {
                         </Button>
                     </div>
                     <Image
-                        src="https://images.unsplash.com/photo-1522120691854-5339f0143501?q=80&w=1770&auto=format&fit=crop"
+                        src="https://images.pexels.com/photos/4348403/pexels-photo-4348403.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                         width="600"
                         height="400"
                         alt="Regalos personalizados"
