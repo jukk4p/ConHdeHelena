@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Wine, Brush, Baby, CircleDot, KeyRound, Scissors } from "lucide-react";
+import { GlassWater, Brush, Baby, CircleDot, KeyRound, Scissors } from "lucide-react";
 import Image from "next/image";
 
 function ServiceCard({ icon, title, description, imageUrl, imageHint }: { icon: React.ReactNode, title: string, description: string, imageUrl: string, imageHint: string }) {
@@ -33,7 +33,7 @@ export function ServicesSection() {
                 </div>
                 <div className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-12">
                     <ServiceCard 
-                        icon={<Wine className="w-10 h-10 text-primary" />} 
+                        icon={<GlassWater className="w-10 h-10 text-primary" />} 
                         title="Copas Personalizadas" 
                         description="Celebra momentos especiales con copas de vino o cava grabadas con tu diseño." 
                         imageUrl="https://images.pexels.com/photos/327228/pexels-photo-327228.jpeg"
