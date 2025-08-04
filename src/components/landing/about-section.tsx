@@ -9,7 +9,7 @@ export function AboutSection() {
                     <div className="space-y-4">
                         <h2 className="text-3xl font-bold tracking-tighter md:text-4xl font-headline">Nuestra Historia de Pasión y Precisión</h2>
                         <p className="text-muted-foreground">
-                            ConhdeHelena nació de un sueño: crear conexiones emocionales a través de regalos que cuentan una historia. Somos dos personas apasionadas que combinamos la creatividad manual con la tecnología para dar vida a tus ideas.
+                            ConhdeHelena nació de un sueño: crear conexiones emocionales a través de regalos que cuentan una historia. Combinamos la creatividad manual con la tecnología para dar vida a tus ideas.
                         </p>
                         <p className="text-muted-foreground">
                             Nuestra misión es simple: ofrecerte un producto único, de alta calidad y lleno de significado. Creemos que el regalo perfecto es aquel que se hace con el corazón y se perfecciona con la técnica.
