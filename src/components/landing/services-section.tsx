@@ -13,7 +13,7 @@ function ServiceCard({ icon, title, description, imageUrl, imageHint }: { icon: 
             </CardHeader>
             <CardContent className="flex flex-col flex-grow items-center">
                 <div className="w-full h-48 mb-4 rounded-md overflow-hidden relative">
-                    <Image src={imageUrl} alt={title} fill className="object-cover" data-ai-hint={imageHint} />
+                    <Image src={imageUrl} alt={title} width={300} height={200} className="object-cover w-full h-full" data-ai-hint={imageHint} />
                 </div>
                 <p className="text-sm text-muted-foreground flex-grow">{description}</p>
             </CardContent>
@@ -36,28 +36,28 @@ export function ServicesSection() {
                         icon={<CupSoda className="w-10 h-10 text-primary" />} 
                         title="Tazas y Vasos" 
                         description="Personaliza tazas, termos y vasos para cualquier ocasión." 
-                        imageUrl="/images/service-cups.jpg"
+                        imageUrl="https://images.pexels.com/photos/302904/pexels-photo-302904.jpeg"
                         imageHint="custom mug" 
                     />
                     <ServiceCard 
                         icon={<Shirt className="w-10 h-10 text-primary" />} 
                         title="Textiles" 
                         description="Camisetas, sudaderas y bolsas de tela con tu diseño favorito." 
-                        imageUrl="/images/service-textiles.jpg"
+                        imageUrl="https://images.pexels.com/photos/769733/pexels-photo-769733.jpeg"
                         imageHint="custom tshirt" 
                     />
                     <ServiceCard 
                         icon={<Mail className="w-10 h-10 text-primary" />} 
                         title="Invitaciones" 
                         description="Diseños únicos para bodas, bautizos y eventos especiales." 
-                        imageUrl="/images/service-invitations.jpg"
+                        imageUrl="https://images.pexels.com/photos/169190/pexels-photo-169190.jpeg"
                         imageHint="wedding invitation" 
                     />
                     <ServiceCard 
                         icon={<Sticker className="w-10 h-10 text-primary" />} 
                         title="Vinilos Decorativos" 
                         description="Decora paredes, portátiles y más con vinilos personalizados." 
-                        imageUrl="/images/service-vinyls.jpg"
+                        imageUrl="https://images.pexels.com/photos/6633934/pexels-photo-6633934.jpeg"
                         imageHint="vinyl decal" 
                     />
                 </div>
