@@ -1,7 +1,6 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 import Link from "next/link";
 import { AnimatedItem } from "@/components/animated-section";
 
@@ -26,7 +25,7 @@ export function HeroSection() {
                         </AnimatedItem>
                         <AnimatedItem>
                             <Button asChild size="lg">
-                                <Link href="/servicios">Explora Nuestros Servicios</Link>
+                                <Link href="/contacto">Contacta con Nosotros</Link>
                             </Button>
                         </AnimatedItem>
                     </div>
