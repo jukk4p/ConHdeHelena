@@ -1,10 +1,24 @@
 "use client";
 
 import { PersonalizeForm } from "@/components/personalize-form";
+import { motion } from "framer-motion";
+
+const sectionFadeIn = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.5 } }
+};
 
 export function PersonalizeFormSection() {
     return (
-        <section id="personaliza" className="w-full py-20 md:py-32">
+        // INICIO ANIMACIÓN BLOQUE PERSONALIZA
+        <motion.section
+            id="personaliza"
+            className="w-full py-20 md:py-32"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={sectionFadeIn}
+        >
             <div className="container px-4 md:px-6">
                 <div className="grid gap-12 lg:grid-cols-2 lg:gap-24 items-center">
                     <div className="space-y-4">
@@ -21,6 +35,7 @@ export function PersonalizeFormSection() {
                     </div>
                 </div>
             </div>
-        </section>
+        </motion.section>
+        // FIN ANIMACIÓN BLOQUE PERSONALIZA
     );
 }

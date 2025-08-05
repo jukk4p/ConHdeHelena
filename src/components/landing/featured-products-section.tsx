@@ -43,9 +43,20 @@ const products = [
     }
 ];
 
+const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.5
+        }
+    }
+};
+
 function ProductCard({ title, description, imageUrl, imageHint }: { title: string, description: string, imageUrl: string, imageHint: string }) {
     return (
-        <motion.div whileHover={{ y: -5 }} className="h-full">
+        <motion.div variants={cardVariants} className="h-full">
             <Card className="text-center hover:shadow-lg transition-shadow duration-300 flex flex-col h-full">
                 <CardHeader>
                     <CardTitle className="font-headline">{title}</CardTitle>
@@ -62,6 +73,15 @@ function ProductCard({ title, description, imageUrl, imageHint }: { title: strin
 }
 
 export function FeaturedProductsSection() {
+    const containerVariants = {
+        hidden: {},
+        visible: {
+            transition: {
+                staggerChildren: 0.2
+            }
+        }
+    };
+
     return (
         <section id="productos-destacados" className="w-full py-20 md:py-32 bg-accent/50">
             <div className="container px-4 md:px-6">
@@ -71,17 +91,25 @@ export function FeaturedProductsSection() {
                         Desde un detalle para un amigo hasta la decoración de tu evento. La tecnología nos permite ofrecer una amplia gama de productos con una precisión increíble.
                     </p>
                 </div>
-                <div className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-12">
+                {/* INICIO ANIMACIÓN BLOQUE PRODUCTOS DESTACADOS */}
+                <motion.div
+                    className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-12"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.2 }}
+                    variants={containerVariants}
+                >
                     {products.map((product) => (
-                        <ProductCard 
+                        <ProductCard
                             key={product.title}
-                            title={product.title} 
-                            description={product.description} 
+                            title={product.title}
+                            description={product.description}
                             imageUrl={product.imageUrl}
                             imageHint={product.imageHint}
                         />
                     ))}
-                </div>
+                </motion.div>
+                {/* FIN ANIMACIÓN BLOQUE PRODUCTOS DESTACADOS */}
             </div>
         </section>
     );
