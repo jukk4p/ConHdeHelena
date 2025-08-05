@@ -37,7 +37,7 @@ export function Header() {
             <NavLink key={link.href} href={link.href} label={link.label} />
           ))}
         </nav>
-        <div className="md:hidden flex items-center">
+        <div className="md:hidden">
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
@@ -45,7 +45,7 @@ export function Header() {
                 <span className="sr-only">Abrir menú</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right">
+            <SheetContent side="right" className="p-0">
               <SheetTitle className="sr-only">Menú de navegación</SheetTitle>
               <SheetDescription className="sr-only">
                 Navegación principal del sitio. Selecciona una opción para ir a la página correspondiente.
