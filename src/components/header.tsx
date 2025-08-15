@@ -6,7 +6,6 @@ import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from '@/components/ui/sheet';
 import { Logo } from '@/components/logo';
-import { motion } from 'framer-motion';
 
 const navLinks = [
   { href: '/', label: 'Inicio' },
@@ -15,15 +14,6 @@ const navLinks = [
   { href: '/personaliza', label: 'Personaliza' },
   { href: '/contacto', label: 'Contacto' },
 ];
-
-const NavLink = ({ href, label }: { href: string; label: string }) => (
-  <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-    <Link href={href} className="relative text-sm font-medium text-muted-foreground transition-colors hover:text-primary">
-      {label}
-    </Link>
-  </motion.div>
-);
-
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,7 +24,13 @@ export function Header() {
         <Logo />
         <nav className="hidden md:flex gap-6">
           {navLinks.map((link) => (
-            <NavLink key={link.href} href={link.href} label={link.label} />
+            <Link
+              key={link.href}
+              href={link.href}
+              className="relative text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+            >
+              {link.label}
+            </Link>
           ))}
         </nav>
         <div className="md:hidden">

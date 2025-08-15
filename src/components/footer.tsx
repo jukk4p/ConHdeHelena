@@ -2,16 +2,13 @@
 
 import { Logo } from './logo';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faYoutube, faTiktok, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 const SocialIcon = ({ href, target, rel, label, children }: { href: string, target?: string, rel?: string, label: string, children: React.ReactNode }) => (
-    <motion.div whileHover={{ scale: 1.2, y: -2 }} transition={{ duration: 0.2 }}>
-        <Link href={href} target={target} rel={rel} aria-label={label} className="text-muted-foreground hover:text-primary">
-            {children}
-        </Link>
-    </motion.div>
+    <Link href={href} target={target} rel={rel} aria-label={label} className="text-muted-foreground hover:text-primary transition-transform hover:scale-125 hover:-translate-y-0.5">
+        {children}
+    </Link>
 );
 
 export function Footer() {
