@@ -1,6 +1,6 @@
 import { AboutSection } from "@/components/landing/about-section";
 
-export default function SobreNosotrosPage() {
+export default function NosotrosPage() {
   return (
     <AboutSection />
   );

@@ -9,7 +9,7 @@ import { Logo } from '@/components/logo';
 
 const navLinks = [
   { href: '/', label: 'Inicio' },
-  { href: '/sobre-nosotros', label: 'Sobre Nosotros' },
+  { href: '/nosotros', label: 'Sobre Nosotros' },
   { href: '/productos', label: 'Productos' },
   { href: '/personaliza', label: 'Personaliza' },
   { href: '/contacto', label: 'Contacto' },
