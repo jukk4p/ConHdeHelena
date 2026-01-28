@@ -1,46 +1,9 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
+import { products } from "@/lib/products";
 
 // NOTE: By removing client-side animations, this component and its children
 // can be rendered on the server, significantly improving performance and reducing CPU load.
-const products = [
-    {
-        title: "Bolas de Navidad",
-        description: "Adorna tu árbol con bolas de Navidad personalizadas con nombres o fechas.",
-        imageUrl: "/Bolas-de-Navidad-personalizadas.webp",
-        imageHint: "custom christmas ornament"
-    },
-    {
-        title: "Joyero Personalizado",
-        description: "Guarda tus joyas con estilo en un joyero personalizado con tu nombre o iniciales.",
-        imageUrl: "/Joyero-personalizado.webp",
-        imageHint: "custom jewelry box"
-    },
-    {
-        title: "Peines Personalizados",
-        description: "Un regalo original y práctico. Peines de madera grabados con nombres o frases.",
-        imageUrl: "/Peine-personalizado.webp",
-        imageHint: "wooden comb"
-    },
-    {
-        title: "Copas Personalizadas",
-        description: "Celebra momentos especiales con copas de vino o cava grabadas con tu diseño.",
-        imageUrl: "/Copa-personalizada-cumpleaños.webp",
-        imageHint: "engraved wine glass"
-    },
-    {
-        title: "Llaveros Personalizados",
-        description: "Lleva un recuerdo contigo. Llaveros de madera o acrílico con el diseño que elijas.",
-        imageUrl: "/Llavero-personalizado-dia-del-padre.webp",
-        imageHint: "custom keychain"
-    },
-    {
-        title: "Perchas Personalizadas",
-        description: "Un detalle elegante para bodas y eventos. Perchas grabadas para trajes y vestidos.",
-        imageUrl: "/Percha-personalizada-comunión.webp",
-        imageHint: "custom clothes hanger"
-    }
-];
 
 function ProductCard({ title, description, imageUrl, imageHint }: { title: string, description: string, imageUrl: string, imageHint: string }) {
     return (
