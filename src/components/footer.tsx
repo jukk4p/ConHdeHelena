@@ -1,5 +1,3 @@
-"use client";
-
 import { Logo } from './logo';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

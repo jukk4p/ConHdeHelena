@@ -1,11 +1,8 @@
-
-"use client";
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
 
-// NOTE: Removed framer-motion and "use client" to convert this to a Server Component.
-// The hover animation is now handled with more performant CSS transitions via Tailwind classes.
+// NOTE: Removed "use client" to convert this to a Server Component.
+// The hover animation is handled with more performant CSS transitions via Tailwind classes.
 
 const products = [
     {
