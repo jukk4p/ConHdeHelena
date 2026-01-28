@@ -17,9 +17,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        // NOTE: Switched to CSS variables provided by next/font for better performance.
-        body: ['var(--font-alegreya)', 'serif'],
-        headline: ['var(--font-belleza)', 'sans-serif'],
+        body: ['var(--font-poppins)', 'sans-serif'],
+        headline: ['var(--font-cormorant)', 'serif'],
         code: ['monospace'],
       },
       colors: {
@@ -68,6 +67,10 @@ export default {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
+      },
+      boxShadow: {
+        soft: '0 10px 40px rgba(0,0,0,0.08)',
+        'soft-lg': '0 20px 50px rgba(0,0,0,0.1)',
       },
       keyframes: {
         'accordion-down': {

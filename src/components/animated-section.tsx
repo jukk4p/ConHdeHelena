@@ -1,19 +1,74 @@
-// NOTE: This component has been refactored to remove framer-motion.
-// By removing the "use client" directive and motion logic, any component
-// using AnimatedSection can now be a Server Component, improving performance.
+'use client';
 
-export function AnimatedSection({ children, className }: { children: React.ReactNode, className?: string }) {
+import { motion, Variants } from 'framer-motion';
+
+interface AnimatedSectionProps {
+  children: React.ReactNode;
+  className?: string;
+  stagger?: number;
+}
+
+const sectionVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.2, // Default stagger
+    },
+  },
+};
+
+export function AnimatedSection({
+  children,
+  className,
+  stagger,
+}: AnimatedSectionProps) {
+  const visibleVariant = stagger
+    ? { ...sectionVariants.visible, transition: { staggerChildren: stagger } }
+    : sectionVariants.visible;
+
   return (
-    <section className={className}>
+    <motion.section
+      className={className}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={{
+        hidden: {},
+        visible: visibleVariant,
+      }}
+    >
       {children}
-    </section>
+    </motion.section>
   );
 }
 
-export function AnimatedItem({ children, className }: { children: React.ReactNode, className?: string }) {
-    return (
-        <div className={className}>
-            {children}
-        </div>
-    )
+interface AnimatedItemProps {
+  children: React.ReactNode;
+  className?: string;
+  el?: 'div' | 'h1' | 'p' | 'span';
+}
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: 'easeOut',
+    },
+  },
+};
+
+export function AnimatedItem({
+  children,
+  className,
+  el = 'div',
+}: AnimatedItemProps) {
+  const Component = motion[el];
+  return (
+    <Component className={className} variants={itemVariants}>
+      {children}
+    </Component>
+  );
 }

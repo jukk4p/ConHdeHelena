@@ -1,24 +1,22 @@
 import type { Metadata } from 'next'
-import { Alegreya, Belleza } from 'next/font/google'
+import { Cormorant_Garamond, Poppins } from 'next/font/google'
 import './globals.css'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import { Toaster } from '@/components/ui/toaster'
 
-// NOTE: Optimized font loading with next/font.
-// This improves performance by self-hosting the fonts and eliminating network requests.
-const belleza = Belleza({
+const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-belleza',
-  weight: '400',
+  variable: '--font-cormorant',
+  weight: ['400', '600', '700'],
 })
 
-const alegreya = Alegreya({
+const poppins = Poppins({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-alegreya',
-  weight: ['400', '700'],
+  variable: '--font-poppins',
+  weight: ['300', '400', '500', '700'],
 })
 
 export const metadata: Metadata = {
@@ -36,7 +34,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="es" className={`!scroll-smooth ${belleza.variable} ${alegreya.variable}`}>
+    <html lang="es" className={`!scroll-smooth ${cormorant.variable} ${poppins.variable}`}>
       <head />
       <body className="font-body antialiased bg-background text-foreground">
         <div className="flex flex-col min-h-screen">
