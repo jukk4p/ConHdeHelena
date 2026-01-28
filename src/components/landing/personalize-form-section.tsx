@@ -1,23 +1,12 @@
-"use client";
-
 import { PersonalizeForm } from "@/components/personalize-form";
-import { motion } from "framer-motion";
 
-const sectionFadeIn = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.5 } }
-};
-
+// NOTE: By removing client-side animations, this component can be rendered on the server.
+// The interactive <PersonalizeForm /> is already a separate client component.
 export function PersonalizeFormSection() {
     return (
-        // INICIO ANIMACIÓN BLOQUE PERSONALIZA
-        <motion.section
+        <section
             id="personaliza"
             className="w-full py-20 md:py-32"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={sectionFadeIn}
         >
             <div className="container px-4 md:px-6">
                 <div className="grid gap-12 lg:grid-cols-2 lg:gap-24 items-center">
@@ -35,7 +24,6 @@ export function PersonalizeFormSection() {
                     </div>
                 </div>
             </div>
-        </motion.section>
-        // FIN ANIMACIÓN BLOQUE PERSONALIZA
+        </section>
     );
 }

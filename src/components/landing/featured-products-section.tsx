@@ -1,9 +1,8 @@
-"use client";
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
-import { motion } from "framer-motion";
 
+// NOTE: By removing client-side animations, this component and its children
+// can be rendered on the server, significantly improving performance and reducing CPU load.
 const products = [
     {
         title: "Bolas de Navidad",
@@ -43,20 +42,9 @@ const products = [
     }
 ];
 
-const cardVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: {
-            duration: 0.5
-        }
-    }
-};
-
 function ProductCard({ title, description, imageUrl, imageHint }: { title: string, description: string, imageUrl: string, imageHint: string }) {
     return (
-        <motion.div variants={cardVariants} className="h-full">
+        <div className="h-full">
             <Card className="text-center hover:shadow-lg transition-shadow duration-300 flex flex-col h-full">
                 <CardHeader>
                     <CardTitle className="font-headline">{title}</CardTitle>
@@ -68,20 +56,11 @@ function ProductCard({ title, description, imageUrl, imageHint }: { title: strin
                     <p className="text-sm text-muted-foreground flex-grow">{description}</p>
                 </CardContent>
             </Card>
-        </motion.div>
+        </div>
     )
 }
 
 export function FeaturedProductsSection() {
-    const containerVariants = {
-        hidden: {},
-        visible: {
-            transition: {
-                staggerChildren: 0.2
-            }
-        }
-    };
-
     return (
         <section id="productos-destacados" className="w-full py-20 md:py-32 bg-accent/50">
             <div className="container px-4 md:px-6">
@@ -91,13 +70,8 @@ export function FeaturedProductsSection() {
                         Desde un detalle para un amigo hasta la decoración de tu evento. La tecnología nos permite ofrecer una amplia gama de productos con una precisión increíble.
                     </p>
                 </div>
-                {/* INICIO ANIMACIÓN BLOQUE PRODUCTOS DESTACADOS */}
-                <motion.div
+                <div
                     className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-12"
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.2 }}
-                    variants={containerVariants}
                 >
                     {products.map((product) => (
                         <ProductCard
@@ -108,8 +82,7 @@ export function FeaturedProductsSection() {
                             imageHint={product.imageHint}
                         />
                     ))}
-                </motion.div>
-                {/* FIN ANIMACIÓN BLOQUE PRODUCTOS DESTACADOS */}
+                </div>
             </div>
         </section>
     );

@@ -1,46 +1,19 @@
-"use client";
-
-import { motion } from "framer-motion";
-
-export const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-export const itemVariants = {
-  hidden: { y: 20, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.5,
-    },
-  },
-};
+// NOTE: This component has been refactored to remove framer-motion.
+// By removing the "use client" directive and motion logic, any component
+// using AnimatedSection can now be a Server Component, improving performance.
 
 export function AnimatedSection({ children, className }: { children: React.ReactNode, className?: string }) {
   return (
-    <motion.section
-      className={className}
-      variants={containerVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
-    >
+    <section className={className}>
       {children}
-    </motion.section>
+    </section>
   );
 }
 
 export function AnimatedItem({ children, className }: { children: React.ReactNode, className?: string }) {
     return (
-        <motion.div variants={itemVariants} className={className}>
+        <div className={className}>
             {children}
-        </motion.div>
+        </div>
     )
 }

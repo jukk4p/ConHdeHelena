@@ -3,7 +3,9 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
-import { motion } from "framer-motion";
+
+// NOTE: Removed framer-motion and "use client" to convert this to a Server Component.
+// The hover animation is now handled with more performant CSS transitions via Tailwind classes.
 
 const products = [
     {
@@ -46,7 +48,7 @@ const products = [
 
 function ProductCard({ title, description, imageUrl, imageHint }: { title: string, description: string, imageUrl: string, imageHint: string }) {
     return (
-        <motion.div whileHover={{ y: -5 }} className="h-full">
+        <div className="h-full transition-transform duration-300 hover:-translate-y-1">
             <Card className="text-center hover:shadow-lg transition-shadow duration-300 flex flex-col h-full">
                 <CardHeader>
                     <CardTitle className="font-headline">{title}</CardTitle>
@@ -58,7 +60,7 @@ function ProductCard({ title, description, imageUrl, imageHint }: { title: strin
                     <p className="text-sm text-muted-foreground flex-grow">{description}</p>
                 </CardContent>
             </Card>
-        </motion.div>
+        </div>
     )
 }
 

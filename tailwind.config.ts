@@ -17,8 +17,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        body: ['Alegreya', 'serif'],
-        headline: ['Belleza', 'sans-serif'],
+        // NOTE: Switched to CSS variables provided by next/font for better performance.
+        body: ['var(--font-alegreya)', 'serif'],
+        headline: ['var(--font-belleza)', 'sans-serif'],
         code: ['monospace'],
       },
       colors: {

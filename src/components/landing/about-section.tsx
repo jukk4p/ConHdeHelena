@@ -1,34 +1,13 @@
-"use client";
+import { AboutSectionCards } from "./about-section-cards";
 
-import { Card } from "@/components/ui/card";
-import { Heart, Sparkles, Scissors, Users } from "lucide-react";
-import { motion } from "framer-motion";
-
-const IconWrapper = ({ children }: { children: React.ReactNode }) => (
-    <motion.div
-        whileHover={{ scale: 1.1, rotate: 5 }}
-        transition={{ type: "spring", stiffness: 300 }}
-    >
-        {children}
-    </motion.div>
-);
-
-const sectionFadeIn = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.5 } }
-};
-
-
+// NOTE: By removing the main animation and extracting the interactive card grid
+// into a separate Client Component (`AboutSectionCards`), the bulk of this section
+// can be rendered on the server, improving performance.
 export function AboutSection() {
     return (
-        // INICIO ANIMACIÓN BLOQUE SOBRE NOSOTROS
-        <motion.section
+        <section
             id="sobre-nosotros"
             className="w-full py-20 md:py-32"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={sectionFadeIn}
         >
             <div className="container px-4 md:px-6">
                 <div className="grid gap-10 lg:grid-cols-2">
@@ -41,31 +20,10 @@ export function AboutSection() {
                             Nuestra misión es simple: ofrecerte un producto único, de alta calidad y lleno de significado. Creemos que el regalo perfecto es aquel que se hace con el corazón y se perfecciona con la técnica.
                         </p>
                     </div>
-                    <div className="grid grid-cols-2 gap-4">
-                        <Card className="flex flex-col items-center justify-center p-6 text-center h-full">
-                            <IconWrapper><Heart className="w-12 h-12 text-primary mb-4" /></IconWrapper>
-                            <h3 className="text-lg font-bold font-headline">Pasión</h3>
-                            <p className="text-sm text-muted-foreground">Amor en cada corte y diseño.</p>
-                        </Card>
-                        <Card className="flex flex-col items-center justify-center p-6 text-center h-full">
-                                <IconWrapper><Sparkles className="w-12 h-12 text-primary mb-4" /></IconWrapper>
-                            <h3 className="text-lg font-bold font-headline">Creatividad</h3>
-                            <p className="text-sm text-muted-foreground">Ideas frescas para regalos únicos.</p>
-                        </Card>
-                        <Card className="flex flex-col items-center justify-center p-6 text-center h-full">
-                                <IconWrapper><Scissors className="w-12 h-12 text-primary mb-4" /></IconWrapper>
-                            <h3 className="text-lg font-bold font-headline">Calidad</h3>
-                            <p className="text-sm text-muted-foreground">Acabados precisos con la mejor tecnología.</p>
-                        </Card>
-                        <Card className="flex flex-col items-center justify-center p-6 text-center h-full">
-                                <IconWrapper><Users className="w-12 h-12 text-primary mb-4" /></IconWrapper>
-                            <h3 className="text-lg font-bold font-headline">Cercanía</h3>
-                            <p className="text-sm text-muted-foreground">Trato personalizado para cada cliente.</p>
-                        </Card>
-                    </div>
+                    {/* The interactive card grid is now in its own client component to isolate interactivity. */}
+                    <AboutSectionCards />
                 </div>
             </div>
-        </motion.section>
-        // FIN ANIMACIÓN BLOQUE SOBRE NOSOTROS
+        </section>
     );
 }

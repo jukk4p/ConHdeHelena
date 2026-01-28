@@ -1,24 +1,13 @@
-"use client";
-
 import { ContactForm } from "@/components/contact-form";
 import { Mail, MapPin, Phone } from "lucide-react";
-import { motion } from "framer-motion";
 
-const sectionFadeIn = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.5 } }
-};
-
+// NOTE: By removing client-side animations, this component can be rendered on the server.
+// The interactive <ContactForm /> is already a separate client component, which is a good pattern.
 export function ContactSection() {
     return (
-        // INICIO ANIMACIÓN BLOQUE CONTACTO
-        <motion.section
+        <section
             id="contacto"
             className="w-full py-20 md:py-32 bg-accent/50"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={sectionFadeIn}
         >
             <div className="container px-4 md:px-6">
                 <div className="grid gap-12 lg:grid-cols-2">
@@ -47,7 +36,6 @@ export function ContactSection() {
                     </div>
                 </div>
             </div>
-        </motion.section>
-        // FIN ANIMACIÓN BLOQUE CONTACTO
+        </section>
     );
 }
