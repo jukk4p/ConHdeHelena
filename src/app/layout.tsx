@@ -23,9 +23,6 @@ export const metadata: Metadata = {
   title: 'ConhdeHelena - Regalos Personalizados',
   description:
     'Creamos regalos personalizados y únicos para toda ocasión.',
-  icons: {
-    icon: '/Favicon.png',
-  },
 }
 
 export default function RootLayout({
@@ -35,6 +32,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={`!scroll-smooth ${cormorant.variable} ${poppins.variable}`}>
+      <head>
+        <link rel="icon" href="/Favicon.png" sizes="any" />
+      </head>
       <body className="font-body antialiased bg-background text-foreground">
         <div className="flex flex-col min-h-screen">
           <Header />
