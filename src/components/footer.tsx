@@ -46,7 +46,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-12 pt-8 border-t border-border/40 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} ConhdeHelena. Todos los derechos reservados.</p>
+          <p>&copy; {new Date().getFullYear()} ConhdeHelena. Todos los derechos reservados. Sevilla, España.</p>
         </div>
       </div>
     </footer>

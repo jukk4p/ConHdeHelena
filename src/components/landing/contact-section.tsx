@@ -1,6 +1,9 @@
 import { ContactForm } from "@/components/contact-form";
+import { Button } from "@/components/ui/button";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { AnimatedSection, AnimatedItem } from "@/components/animated-section";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
 export function ContactSection() {
     return (
@@ -43,6 +46,15 @@ export function ContactSection() {
                     </div>
                     <AnimatedItem>
                         <ContactForm />
+                         <div className="mt-8 text-center border-t pt-8">
+                            <p className="text-muted-foreground mb-4">O si lo prefieres, escríbenos directamente:</p>
+                            <Button asChild size="lg" variant="secondary" className="bg-green-500 hover:bg-green-600 text-white">
+                                <a href="https://wa.me/34678973988" target="_blank" rel="noopener noreferrer">
+                                    <FontAwesomeIcon icon={faWhatsapp} className="mr-2 h-5 w-5" />
+                                    Contactar por WhatsApp
+                                </a>
+                            </Button>
+                        </div>
                     </AnimatedItem>
                 </AnimatedSection>
                 {/* // FIN ANIMACIÓN BLOQUE CONTACTO */}

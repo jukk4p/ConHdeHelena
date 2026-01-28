@@ -20,9 +20,9 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: 'ConhdeHelena - Regalos Personalizados',
+  title: 'ConhdeHelena: Regalos Personalizados Grabados | Sevilla',
   description:
-    'Creamos regalos personalizados y únicos para toda ocasión.',
+    'Descubre regalos únicos y personalizados grabados con láser en Sevilla. Calidad y diseño para bodas, cumpleaños y eventos especiales. Transforma tus ideas en realidad.',
 }
 
 export default function RootLayout({

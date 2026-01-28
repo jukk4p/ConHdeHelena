@@ -18,6 +18,8 @@ import { Textarea } from "@/components/ui/textarea"
 import { useToast } from "@/hooks/use-toast"
 import { Loader2 } from "lucide-react"
 import { useState } from "react"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select"
+import { products } from "@/lib/products"
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -29,7 +31,7 @@ const formSchema = z.object({
   message: z.string().min(10, {
     message: "El mensaje debe tener al menos 10 caracteres.",
   }),
-  specialOrder: z.string().optional(),
+  productInterest: z.string().optional(),
 })
 
 export function ContactForm() {
@@ -42,16 +44,30 @@ export function ContactForm() {
       name: "",
       email: "",
       message: "",
-      specialOrder: "",
+      productInterest: "",
     },
   })
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true)
-    // Here you would typically send the data to a server
-    // For this example, we'll just simulate a delay
+    
+    // TODO: Implementar la subida a Firebase.
+    // Esto requiere configurar el backend de Firebase.
+    // Ejemplo de cómo se haría:
+    // try {
+    //   const { firestore } = getFirebase();
+    //   await addDoc(collection(firestore, "contactMessages"), {
+    //     ...values,
+    //     createdAt: new Date(),
+    //   });
+    // } catch (error) {
+    //   console.error("Error writing document: ", error);
+    // }
+
     await new Promise(resolve => setTimeout(resolve, 2000))
-    console.log(values)
+
+    console.log("Form values:", values)
+    
     setIsSubmitting(false)
     form.reset()
     toast({
@@ -91,6 +107,31 @@ export function ContactForm() {
             )}
           />
         </div>
+
+        <FormField
+          control={form.control}
+          name="productInterest"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Producto de interés (opcional)</FormLabel>
+              <Select onValueChange={field.onChange} defaultValue={field.value}>
+                <FormControl>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Selecciona un producto" />
+                  </SelectTrigger>
+                </FormControl>
+                <SelectContent>
+                  {products.map((p) => (
+                    <SelectItem key={p.title} value={p.title}>{p.title}</SelectItem>
+                  ))}
+                   <SelectItem value="Otro">Otro</SelectItem>
+                </SelectContent>
+              </Select>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        
         <FormField
           control={form.control}
           name="message"
@@ -108,23 +149,7 @@ export function ContactForm() {
             </FormItem>
           )}
         />
-        <FormField
-          control={form.control}
-          name="specialOrder"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Consulta para pedidos especiales (opcional)</FormLabel>
-              <FormControl>
-                <Textarea
-                  placeholder="Describe tu idea para un regalo personalizado..."
-                  className="resize-none"
-                  {...field}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+
         <Button type="submit" disabled={isSubmitting} className="w-full md:w-auto">
           {isSubmitting ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
           {isSubmitting ? "Enviando..." : "Enviar Mensaje"}
