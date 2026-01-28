@@ -41,7 +41,7 @@ export function Footer() {
               <SocialIcon href="https://www.instagram.com/conh_dehelena" target="_blank" rel="noopener noreferrer" label="Instagram"><FontAwesomeIcon icon={faInstagram} className="h-6 w-6" /></SocialIcon>
               <SocialIcon href="https://www.youtube.com/@Conh_deHelena" target="_blank" rel="noopener noreferrer" label="YouTube"><FontAwesomeIcon icon={faYoutube} className="h-6 w-6" /></SocialIcon>
               <SocialIcon href="#" label="TikTok"><FontAwesomeIcon icon={faTiktok} className="h-6 w-6" /></SocialIcon>
-              <SocialIcon href="#" label="WhatsApp"><FontAwesomeIcon icon={faWhatsapp} className="h-6 w-6" /></SocialIcon>
+              <SocialIcon href="https://wa.me/34678973988" target="_blank" rel="noopener noreferrer" label="WhatsApp"><FontAwesomeIcon icon={faWhatsapp} className="h-6 w-6" /></SocialIcon>
             </div>
           </div>
         </div>
