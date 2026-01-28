@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   description:
     'Creamos regalos personalizados y únicos para toda ocasión.',
   icons: {
-    icon: '/favicon.ico',
+    icon: '/Favicon.png',
   },
 }
 
