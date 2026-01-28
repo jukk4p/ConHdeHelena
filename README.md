@@ -4,7 +4,7 @@ Este es el repositorio del sitio web de ConhdeHelena, una tienda online de regal
 
 ## Descripción del Proyecto
 
-El sitio web está construido con Next.js y React, utilizando Tailwind CSS para el estilo y ShadCN para los componentes de UI. Está diseñado para ser rápido, moderno y completamente responsive.
+El sitio web está construido con Next.js y React, utilizando Tailwind CSS para el estilo y ShadCN para los componentes de UI. Está diseñado para ser rápido, moderno y completamente responsive, con un enfoque en una estética premium y elegante.
 
 ### Tecnologías Utilizadas
 
@@ -12,7 +12,7 @@ El sitio web está construido con Next.js y React, utilizando Tailwind CSS para 
 -   **Librería UI**: [React](https://reactjs.org/)
 -   **Estilos**: [Tailwind CSS](https://tailwindcss.com/)
 -   **Componentes**: [ShadCN UI](https://ui.shadcn.com/)
--   **Animaciones**: Transiciones CSS para un rendimiento óptimo.
+-   **Animaciones**: [Framer Motion](https://www.framer.com/motion/) para transiciones sutiles y performantes.
 -   **Hosting**: Firebase App Hosting
 
 ## Estructura del Proyecto
@@ -45,7 +45,8 @@ Para ejecutar este proyecto en un entorno local, sigue estos pasos:
 Este proyecto ha sido optimizado para un alto rendimiento, centrándose en:
 -   **Server Components**: La mayoría de los componentes se renderizan en el servidor para minimizar el JavaScript enviado al cliente.
 -   **Optimización de Fuentes**: Uso de `next/font` para cargar las fuentes de manera eficiente.
--   **Animaciones Ligeras**: Se utilizan transiciones CSS ligeras para las interacciones, evitando librerías pesadas de JavaScript para las animaciones de entrada.
+-   **Animaciones Optimizadas**: Se utilizan animaciones de entrada (`fade-in`) y micro-interacciones sutiles con Framer Motion, implementadas de manera que no bloqueen la renderización y se activen solo cuando los componentes son visibles (`whileInView`), garantizando una experiencia fluida.
+-   **Aislamiento de Componentes de Cliente**: La lógica interactiva se encapsula en Client Components (`'use client'`) específicos, permitiendo que el resto de la interfaz se sirva como HTML estático.
 
 ¡Gracias por visitar ConhdeHelena!
 # ConHdeHelena
