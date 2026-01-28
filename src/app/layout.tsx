@@ -35,7 +35,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={`!scroll-smooth ${cormorant.variable} ${poppins.variable}`}>
-      <head />
       <body className="font-body antialiased bg-background text-foreground">
         <div className="flex flex-col min-h-screen">
           <Header />
