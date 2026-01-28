@@ -48,3 +48,4 @@ Este proyecto ha sido optimizado para un alto rendimiento, centrándose en:
 -   **Animaciones Ligeras**: Se utilizan transiciones CSS ligeras para las interacciones, evitando librerías pesadas de JavaScript para las animaciones de entrada.
 
 ¡Gracias por visitar ConhdeHelena!
+# ConHdeHelena
