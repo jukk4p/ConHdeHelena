@@ -8,7 +8,7 @@ export function HeroSection() {
         <section id="inicio" className="w-full pt-28 md:pt-40 pb-20 md:pb-24 bg-background overflow-hidden">
              {/* INICIO ANIMACIÓN BLOQUE HERO */}
             <AnimatedSection className="container px-4 md:px-6 text-center">
-                <AnimatedItem el="div" className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary font-medium mb-4">Regalos con Alma</AnimatedItem>
+                <AnimatedItem el="div" className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-muted-foreground font-medium mb-4 transition-colors hover:text-primary">Regalos con Alma</AnimatedItem>
                 <AnimatedItem el="h1" className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl font-headline text-foreground">
                     ConhdeHelena: Arte en Cada Detalle
                 </AnimatedItem>
