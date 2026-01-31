@@ -4,7 +4,7 @@ export const products = [
         description: "Adorna tu árbol con bolas de Navidad personalizadas con nombres o fechas.",
         imageUrl: "/Bolas-de-Navidad-personalizadas.webp",
         imageHint: "custom christmas ornament",
-        price: 15
+        price: 10
     },
     {
         title: "Joyero Personalizado",
@@ -18,7 +18,7 @@ export const products = [
         description: "Un regalo original y práctico. Peines de madera grabados con nombres o frases.",
         imageUrl: "/Peine-personalizado.webp",
         imageHint: "wooden comb",
-        price: 18
+        price: 12
     },
     {
         title: "Copas Personalizadas",
@@ -39,6 +39,6 @@ export const products = [
         description: "Un detalle elegante para bodas y eventos. Perchas grabadas para trajes y vestidos.",
         imageUrl: "/Percha-personalizada-comunión.webp",
         imageHint: "custom clothes hanger",
-        price: 20
+        price: 12
     }
 ];
