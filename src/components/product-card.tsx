@@ -44,7 +44,7 @@ export function ProductCard({ product }: { product: any }) {
                     />
                     <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center">
                         <span className="text-3xl font-bold text-white mb-4 font-headline">{product.price}€</span>
-                        <Button asChild variant="secondary">
+                        <Button asChild>
                             <Link href="/personaliza">Personalizar ahora</Link>
                         </Button>
                     </div>

@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/carousel"
 import { AnimatedSection, AnimatedItem } from "../animated-section"
 import { Star } from "lucide-react"
+import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 
 const testimonials = [
   {
@@ -65,9 +66,14 @@ export function TestimonialsSection() {
                           </div>
                           <p className="text-muted-foreground italic">"{testimonial.quote}"</p>
                         </CardContent>
-                        <div className="p-6 pt-0 text-right">
-                          <p className="font-bold font-headline text-lg">{testimonial.name}</p>
-                          <p className="text-sm text-muted-foreground">{testimonial.event}</p>
+                        <div className="p-6 pt-0 flex items-center justify-end gap-4">
+                           <div className="text-right">
+                              <p className="font-bold font-headline text-lg">{testimonial.name}</p>
+                              <p className="text-sm text-muted-foreground">{testimonial.event}</p>
+                           </div>
+                           <Avatar>
+                              <AvatarFallback>{testimonial.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+                           </Avatar>
                         </div>
                       </Card>
                     </div>
