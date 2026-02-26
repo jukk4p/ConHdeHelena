@@ -39,7 +39,7 @@ export function Footer() {
             </div>
           </div>
           
-          <div className="flex flex-col items-center md:items-start">
+          <div className="flex flex-col items-center">
             <h3 className="font-headline-alt font-bold text-lg mb-4 uppercase tracking-[2px] text-secondary/80">Síguenos</h3>
             <div className="flex space-x-6">
                 <SocialIcon href="https://www.instagram.com/conh_dehelena" target="_blank" rel="noopener noreferrer" label="Instagram">
