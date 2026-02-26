@@ -17,10 +17,10 @@ export function Footer() {
             <Logo onDark={true} />
             <p className="font-great-vibes text-2xl text-primary mt-4">Creando emociones, un regalo a la vez.</p>
         </div>
-        <div className="flex flex-col md:flex-row md:justify-between items-center md:items-start gap-10 md:gap-8 text-center md:text-left">
+        <div className="flex flex-col md:flex-row md:justify-between items-center md:items-start gap-10 md:gap-8 text-center">
           
           <div className="flex flex-col sm:flex-row gap-10 md:gap-24">
-            <div className="flex flex-col gap-4 items-center md:items-start">
+            <div className="flex flex-col gap-4 items-center md:items-start md:text-left">
               <h3 className="font-headline-alt font-bold text-lg mb-2 uppercase tracking-[2px] text-secondary/80">Navegación</h3>
               <ul className="space-y-2">
                 <li><Link href="/" className="text-sm text-secondary/70 hover:text-primary transition-colors">Inicio</Link></li>
@@ -30,7 +30,7 @@ export function Footer() {
               </ul>
             </div>
             
-            <div className="flex flex-col items-center md:items-start">
+            <div className="flex flex-col items-center">
               <h3 className="font-headline-alt font-bold text-lg mb-2 uppercase tracking-[2px] text-secondary/80">Legal</h3>
               <ul className="space-y-2">
                 <li><Link href="/legal/terminos" className="text-sm text-secondary/70 hover:text-primary transition-colors">Términos y Condiciones</Link></li>
