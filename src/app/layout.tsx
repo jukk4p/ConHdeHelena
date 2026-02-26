@@ -67,6 +67,9 @@ export const metadata: Metadata = {
     locale: 'es_ES',
     type: 'website',
   },
+  icons: {
+    icon: '/Favicon.png',
+  },
 }
 
 const jsonLd = {
@@ -97,7 +100,7 @@ const jsonLd = {
         }
       },
       {
-        "@type": "Offer", 
+        "@type": "Offer",
         "itemOffered": {
           "@type": "Product",
           "name": "Bolas de Navidad Personalizadas",
@@ -122,7 +125,6 @@ export default function RootLayout({
   return (
     <html lang="es" className={`!scroll-smooth ${cormorant.variable} ${playfair.variable} ${montserrat.variable} ${lato.variable} ${greatVibes.variable}`}>
        <head>
-        <link rel="icon" href="/Favicon.png" sizes="any" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
