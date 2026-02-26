@@ -19,23 +19,31 @@ const navLinks = [
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
+    setIsMounted(true);
+    
     const handleScroll = () => {
       setHasScrolled(window.scrollY > 10);
     };
+
+    handleScroll();
     window.addEventListener('scroll', handleScroll);
+    
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const headerIsScrolled = isMounted && hasScrolled;
 
   return (
     <header className={cn(
       "sticky top-0 z-50 w-full transition-all duration-300",
-      hasScrolled ? "bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 shadow-md" : "bg-transparent",
+      headerIsScrolled ? "bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 shadow-md" : "bg-transparent",
     )}>
       <div className="container flex h-20 max-w-7xl items-center justify-between">
-        <Logo isScrolled={hasScrolled} />
+        <Logo isScrolled={headerIsScrolled} />
         <nav className="hidden md:flex gap-8 items-center">
           {navLinks.map((link) => (
             <Link
@@ -43,8 +51,8 @@ export function Header() {
               href={link.href}
               className={cn(
                 "relative text-sm font-body tracking-[1.5px] uppercase transition-colors hover:text-primary",
-                hasScrolled ? 'text-foreground' : 'text-background/80 hover:text-background',
-                pathname === link.href && (hasScrolled ? 'text-foreground' : 'text-background')
+                headerIsScrolled ? 'text-foreground' : 'text-background/80 hover:text-background',
+                pathname === link.href && (headerIsScrolled ? 'text-foreground' : 'text-background')
               )}
             >
               {link.label}
@@ -58,7 +66,7 @@ export function Header() {
         <div className="md:hidden">
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className={cn(hasScrolled ? 'text-foreground' : 'text-background', "hover:bg-transparent")}>
+              <Button variant="ghost" size="icon" className={cn(headerIsScrolled ? 'text-foreground' : 'text-background', "hover:bg-transparent")}>
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Abrir menú</span>
               </Button>
