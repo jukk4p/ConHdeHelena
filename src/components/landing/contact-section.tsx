@@ -53,9 +53,9 @@ export function ContactSection() {
                         </AnimatedItem>
                          <div className="border-t border-accent/20 my-6"></div>
                          <AnimatedItem>
-                             <div className="text-left">
+                             <div className="text-center">
                                 <p className="text-muted-foreground mb-4">O si lo prefieres, escríbenos directamente para una respuesta más rápida:</p>
-                                <Button asChild size="lg" className="bg-green-600 hover:bg-green-700 text-white font-body normal-case tracking-normal">
+                                <Button asChild size="lg" className="bg-green-600 hover:bg-green-700 text-white font-body normal-case tracking-normal w-auto">
                                     <a href="https://wa.me/34678973988" target="_blank" rel="noopener noreferrer">
                                         <FontAwesomeIcon icon={faWhatsapp} className="mr-2 h-5 w-5" />
                                         Escríbenos por WhatsApp
