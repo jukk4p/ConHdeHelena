@@ -10,7 +10,6 @@ export function Logo({ onDark = false }: { onDark?: boolean }) {
         alt="ConhdeHelena Logo" 
         width={50} 
         height={50} 
-        className={cn(onDark && 'brightness-0 invert')}
       />
       <span className={cn(
         onDark ? 'text-secondary/90' : 'text-foreground'
