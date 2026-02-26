@@ -3,13 +3,6 @@
 import { products } from "@/lib/products";
 import { AnimatedSection, AnimatedItem } from "@/components/animated-section";
 import { ProductCard } from "@/components/product-card";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 import { Ornament } from "../ornament";
 
 export function FeaturedProductsSection() {
@@ -26,27 +19,13 @@ export function FeaturedProductsSection() {
                         </p>
                     </AnimatedItem>
                     
-                    <AnimatedItem el="div" className="mt-12">
-                      <Carousel
-                        opts={{
-                          align: "start",
-                          loop: true,
-                        }}
-                        className="w-full"
-                      >
-                        <CarouselContent>
-                          {products.map((product, index) => (
-                            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                              <div className="p-2 h-full">
-                                <ProductCard product={product} />
-                              </div>
-                            </CarouselItem>
-                          ))}
-                        </CarouselContent>
-                        <CarouselPrevious className="hidden md:flex" />
-                        <CarouselNext className="hidden md:flex" />
-                      </Carousel>
-                    </AnimatedItem>
+                    <div className="mt-12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                      {products.map((product, index) => (
+                          <AnimatedItem key={index}>
+                              <ProductCard product={product} />
+                          </AnimatedItem>
+                      ))}
+                    </div>
                 </AnimatedSection>
             </div>
         </section>
