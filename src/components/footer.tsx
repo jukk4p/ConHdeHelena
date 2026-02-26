@@ -38,7 +38,7 @@ export function Footer() {
                 <SocialIcon href="https://wa.me/34678973988" label="WhatsApp" icon={faWhatsapp} />
             </div>
              <p className="font-body text-[13px] leading-relaxed text-white/60 max-w-[300px] pt-2">
-              Regalos personalizados grabados con láser. Hechos con amor en Sevilla.
+              Regalos personalizados y detalles únicos. Hechos con amor en Sevilla.
             </p>
           </div>
 

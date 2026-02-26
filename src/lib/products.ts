@@ -8,16 +8,16 @@ export const products = [
     },
     {
         title: "Peines Personalizados",
-        description: "Un regalo original y práctico. Peines de madera grabados con nombres o frases.",
+        description: "Un regalo original y práctico. Peines de madera personalizados con nombres o frases.",
         imageUrl: "/Peine-personalizado.webp",
-        imageHint: "peine de madera personalizado con grabado laser sevilla",
+        imageHint: "peine de madera personalizado sevilla",
         price: 12
     },
     {
         title: "Perchas Personalizadas",
-        description: "Un detalle elegante para bodas y eventos. Perchas grabadas para trajes y vestidos.",
+        description: "Un detalle elegante para bodas y eventos. Perchas personalizadas para trajes y vestidos.",
         imageUrl: "/Percha-personalizada-comunión.webp",
-        imageHint: "perchas personalizadas grabadas para boda sevilla conhdehelena",
+        imageHint: "perchas personalizadas para boda sevilla conhdehelena",
         price: 12
     }
 ];

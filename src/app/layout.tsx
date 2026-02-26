@@ -48,12 +48,12 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: 'Regalos Personalizados Grabados en Sevilla | ConhdeHelena',
+  title: 'Regalos Personalizados en Sevilla | ConhdeHelena',
   description:
-    'Regalos personalizados grabados con láser en Sevilla. Perchas de boda, bolas de Navidad, peines grabados y mucho más. Diseño único para cada momento. ¡Pide tu presupuesto gratis!',
+    'Regalos personalizados y detalles únicos en Sevilla. Perchas de boda, bolas de Navidad, peines personalizados y mucho más. Diseño único para cada momento. ¡Pide tu presupuesto gratis!',
    openGraph: {
-    title: 'Regalos Personalizados Grabados en Sevilla | ConhdeHelena',
-    description: 'Regalos personalizados grabados con láser en Sevilla. Diseño único para cada momento.',
+    title: 'Regalos Personalizados en Sevilla | ConhdeHelena',
+    description: 'Regalos personalizados y detalles únicos en Sevilla. Diseño único para cada momento.',
     url: 'https://conhdehelena.es',
     siteName: 'ConhdeHelena',
     images: [
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
         url: 'https://conhdehelena.es/Percha-personalizada-comunión.webp',
         width: 800,
         height: 600,
-        alt: 'Perchas personalizadas grabadas para boda en Sevilla',
+        alt: 'Perchas personalizadas para boda en Sevilla',
       },
     ],
     locale: 'es_ES',
@@ -76,7 +76,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": ["LocalBusiness", "Store"],
   "name": "ConhdeHelena",
-  "description": "Regalos personalizados grabados con láser en Sevilla",
+  "description": "Regalos personalizados y detalles únicos en Sevilla",
   "url": "https://conhdehelena.es",
   "telephone": "+34678973988",
   "email": "hola@conhdehelena.es",
