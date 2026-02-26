@@ -37,7 +37,7 @@ export function HeroSection() {
                   <Ornament isGold />
                 </AnimatedItem>
                 <AnimatedItem el="p" className="max-w-[500px] mx-auto text-white/90 md:text-xl">
-                    Diseño y personalización de regalos con plotter de corte en Sevilla. Transformamos tus ideas en detalles únicos para momentos especiales.
+                    Diseño y personalización de regalos en Sevilla. Transformamos tus ideas en detalles únicos para momentos especiales.
                 </AnimatedItem>
                 <AnimatedItem el="div" className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
                     <Button asChild size="lg" variant="primary" className="group">
