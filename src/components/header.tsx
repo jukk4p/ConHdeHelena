@@ -55,7 +55,7 @@ export function Header() {
               href={link.href}
               className={cn(
                 'relative text-sm font-body tracking-[1.5px] uppercase transition-colors hover:text-primary',
-                headerIsScrolled ? 'text-foreground' : 'text-background'
+                headerIsScrolled ? 'text-foreground' : 'text-white'
               )}
             >
               {link.label}
@@ -75,7 +75,7 @@ export function Header() {
                 variant="ghost"
                 size="icon"
                 className={cn(
-                  headerIsScrolled ? 'text-foreground' : 'text-background',
+                  headerIsScrolled ? 'text-foreground' : 'text-white',
                   'hover:bg-transparent'
                 )}
               >

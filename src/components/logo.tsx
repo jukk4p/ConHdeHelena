@@ -15,7 +15,7 @@ export function Logo({ isFooter = false, isScrolled = false }: { isFooter?: bool
         className={cn(onDarkBg && 'brightness-0 invert')}
       />
       <span className={cn(
-        onDarkBg ? 'text-background' : 'text-foreground'
+        onDarkBg ? 'text-white' : 'text-foreground'
       )}>
         ConhdeHelena
       </span>
