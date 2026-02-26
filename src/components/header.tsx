@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -18,36 +18,16 @@ const navLinks = [
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
-  const [hasScrolled, setHasScrolled] = useState(false)
-  const [isMounted, setIsMounted] = useState(false)
   const pathname = usePathname()
-
-  useEffect(() => {
-    setIsMounted(true)
-
-    const handleScroll = () => {
-      setHasScrolled(window.scrollY > 10)
-    }
-
-    handleScroll()
-    window.addEventListener('scroll', handleScroll)
-
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  const headerIsScrolled = isMounted && hasScrolled
 
   return (
     <header
       className={cn(
-        'sticky top-0 z-50 w-full transition-all duration-300',
-        headerIsScrolled
-          ? 'bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 shadow-md'
-          : 'bg-transparent'
+        'sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 shadow-md'
       )}
     >
       <div className="container flex h-20 max-w-7xl items-center justify-between">
-        <Logo isScrolled={headerIsScrolled} />
+        <Logo isScrolled={true} />
         <nav className="hidden md:flex gap-8 items-center">
           {navLinks.map(link => (
             <Link
@@ -55,7 +35,7 @@ export function Header() {
               href={link.href}
               className={cn(
                 'relative text-sm font-body tracking-[1.5px] uppercase transition-colors hover:text-primary',
-                headerIsScrolled ? 'text-foreground' : 'text-white'
+                'text-foreground'
               )}
             >
               {link.label}
@@ -75,7 +55,7 @@ export function Header() {
                 variant="ghost"
                 size="icon"
                 className={cn(
-                  headerIsScrolled ? 'text-foreground' : 'text-white',
+                  'text-foreground',
                   'hover:bg-transparent'
                 )}
               >
