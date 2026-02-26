@@ -17,13 +17,18 @@ export default {
     },
     extend: {
       fontFamily: {
-        body: ['var(--font-poppins)', 'sans-serif'],
+        body: ['var(--font-lato)', 'sans-serif'],
         headline: ['var(--font-cormorant)', 'serif'],
+        'headline-alt': ['var(--font-playfair)', 'serif'],
+        label: ['var(--font-montserrat)', 'sans-serif'],
+        'great-vibes': ['var(--font-great-vibes)', 'cursive'],
         code: ['monospace'],
       },
       colors: {
         background: 'hsl(var(--background))',
+        'background-medium': 'hsl(var(--background-medium))',
         foreground: 'hsl(var(--foreground))',
+        'foreground-dark': 'hsl(var(--foreground-dark))',
         card: {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
@@ -48,6 +53,9 @@ export default {
           DEFAULT: 'hsl(var(--accent))',
           foreground: 'hsl(var(--accent-foreground))',
         },
+        sage: {
+          DEFAULT: 'hsl(var(--sage))',
+        },
         destructive: {
           DEFAULT: 'hsl(var(--destructive))',
           foreground: 'hsl(var(--destructive-foreground))',
@@ -65,12 +73,12 @@ export default {
       },
       borderRadius: {
         lg: 'var(--radius)',
-        md: 'calc(var(--radius) - 2px)',
-        sm: 'calc(var(--radius) - 4px)',
+        md: 'calc(var(--radius) - 4px)',
+        sm: 'calc(var(--radius) - 8px)',
       },
       boxShadow: {
-        soft: '0 10px 40px rgba(0,0,0,0.08)',
-        'soft-lg': '0 20px 50px rgba(0,0,0,0.1)',
+        warm: '0 8px 32px hsla(22, 41%, 11%, 0.1)',
+        'warm-lg': '0 15px 45px hsla(22, 41%, 11%, 0.15)',
       },
       keyframes: {
         'accordion-down': {
@@ -89,10 +97,20 @@ export default {
             height: '0',
           },
         },
+        'pulse-whatsapp': {
+          '0%, 100%': { transform: 'scale(1)', opacity: '1' },
+          '50%': { transform: 'scale(1.08)', opacity: '0.95' },
+        },
+        'fade-in-from-bottom': {
+          '0%': { opacity: '0', transform: 'translateY(20px)'},
+          '100%': { opacity: '1', transform: 'translateY(0)'}
+        }
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'pulse-whatsapp': 'pulse-whatsapp 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'fade-in-from-bottom': 'fade-in-from-bottom 0.5s ease-out forwards'
       },
     },
   },

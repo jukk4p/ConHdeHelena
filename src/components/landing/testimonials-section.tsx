@@ -9,8 +9,9 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 import { AnimatedSection, AnimatedItem } from "../animated-section"
-import { Star } from "lucide-react"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+import { Ornament } from "../ornament"
+import { Quote } from "lucide-react"
 
 const testimonials = [
   {
@@ -41,10 +42,9 @@ export function TestimonialsSection() {
       <div className="container px-4 md:px-6">
         <AnimatedSection>
           <AnimatedItem el="div" className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight md:text-5xl font-headline">Lo que dicen nuestros clientes</h2>
-            <p className="max-w-[900px] text-muted-foreground md:text-xl">
-              Nos enorgullece crear piezas que generan sonrisas y recuerdos.
-            </p>
+            <span className="font-label uppercase tracking-[5px] text-primary text-sm">Opiniones</span>
+            <h2 className="text-4xl font-bold tracking-tight md:text-5xl font-headline-alt">Lo que dicen quienes nos eligen</h2>
+            <Ornament />
           </AnimatedItem>
 
           <AnimatedItem>
@@ -53,26 +53,31 @@ export function TestimonialsSection() {
                 align: "start",
                 loop: true,
               }}
-              className="w-full max-w-4xl mx-auto"
+              className="w-full max-w-5xl mx-auto"
             >
               <CarouselContent>
                 {testimonials.map((testimonial, index) => (
                   <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                     <div className="p-4 h-full">
-                      <Card className="h-full flex flex-col justify-between">
-                        <CardContent className="p-6 flex-grow">
-                          <div className="flex mb-2">
-                              {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 text-accent fill-accent" />)}
-                          </div>
-                          <p className="text-muted-foreground italic">"{testimonial.quote}"</p>
-                        </CardContent>
-                        <div className="p-6 pt-0 flex items-center justify-end gap-4">
-                           <div className="text-right">
-                              <p className="font-bold font-headline text-lg">{testimonial.name}</p>
-                              <p className="text-sm text-muted-foreground">{testimonial.event}</p>
+                      <Card className="h-full flex flex-col justify-between shadow-warm p-2 relative overflow-hidden">
+                        <Quote className="absolute -top-2 -left-2 w-20 h-20 text-primary/5 opacity-50" />
+                        <CardContent className="p-6 flex-grow text-center">
+                          <p className="font-body italic text-muted-foreground mb-6">"{testimonial.quote}"</p>
+                           <div className="flex justify-center my-4">
+                             <Ornament small />
                            </div>
+                           <p className="font-headline-alt font-bold text-lg">{testimonial.name}</p>
+                           <div className="flex justify-center mt-2">
+                             <div className="inline-block rounded-full bg-secondary/50 px-3 py-1 text-xs text-secondary-foreground font-label uppercase tracking-widest">
+                                {testimonial.event}
+                             </div>
+                           </div>
+                        </CardContent>
+                         <div className="p-4 pt-0 flex items-center justify-center">
                            <Avatar>
-                              <AvatarFallback>{testimonial.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+                              <AvatarFallback className="bg-gradient-to-br from-primary to-accent text-primary-foreground font-bold">
+                                {testimonial.name.split(' ').map(n => n[0]).join('')}
+                              </AvatarFallback>
                            </Avatar>
                         </div>
                       </Card>
