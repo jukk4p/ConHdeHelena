@@ -34,19 +34,19 @@ export function ContactSection() {
                     </div>
                     <div className="space-y-8 lg:col-span-2">
                         <AnimatedItem>
-                            <div className="flex items-center justify-center lg:justify-start gap-4">
+                            <div className="flex items-center justify-center gap-4">
                                 <Mail className="w-6 h-6 text-primary" />
                                 <a href="mailto:hola@conhdehelena.es" className="text-muted-foreground hover:text-primary transition-colors">hola@conhdehelena.es</a>
                             </div>
                         </AnimatedItem>
                         <AnimatedItem>
-                            <div className="flex items-center justify-center lg:justify-start gap-4">
+                            <div className="flex items-center justify-center gap-4">
                                 <Phone className="w-6 h-6 text-primary" />
                                 <a href="tel:+34678973988" className="text-muted-foreground hover:text-primary transition-colors">+34 678 973 988</a>
                             </div>
                         </AnimatedItem>
                         <AnimatedItem>
-                            <div className="flex items-center justify-center lg:justify-start gap-4">
+                            <div className="flex items-center justify-center gap-4">
                                 <MapPin className="w-6 h-6 text-primary" />
                                 <p className="text-muted-foreground">Sevilla, España</p>
                             </div>
