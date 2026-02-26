@@ -23,11 +23,11 @@ export function Header() {
   return (
     <header
       className={cn(
-        'sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 shadow-md'
+        'sticky top-0 z-50 w-full bg-background shadow-md'
       )}
     >
       <div className="container flex h-20 max-w-7xl items-center justify-between">
-        <Logo isScrolled={true} />
+        <Logo />
         <nav className="hidden md:flex gap-8 items-center">
           {navLinks.map(link => (
             <Link
@@ -65,16 +65,8 @@ export function Header() {
             </SheetTrigger>
             <SheetContent side="right" className="p-0 bg-background">
               <div className="flex flex-col h-full">
-                <div className="flex items-center justify-between p-4 border-b">
-                  <Logo isScrolled={true} />
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    <X className="h-6 w-6" />
-                    <span className="sr-only">Cerrar menú</span>
-                  </Button>
+                <div className="flex items-center p-4 border-b">
+                  <Logo />
                 </div>
                 <nav className="flex flex-col gap-6 p-6 text-lg">
                   {navLinks.map(link => (
