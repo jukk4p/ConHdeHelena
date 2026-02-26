@@ -15,7 +15,7 @@ export function Footer() {
     <footer className="bg-foreground-dark text-secondary/90">
       <div className="container max-w-7xl pt-16 pb-8">
         <div className="flex flex-col items-center text-center mb-12">
-            <Logo isFooter={true} />
+            <Logo onDark={true} />
             <p className="font-great-vibes text-2xl text-primary mt-4">Creando emociones, un regalo a la vez.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
