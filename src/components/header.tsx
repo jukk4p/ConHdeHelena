@@ -44,7 +44,7 @@ export function Header() {
               className={cn(
                 "relative text-sm font-body tracking-[1.5px] uppercase transition-colors hover:text-primary",
                 hasScrolled ? 'text-foreground' : 'text-background/80 hover:text-background',
-                pathname === link.href && (hasScrolled ? 'text-primary' : 'text-background')
+                pathname === link.href && (hasScrolled ? 'text-foreground' : 'text-background')
               )}
             >
               {link.label}
