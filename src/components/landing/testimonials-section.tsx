@@ -59,10 +59,13 @@ export function TestimonialsSection() {
                 {testimonials.map((testimonial, index) => (
                   <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                     <div className="p-4 h-full">
-                      <Card className="h-full flex flex-col justify-between shadow-warm p-2 relative overflow-hidden">
+                      <Card className="h-full flex flex-col shadow-warm p-2 relative overflow-hidden">
                         <Quote className="absolute -top-2 -left-2 w-20 h-20 text-primary/5 opacity-50" />
-                        <CardContent className="p-6 flex-grow text-center">
-                          <p className="font-body italic text-muted-foreground mb-6">"{testimonial.quote}"</p>
+                        <CardContent className="p-6 flex flex-col flex-grow text-center">
+                          <div className="flex-grow">
+                            <p className="font-body italic text-muted-foreground">"{testimonial.quote}"</p>
+                          </div>
+                          <div>
                            <div className="flex justify-center my-4">
                              <Ornament small />
                            </div>
@@ -72,6 +75,7 @@ export function TestimonialsSection() {
                                 {testimonial.event}
                              </div>
                            </div>
+                          </div>
                         </CardContent>
                          <div className="p-4 pt-0 flex items-center justify-center">
                            <Avatar>
