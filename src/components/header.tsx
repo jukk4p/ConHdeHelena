@@ -55,8 +55,7 @@ export function Header() {
               href={link.href}
               className={cn(
                 'relative text-sm font-body tracking-[1.5px] uppercase transition-colors hover:text-primary',
-                headerIsScrolled ? 'text-foreground' : 'text-background',
-                { 'hidden': !headerIsScrolled && pathname !== link.href }
+                headerIsScrolled ? 'text-foreground' : 'text-background'
               )}
             >
               {link.label}
