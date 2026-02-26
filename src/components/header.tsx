@@ -56,7 +56,7 @@ export function Header() {
               className={cn(
                 'relative text-sm font-body tracking-[1.5px] uppercase transition-colors hover:text-primary',
                 headerIsScrolled ? 'text-foreground' : 'text-background',
-                !headerIsScrolled && pathname !== link.href && 'opacity-80'
+                { 'hidden': !headerIsScrolled && pathname !== link.href }
               )}
             >
               {link.label}
@@ -65,7 +65,7 @@ export function Header() {
               )}
             </Link>
           ))}
-          <Button asChild variant="primary" size="sm">
+          <Button asChild variant="primary" size="sm" className={cn(!headerIsScrolled && 'hidden')}>
             <Link href="/personaliza">Personaliza</Link>
           </Button>
         </nav>
