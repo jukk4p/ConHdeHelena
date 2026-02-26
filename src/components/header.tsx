@@ -65,7 +65,7 @@ export function Header() {
               )}
             </Link>
           ))}
-          <Button asChild variant="primary" size="sm" className={cn(!headerIsScrolled && 'hidden')}>
+          <Button asChild variant="primary" size="sm">
             <Link href="/personaliza">Personaliza</Link>
           </Button>
         </nav>
