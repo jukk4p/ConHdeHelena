@@ -36,8 +36,8 @@ export function HeroSection() {
                 <AnimatedItem el="div" className="my-6">
                   <Ornament isGold />
                 </AnimatedItem>
-                <AnimatedItem el="p" className="max-w-[500px] mx-auto text-background/80 md:text-xl">
-                    Taller de diseño y grabado en Sevilla. Creamos piezas únicas para momentos especiales, transformando tus ideas en regalos inolvidables.
+                <AnimatedItem el="p" className="max-w-[500px] mx-auto text-white/90 md:text-xl">
+                    Diseño y personalización de regalos con plotter de corte en Sevilla. Transformamos tus ideas en detalles únicos para momentos especiales.
                 </AnimatedItem>
                 <AnimatedItem el="div" className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
                     <Button asChild size="lg" variant="primary" className="group">
