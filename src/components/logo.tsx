@@ -13,7 +13,7 @@ export function Logo({ onDark = false }: { onDark?: boolean }) {
         className={cn(onDark && 'brightness-0 invert')}
       />
       <span className={cn(
-        onDark ? 'text-background' : 'text-foreground'
+        onDark ? 'text-secondary/90' : 'text-foreground'
       )}>
         ConhdeHelena
       </span>
