@@ -1,82 +1,53 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@layer base {
-  :root {
-    --background: 30 33% 98%; /* #FDF8F3 - Crema Cálida */
-    --background-medium: 30 20% 91%; /* #F5EDE3 - Crema Media */
-    
-    --foreground: 18 45% 15%; /* #3D2314 - Marrón Oscuro Cálido (Texto) */
-    --foreground-dark: 22 41% 11%; /* #2C1A0E - Marrón Cacao */
+@theme {
+  --color-background-light: #fffcf9;
+  --color-background-dark: #0f0a07;
 
-    --card: 30 33% 98%;
-    --card-foreground: 18 45% 15%;
+  --color-surface-light: #ffffff;
+  --color-surface-dark: #1a1412;
 
-    --popover: 30 33% 98%;
-    --popover-foreground: 18 45% 15%;
+  --color-foreground-light: #1a1a1a;
+  --color-foreground-dark: #fcfcfc;
 
-    --primary: 23 48% 60%; /* #C9956B - Terracota Rosada (Acento Principal) */
-    --primary-foreground: 30 33% 98%;
+  --color-primary: #c5a059;
+  --color-primary-hover: #b38f4d;
 
-    --secondary: 23 50% 81%; /* #E8C4B0 - Melocotón Suave */
-    --secondary-foreground: 18 45% 15%;
+  --color-secondary: #8c7a6b;
 
-    --muted: 30 20% 85%;
-    --muted-foreground: 20 15% 45%;
-
-    --accent: 38 33% 59%; /* #BFA070 - Dorado Delicado */
-    --accent-foreground: 18 45% 15%;
-    
-    --sage: 89 10% 52%; /* #7A8C6E - Verde Salvia */
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 30 20% 88%;
-    --input: 30 20% 90%;
-    --ring: 23 48% 60%;
-    
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-
-    --radius: 0.75rem;
-  }
-  .dark {
-    --background: 22 41% 11%; /* #2C1A0E */
-    --foreground: 30 20% 92%;
-    --card: 20 15% 12%;
-    --card-foreground: 30 20% 92%;
-    --popover: 20 15% 12%;
-    --popover-foreground: 30 20% 92%;
-    --primary: 23 48% 60%; /* #C9956B */
-    --primary-foreground: 30 33% 98%;
-    --secondary: 23 50% 81%; /* #E8C4B0 */
-    --secondary-foreground: 18 45% 15%;
-    --muted: 20 15% 25%;
-    --muted-foreground: 30 20% 70%;
-    --accent: 38 33% 59%; /* #BFA070 */
-    --accent-foreground: 30 33% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 20 15% 25%;
-    --input: 20 15% 25%;
-    --ring: 23 48% 60%;
-  }
+  --font-sans: var(--font-outfit), system-ui, sans-serif;
+  --font-serif: var(--font-lora), Georgia, serif;
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-    font-family: var(--font-lato), sans-serif;
-  }
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-headline;
-  }
+:root {
+  --background: var(--color-background-light);
+  --foreground: var(--color-foreground-light);
+  --surface: var(--color-surface-light);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+@utility glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.glass-logo {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* En Tailwind v4, en lugar de anidar utilidades en media queries,
+   se puede usar CSS normal para evitar el error `@utility cannot be nested` */
+.glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }

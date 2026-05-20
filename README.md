@@ -1,52 +1,60 @@
-# ConhdeHelena - Regalos Personalizados
+# 💎 Con h de Helena — Artesanía Personalizada
 
-Este es el repositorio del sitio web de ConhdeHelena, una tienda online de regalos personalizados y únicos para toda ocasión.
+> El arte de crear magia en cada detalle. Regalos únicos y exclusivos hechos a mano en Sevilla.
 
-## Descripción del Proyecto
+Este proyecto es la plataforma digital de **Con h de Helena**, un catálogo digital premium diseñado con un enfoque inmersivo e interactivo 3D para exhibir piezas de artesanía personalizadas y facilitar el pedido directo de presupuestos.
 
-El sitio web está construido con Next.js y React, utilizando Tailwind CSS para el estilo y ShadCN para los componentes de UI. Está diseñado para ser rápido, moderno y completamente responsive, con un enfoque en una estética premium y elegante.
+---
 
-### Tecnologías Utilizadas
+## 🎨 Características Clave
 
--   **Framework**: [Next.js](https://nextjs.org/)
--   **Librería UI**: [React](https://reactjs.org/)
--   **Estilos**: [Tailwind CSS](https://tailwindcss.com/)
--   **Componentes**: [ShadCN UI](https://ui.shadcn.com/)
--   **Animaciones**: [Framer Motion](https://www.framer.com/motion/) para transiciones sutiles y performantes.
--   **Hosting**: Firebase App Hosting
+- **Experiencia Inmersiva 3D**: Escena interactiva en el Hero utilizando **Three.js** (`React Three Fiber` / `@react-three/drei`) con iluminación cinemática y sistema dinámico de partículas.
+- **Catálogo de Productos**: Galería de productos detallada (copas, joyeros, llaveros, perchas de comunión, bolas navideñas, sets de aseo de madera) con su respectiva información técnica e imágenes reales.
+- **Integración con WhatsApp**: Flujo automatizado para realizar pedidos o solicitar presupuestos personalizados mediante un mensaje pre-configurado de WhatsApp.
+- **Estética de Lujo**: Diseño minimalista y moderno usando tipografías elegantes (**Lora** y **Outfit**) y un esquema de color cálido y orgánico.
+- **SEO Optimizado**: Estructura semántica HTML, metadatos optimizados y marcado de datos estructurados de búsqueda local `LocalBusiness` (Schema JSON-LD) para mejorar el posicionamiento orgánico en Sevilla.
 
-## Estructura del Proyecto
+---
 
--   `src/app/`: Contiene las rutas y páginas de la aplicación (usando el App Router de Next.js).
--   `src/components/`: Componentes reutilizables de la aplicación.
-    -   `src/components/ui/`: Componentes base de ShadCN.
-    -   `src/components/landing/`: Secciones principales que componen las páginas.
--   `src/lib/`: Utilidades y datos (como la lista de productos).
--   `public/`: Archivos estáticos como imágenes y logos.
+## 🛠️ Stack Tecnológico
 
-## Cómo empezar
+- **Core**: [Next.js 15+](https://nextjs.org/) (App Router) & [React 19](https://react.dev/)
+- **Estilos**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **Modelado 3D & Animación**: [Three.js](https://threejs.org/) / `@react-three/fiber` / [Framer Motion](https://www.framer.com/motion/)
+- **Iconografía**: [Lucide React](https://lucide.dev/)
 
-Para ejecutar este proyecto en un entorno local, sigue estos pasos:
+---
 
-1.  **Instala las dependencias:**
-    ```bash
-    npm install
-    ```
+## 🚀 Comenzar en Desarrollo
 
-2.  **Ejecuta el servidor de desarrollo:**
-    ```bash
-    npm run dev
-    ```
+1. **Instalar dependencias**:
+   ```bash
+   npm install
+   ```
 
-    Abre [http://localhost:3000](http://localhost:3000) (o el puerto que se indique en la consola) en tu navegador para ver la aplicación.
+2. **Iniciar el servidor de desarrollo**:
+   ```bash
+   npm run dev
+   ```
 
-## Optimización de Rendimiento
+3. **Compilar para producción**:
+   ```bash
+   npm run build
+   ```
 
-Este proyecto ha sido optimizado para un alto rendimiento, centrándose en:
--   **Server Components**: La mayoría de los componentes se renderizan en el servidor para minimizar el JavaScript enviado al cliente.
--   **Optimización de Fuentes**: Uso de `next/font` para cargar las fuentes de manera eficiente.
--   **Animaciones Optimizadas**: Se utilizan animaciones de entrada (`fade-in`) y micro-interacciones sutiles con Framer Motion, implementadas de manera que no bloqueen la renderización y se activen solo cuando los componentes son visibles (`whileInView`), garantizando una experiencia fluida.
--   **Aislamiento de Componentes de Cliente**: La lógica interactiva se encapsula en Client Components (`'use client'`) específicos, permitiendo que el resto de la interfaz se sirva como HTML estático.
+4. **Iniciar en modo producción**:
+   ```bash
+   npm run start
+   ```
 
-¡Gracias por visitar ConhdeHelena!
-# ConHdeHelena
+---
+
+## 📁 Estructura del Proyecto
+
+- `src/app/`: Rutas de Next.js (Inicio, Catálogo de Productos, Detalles, Formulario de Contacto).
+- `src/components/`: Componentes modulares (escena 3D, botones de compra, cabecera y pie de página, marcado JSON-LD).
+- `public/images/assets/`: Galería de fotos reales de los productos artesanales.
+
+---
+
+Desarrollado con pasión. ✨

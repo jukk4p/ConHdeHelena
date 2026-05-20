@@ -1,17 +1,5 @@
-import { HeroSection } from "@/components/landing/hero-section";
-import { FeaturedProductsSection } from "@/components/landing/featured-products-section";
-import { TestimonialsSection } from "@/components/landing/testimonials-section";
-import { ContactSection } from "@/components/landing/contact-section";
-import { StatsSection } from "@/components/landing/stats-section";
+import HomePageClient from "@/components/home/HomePageClient";
 
 export default function Home() {
-  return (
-    <div>
-      <HeroSection />
-      <FeaturedProductsSection />
-      <StatsSection />
-      <TestimonialsSection />
-      <ContactSection />
-    </div>
-  );
+  return <HomePageClient />;
 }
