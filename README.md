@@ -1,60 +1,94 @@
-# 💎 Con h de Helena — Artesanía Personalizada
+<div align="center">
 
-> El arte de crear magia en cada detalle. Regalos únicos y exclusivos hechos a mano en Sevilla.
+# ✨ Con h de Helena ✨
+### *El arte de crear magia en cada detalle*
 
-Este proyecto es la plataforma digital de **Con h de Helena**, un catálogo digital premium diseñado con un enfoque inmersivo e interactivo 3D para exhibir piezas de artesanía personalizadas y facilitar el pedido directo de presupuestos.
-
----
-
-## 🎨 Características Clave
-
-- **Experiencia Inmersiva 3D**: Escena interactiva en el Hero utilizando **Three.js** (`React Three Fiber` / `@react-three/drei`) con iluminación cinemática y sistema dinámico de partículas.
-- **Catálogo de Productos**: Galería de productos detallada (copas, joyeros, llaveros, perchas de comunión, bolas navideñas, sets de aseo de madera) con su respectiva información técnica e imágenes reales.
-- **Integración con WhatsApp**: Flujo automatizado para realizar pedidos o solicitar presupuestos personalizados mediante un mensaje pre-configurado de WhatsApp.
-- **Estética de Lujo**: Diseño minimalista y moderno usando tipografías elegantes (**Lora** y **Outfit**) y un esquema de color cálido y orgánico.
-- **SEO Optimizado**: Estructura semántica HTML, metadatos optimizados y marcado de datos estructurados de búsqueda local `LocalBusiness` (Schema JSON-LD) para mejorar el posicionamiento orgánico en Sevilla.
+[Sitio Web](https://github.com/jukk4p/ConHdeHelena) • [Contacto WhatsApp](https://wa.me/34600000000)
 
 ---
 
-## 🛠️ Stack Tecnológico
+[![Next.js 15](https://img.shields.io/badge/Next.js-15-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
+[![React 19](https://img.shields.io/badge/React-19-20232a?style=for-the-badge&logo=react&logoColor=61dafb)](https://react.dev/)
+[![Tailwind CSS v4](https://img.shields.io/badge/Tailwind_CSS-v4-0F172A?style=for-the-badge&logo=tailwindcss&logoColor=38bdf8)](https://tailwindcss.com/)
+[![Three.js](https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white)](https://threejs.org/)
+[![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)](https://framer.com/)
 
-- **Core**: [Next.js 15+](https://nextjs.org/) (App Router) & [React 19](https://react.dev/)
-- **Estilos**: [Tailwind CSS v4](https://tailwindcss.com/)
-- **Modelado 3D & Animación**: [Three.js](https://threejs.org/) / `@react-three/fiber` / [Framer Motion](https://www.framer.com/motion/)
-- **Iconografía**: [Lucide React](https://lucide.dev/)
-
----
-
-## 🚀 Comenzar en Desarrollo
-
-1. **Instalar dependencias**:
-   ```bash
-   npm install
-   ```
-
-2. **Iniciar el servidor de desarrollo**:
-   ```bash
-   npm run dev
-   ```
-
-3. **Compilar para producción**:
-   ```bash
-   npm run build
-   ```
-
-4. **Iniciar en modo producción**:
-   ```bash
-   npm run start
-   ```
+</div>
 
 ---
 
-## 📁 Estructura del Proyecto
+## 🌸 Filosofía de la Marca
 
-- `src/app/`: Rutas de Next.js (Inicio, Catálogo de Productos, Detalles, Formulario de Contacto).
-- `src/components/`: Componentes modulares (escena 3D, botones de compra, cabecera y pie de página, marcado JSON-LD).
-- `public/images/assets/`: Galería de fotos reales de los productos artesanales.
+**Con h de Helena** es un taller artesanal ubicado en el corazón de **Sevilla**, donde transformamos objetos cotidianos en recuerdos eternos. Cada pieza se diseña, graba y personaliza a mano, fusionando técnicas tradicionales con acabados modernos de alta calidad. 
+
+> *No hacemos regalos en serie, creamos emociones a medida.*
 
 ---
 
-Desarrollado con pasión. ✨
+## 🛍️ Nuestro Catálogo de Productos
+
+| Producto | Vista Previa | Categoría | Precio | Detalles Clave |
+| :--- | :---: | :---: | :---: | :--- |
+| **Copa Personalizada** | <img src="public/images/assets/Copa-personalizada-cumpleaños.webp" width="100" style="border-radius: 8px;" alt="Copa"/> | Eventos | **15€** | Cristal de alto brillo, grabado en vinilo metálico premium. |
+| **Llavero Personalizado** | <img src="public/images/assets/Llavero-personalizado-dia-del-padre.webp" width="100" style="border-radius: 8px;" alt="Llavero"/> | Día a día | **10€** | Cuero genuino y remaches en bronce envejecido. |
+| **Joyero Personalizado** | <img src="public/images/assets/Joyero-personalizado.webp" width="100" style="border-radius: 8px;" alt="Joyero"/> | Especiales | **30€** | Piel sintética suave, interior de terciopelo y foil dorado. |
+| **Percha de Comunión** | <img src="public/images/assets/Percha-personalizada-comunión.webp" width="100" style="border-radius: 8px;" alt="Percha"/> | Comuniones | **15€** | Madera maciza lacada en blanco con lazo de gasa artesanal. |
+| **Bolas de Navidad** | <img src="public/images/assets/Bolas-de-Navidad-personalizadas.webp" width="100" style="border-radius: 8px;" alt="Bolas"/> | Temporada | **15€** | Esfera acrílica transparente rellena de nieve o purpurina. |
+| **Peine Personalizado** | <img src="public/images/assets/Peine-personalizado.webp" width="100" style="border-radius: 8px;" alt="Peine"/> | Cuidado | **15€** | Set de peine y cepillo de madera natural con bolsa de algodón. |
+
+---
+
+## 🛠️ Características del Desarrollo
+
+- **Visuales Premium (3D)**: Implementación de un modelo interactivo 3D en el *Hero* utilizando `@react-three/fiber` y `@react-three/drei`, complementado con un sistema cinemático de partículas que simula polvo mágico.
+- **Micro-interacciones**: Transiciones fluidas y efectos hover controlados con **Framer Motion** y vanilla CSS.
+- **Rendimiento Impecable**: Estructura optimizada para Next.js con carga diferida de elementos 3D complejos y uso del formato WebP para todas las imágenes.
+- **Optimización Local SEO**: Archivos con metadatos estructurados en formato **JSON-LD** (`LocalBusiness`) para garantizar un posicionamiento óptimo en búsquedas de Sevilla y alrededores.
+- **Pasarela de Pedidos WhatsApp**: Modales interactivos que generan mensajes automatizados detallando el producto y la personalización deseada directamente al taller.
+
+---
+
+## 🚀 Instalación y Despliegue Local
+
+Asegúrate de tener instalado [Node.js](https://nodejs.org/) (versión 18 o superior).
+
+```bash
+# 1. Clonar el repositorio
+git clone https://github.com/jukk4p/ConHdeHelena.git
+
+# 2. Entrar en la carpeta
+cd ConHdeHelena
+
+# 3. Instalar dependencias
+npm install
+
+# 4. Iniciar servidor de desarrollo
+npm run dev
+```
+
+El servidor estará disponible en [http://localhost:3000](http://localhost:3000).
+
+---
+
+## 📁 Estructura Principal del Proyecto
+
+```yaml
+ConHdeHelena/
+├── public/
+│   └── images/
+│       ├── assets/       # Galería de imágenes WebP reales de productos
+│       └── headers/      # Encabezados visuales de las secciones
+├── src/
+│   ├── app/              # Rutas principales y páginas de Next.js
+│   ├── components/
+│   │   ├── home/         # Escenas 3D y componentes de la página de inicio
+│   │   ├── layout/       # Cabecera, pie de página y elementos comunes
+│   │   ├── seo/          # Scripts de datos estructurados para Google (JSON-LD)
+│   │   └── shop/         # Modales y botones de pedidos interactivos
+```
+
+---
+
+<div align="center">
+Hecho a mano con amor y código en Sevilla. ✨
+</div>
