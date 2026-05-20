@@ -1,4 +1,4 @@
-# 💎 Informe de Calidad: Auditoría Maestra Con h de Helena
+# 💎 Informe de Calidad: Auditoría Maestra ConhdeHelena
 
 Este informe resume la auditoría y mejoras realizadas en el proyecto basándose en los estándares de élite del **PROMPT MAESTRO**.
 

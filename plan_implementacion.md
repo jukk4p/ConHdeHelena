@@ -1,6 +1,6 @@
-# 🚀 Plan de Implementación: Con h de Helena
+# 🚀 Plan de Implementación: ConhdeHelena
 
-Este documento detalla la hoja de ruta estratégica para elevar el proyecto **Con h de Helena** a un estándar web de élite (Premium Diamond), siguiendo las fases del **PROMPT MAESTRO**.
+Este documento detalla la hoja de ruta estratégica para elevar el proyecto **ConhdeHelena** a un estándar web de élite (Premium Diamond), siguiendo las fases del **PROMPT MAESTRO**.
 
 ---
 

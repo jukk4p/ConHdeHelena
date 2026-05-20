@@ -1,6 +1,6 @@
 <div align="center">
 
-# ✨ Con h de Helena ✨
+# ✨ ConhdeHelena ✨
 ### *El arte de crear magia en cada detalle*
 
 [Sitio Web](https://github.com/jukk4p/ConHdeHelena) • [Contacto WhatsApp](https://wa.me/34600000000)
@@ -19,7 +19,7 @@
 
 ## 🌸 Filosofía de la Marca
 
-**Con h de Helena** es un taller artesanal ubicado en el corazón de **Sevilla**, donde transformamos objetos cotidianos en recuerdos eternos. Cada pieza se diseña, graba y personaliza a mano, fusionando técnicas tradicionales con acabados modernos de alta calidad. 
+**ConhdeHelena** es un taller artesanal ubicado en el corazón de **Sevilla**, donde transformamos objetos cotidianos en recuerdos eternos. Cada pieza se diseña, graba y personaliza a mano, fusionando técnicas tradicionales con acabados modernos de alta calidad. 
 
 > *No hacemos regalos en serie, creamos emociones a medida.*
 
