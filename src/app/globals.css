@@ -4,6 +4,7 @@
   --color-background-light: #fffcf9;
   --color-background-dark: #0f0a07;
 
+  --color-surface: var(--surface);
   --color-surface-light: #ffffff;
   --color-surface-dark: #1a1412;
 

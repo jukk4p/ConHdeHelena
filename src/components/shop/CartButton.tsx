@@ -7,7 +7,7 @@ import OrderModal from "./OrderModal";
 
 interface CartButtonProps {
     product: {
-        id: number;
+        id: string | number;
         title: string;
         price: string;
         category: string;

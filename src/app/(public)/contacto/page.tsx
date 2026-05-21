@@ -3,7 +3,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { Mail, Phone, MapPin, Send, ArrowRight, ChevronDown } from "lucide-react";
+import { Mail, Phone, MapPin, Send, ArrowRight, ChevronDown, CheckCircle2 } from "lucide-react";
+import { createClient } from "@/utils/supabase/client";
 import { useMotionValue, useTransform, useSpring } from "framer-motion";
 import { useRef } from "react";
 
@@ -18,6 +19,8 @@ function WhatsAppIcon({ className }: { className?: string }) {
 export default function ContactoPage() {
     const [selectedOccasion, setSelectedOccasion] = useState("boda");
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isSuccess, setIsSuccess] = useState(false);
 
     const occasions = [
         { id: "boda", label: "Boda o Enlace" },
@@ -36,6 +39,34 @@ export default function ContactoPage() {
     const springConfig = { damping: 20, stiffness: 150 };
     const rotateX = useSpring(useTransform(mouseY, [-200, 200], [15, -15]), springConfig);
     const rotateY = useSpring(useTransform(mouseX, [-200, 200], [-15, 15]), springConfig);
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        const form = e.currentTarget;
+        setIsSubmitting(true);
+
+        const formData = new FormData(form);
+        const name = formData.get("name") as string;
+        const email = formData.get("email") as string;
+        const subject = formData.get("subject") as string;
+        const message = formData.get("message") as string;
+
+        const supabase = createClient();
+        
+        await supabase.from("contact_messages").insert({
+            name,
+            email,
+            message: `[Asunto: ${occasions.find(o => o.id === subject)?.label || subject}]\n\n${message}`
+        });
+
+        setIsSubmitting(false);
+        setIsSuccess(true);
+        form.reset();
+        
+        setTimeout(() => {
+            setIsSuccess(false);
+        }, 5000);
+    };
 
     return (
         <div className="min-h-screen">
@@ -183,7 +214,7 @@ export default function ContactoPage() {
                             className="lg:col-span-8"
                         >
                             <div className="bg-surface/50 backdrop-blur-sm border border-foreground/5 p-8 md:p-12 rounded-[2.5rem] shadow-2xl shadow-foreground/5">
-                                <form className="space-y-8" action="/contacto/gracias" method="GET">
+                                <form className="space-y-8" onSubmit={handleSubmit}>
 
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                         <div className="space-y-2">
@@ -271,10 +302,26 @@ export default function ContactoPage() {
                                     <div className="pt-4 flex flex-col items-center">
                                         <button
                                             type="submit"
-                                            className="group w-fit px-12 py-5 bg-foreground text-background font-bold text-lg rounded-full hover:bg-primary hover:text-white transition-all duration-500 shadow-xl shadow-foreground/10 flex items-center justify-center space-x-3"
+                                            disabled={isSubmitting || isSuccess}
+                                            className={`group w-fit px-12 py-5 font-bold text-lg rounded-full transition-all duration-500 shadow-xl flex items-center justify-center space-x-3 ${
+                                                isSuccess 
+                                                    ? 'bg-green-500 text-white shadow-green-500/20' 
+                                                    : 'bg-foreground text-background hover:bg-primary hover:text-white shadow-foreground/10'
+                                            }`}
                                         >
-                                            <span>Enviar Mensaje</span>
-                                            <Send className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                                            {isSubmitting ? (
+                                                <span>Enviando...</span>
+                                            ) : isSuccess ? (
+                                                <>
+                                                    <span>Enviado</span>
+                                                    <CheckCircle2 className="w-5 h-5" />
+                                                </>
+                                            ) : (
+                                                <>
+                                                    <span>Enviar Mensaje</span>
+                                                    <Send className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                                                </>
+                                            )}
                                         </button>
                                         <p className="mt-8 text-center text-sm text-foreground/40 italic max-w-sm">
                                             Responderemos tan pronto como terminemos nuestra última pieza en el taller.

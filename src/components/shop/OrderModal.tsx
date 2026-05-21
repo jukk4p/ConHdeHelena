@@ -3,7 +3,8 @@
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ShoppingBag, Minus, Plus } from "lucide-react";
+import { X, ShoppingBag, Minus, Plus, Phone } from "lucide-react";
+import { createClient } from "@/utils/supabase/client";
 
 // Official WhatsApp logo SVG
 function WhatsAppIcon({ className }: { className?: string }) {
@@ -22,7 +23,7 @@ function WhatsAppIcon({ className }: { className?: string }) {
 
 interface OrderModalProps {
     product: {
-        id: number;
+        id: string | number;
         title: string;
         price: string;
         category: string;
@@ -36,6 +37,7 @@ const WHATSAPP_NUMBER = "34678973988"; // Número real de ConhdeHelena
 export default function OrderModal({ product, isOpen, onClose }: OrderModalProps) {
     const [mounted, setMounted] = useState(false);
     const [name, setName] = useState("");
+    const [phone, setPhone] = useState("");
     const [quantity, setQuantity] = useState(1);
     const [note, setNote] = useState("");
     const [sending, setSending] = useState(false);
@@ -56,16 +58,30 @@ export default function OrderModal({ product, isOpen, onClose }: OrderModalProps
     useEffect(() => {
         if (!isOpen) {
             setName("");
+            setPhone("");
             setQuantity(1);
             setNote("");
             setSending(false);
         }
     }, [isOpen]);
 
-    const handleSend = () => {
-        if (!name.trim()) return;
+    const handleSend = async () => {
+        if (!name.trim() || !phone.trim()) return;
 
         setSending(true);
+
+        const isUuid = typeof product.id === "string" && 
+            /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(product.id);
+
+        // Guardar en Supabase
+        const supabase = createClient();
+        await supabase.from("orders").insert({
+            customer_name: name.trim(),
+            customer_phone: phone.trim(),
+            product_id: isUuid ? product.id : null,
+            customization_details: `${product.title} (x${quantity})\nPrecio Ud: ${product.price}\nNota: ${note}`,
+            status: "pending"
+        });
 
         const lines = [
             `🛍️ *Nuevo pedido — ConhdeHelena*`,
@@ -75,6 +91,7 @@ export default function OrderModal({ product, isOpen, onClose }: OrderModalProps
             `💰 *Precio unitario:* ${product.price}`,
             `🔢 *Cantidad:* ${quantity}`,
             `👤 *Nombre:* ${name.trim()}`,
+            `📱 *Teléfono:* ${phone.trim()}`,
             note.trim() ? `📝 *Nota:* ${note.trim()}` : null,
             ``,
             `¡Gracias por tu interés! 🌿`,
@@ -169,6 +186,20 @@ export default function OrderModal({ product, isOpen, onClose }: OrderModalProps
                                     />
                                 </div>
 
+                                {/* Phone */}
+                                <div className="space-y-2">
+                                    <label className="text-sm font-semibold text-foreground/70">
+                                        WhatsApp <span className="text-primary">*</span>
+                                    </label>
+                                    <input
+                                        type="tel"
+                                        value={phone}
+                                        onChange={(e) => setPhone(e.target.value)}
+                                        placeholder="600 000 000"
+                                        className="w-full px-4 py-3 rounded-2xl border border-foreground/12 bg-foreground/3 text-foreground placeholder:text-foreground/30 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                                    />
+                                </div>
+
                                 {/* Quantity */}
                                 <div className="space-y-2">
                                     <label className="text-sm font-semibold text-foreground/70">
@@ -216,11 +247,11 @@ export default function OrderModal({ product, isOpen, onClose }: OrderModalProps
                             <div className="px-8 pb-8">
                                 <motion.button
                                     onClick={handleSend}
-                                    disabled={!name.trim() || sending}
-                                    whileHover={{ scale: name.trim() && !sending ? 1.02 : 1 }}
+                                    disabled={!name.trim() || !phone.trim() || sending}
+                                    whileHover={{ scale: name.trim() && phone.trim() && !sending ? 1.02 : 1 }}
                                     whileTap={{ scale: 0.97 }}
                                     className={`w-full py-4 rounded-2xl font-bold text-sm flex items-center justify-center gap-3 transition-all duration-300 ${
-                                        name.trim() && !sending
+                                        name.trim() && phone.trim() && !sending
                                             ? "bg-[#25D366] hover:bg-[#1ebe5d] text-white shadow-lg shadow-[#25D366]/30"
                                             : "bg-foreground/8 text-foreground/30 cursor-not-allowed"
                                     }`}

@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
 import { Outfit, Lora } from "next/font/google";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
-import JsonLd from "@/components/seo/JsonLd";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -27,13 +24,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body
-        className={`${outfit.variable} ${lora.variable} antialiased flex flex-col min-h-screen`}
-      >
-        <JsonLd />
-        <Navbar />
-        <main className="flex-grow pt-24">{children}</main>
-        <Footer />
+      <body className={`${outfit.variable} ${lora.variable} antialiased`}>
+        {children}
       </body>
     </html>
   );
