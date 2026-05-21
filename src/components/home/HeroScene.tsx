@@ -1,9 +1,7 @@
 "use client";
 
-import { useRef } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { Float, Environment } from "@react-three/drei";
-import * as THREE from "three";
+import { Canvas } from "@react-three/fiber";
+import { Float } from "@react-three/drei";
 
 function HeroAnimation() {
     return (
@@ -51,7 +49,6 @@ export default function HeroScene() {
                 <pointLight position={[5, 10, 10]} intensity={4} color="#C5A059" />
                 <pointLight position={[-5, -10, -10]} intensity={2} color="#8c7a6b" />
                 <HeroAnimation />
-                <Environment preset="sunset" />
             </Canvas>
 
             {/* Premium background glow */}
