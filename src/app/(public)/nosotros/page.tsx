@@ -49,13 +49,14 @@ export default function NosotrosPage() {
                                 transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                                 className="relative aspect-video rounded-[2rem] overflow-hidden bg-[#fdfcfb] border border-foreground/10 shadow-2xl"
                             >
-                                <div className="absolute inset-0 flex items-center justify-center">
+                                <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
                                     <video
                                         src="/images/Animation_logo.mp4"
                                         autoPlay
                                         muted
                                         playsInline
-                                        className="w-full h-full object-contain"
+                                        className="w-full h-full object-cover"
+                                        style={{ transform: 'scale(1.3)', transformOrigin: 'center' }}
                                     />
                                 </div>
                             </motion.div>

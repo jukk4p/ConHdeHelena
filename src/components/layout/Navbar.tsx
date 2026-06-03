@@ -68,7 +68,8 @@ export default function Navbar() {
                                     alt="ConhdeHelena Logo"
                                     width={60}
                                     height={60}
-                                    className="hover:scale-110 transition-transform duration-300"
+                                    className="object-contain"
+                                    priority
                                 />
                             </motion.div>
 
@@ -77,7 +78,7 @@ export default function Navbar() {
                                 initial={{ x: -20, opacity: 0 }}
                                 animate={{ x: 0, opacity: 1 }}
                                 transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
-                                className="font-serif text-2xl font-normal tracking-tight text-[#b38f4d] ml-3"
+                                className="font-serif text-2xl font-normal tracking-tight text-[#8c6b2d] ml-3"
                             >
                                 ConhdeHelena
                             </motion.span>
@@ -164,7 +165,7 @@ export default function Navbar() {
                                     width={48}
                                     height={48}
                                 />
-                                <span className="font-serif text-xl font-normal tracking-tight text-[#b38f4d]">
+                                <span className="font-serif text-xl font-normal tracking-tight text-[#8c6b2d]">
                                     ConhdeHelena
                                 </span>
                             </Link>

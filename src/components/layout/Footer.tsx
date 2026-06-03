@@ -25,9 +25,9 @@ export default function Footer() {
                                     alt="ConhdeHelena Logo"
                                     width={84}
                                     height={84}
-                                    className="hover:scale-110 transition-transform duration-300"
-                                />
-                            <span className="font-serif text-2xl font-normal tracking-tight text-[#b38f4d]">
+                                    className="object-contain hover:scale-105 transition-transform duration-300"
+                                    priority
+                                /><span className="font-serif text-2xl font-normal tracking-tight text-[#8c6b2d]">
                                 ConhdeHelena
                             </span>
                         </Link>

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "ConhdeHelena | Regalos Personalizados",
     description: "Diseño y personalización de regalos en Sevilla. Transformamos tus ideas en detalles únicos para momentos especiales.",
-    url: "https://conhdehelena.com",
+    url: "https://conhdehelena.es",
     siteName: "ConhdeHelena",
     locale: "es_ES",
     type: "website",
