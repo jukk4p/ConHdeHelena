@@ -51,9 +51,10 @@ export default function NosotrosPage() {
                             >
                                 <div className="absolute inset-0 flex items-center justify-center">
                                     <video
-                                        src="/images/ConhdeHelena_logo_animation.mp4"
+                                        src="/images/Animation_logo.mp4"
                                         autoPlay
                                         muted
+                                        loop
                                         playsInline
                                         className="w-full h-full object-contain"
                                     />
