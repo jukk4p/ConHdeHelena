@@ -54,7 +54,6 @@ export default function NosotrosPage() {
                                         src="/images/Animation_logo.mp4"
                                         autoPlay
                                         muted
-                                        loop
                                         playsInline
                                         className="w-full h-full object-contain"
                                     />
