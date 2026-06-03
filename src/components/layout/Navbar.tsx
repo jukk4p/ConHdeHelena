@@ -64,7 +64,7 @@ export default function Navbar() {
                                 className="relative z-10"
                             >
                                 <Image
-                                    src="/images/logo.png"
+                                    src="/images/logo_v2.png"
                                     alt="ConhdeHelena Logo"
                                     width={60}
                                     height={60}

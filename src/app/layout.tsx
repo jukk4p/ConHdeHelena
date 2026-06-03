@@ -15,6 +15,19 @@ const lora = Lora({
 export const metadata: Metadata = {
   title: "ConhdeHelena | Regalos Personalizados",
   description: "Diseño y personalización de regalos en Sevilla. Transformamos tus ideas en detalles únicos para momentos especiales.",
+  openGraph: {
+    title: "ConhdeHelena | Regalos Personalizados",
+    description: "Diseño y personalización de regalos en Sevilla. Transformamos tus ideas en detalles únicos para momentos especiales.",
+    url: "https://conhdehelena.com",
+    siteName: "ConhdeHelena",
+    locale: "es_ES",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ConhdeHelena | Regalos Personalizados",
+    description: "Diseño y personalización de regalos en Sevilla.",
+  },
 };
 
 export default function RootLayout({

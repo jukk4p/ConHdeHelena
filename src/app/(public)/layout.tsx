@@ -1,6 +1,7 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import JsonLd from "@/components/seo/JsonLd";
+import CookieBanner from "@/components/layout/CookieBanner";
 
 export default function PublicLayout({
   children,
@@ -13,6 +14,7 @@ export default function PublicLayout({
       <Navbar />
       <main className="flex-grow pt-24">{children}</main>
       <Footer />
+      <CookieBanner />
     </div>
   );
 }

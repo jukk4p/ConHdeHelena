@@ -1,7 +1,7 @@
 "use client";
 
 import { Canvas } from "@react-three/fiber";
-import { Float } from "@react-three/drei";
+import { Float, Sparkles } from "@react-three/drei";
 
 function HeroAnimation() {
     return (
@@ -18,25 +18,16 @@ function HeroAnimation() {
                 />
             </mesh>
 
-            {/* Glowing gold dust particles */}
-            {Array.from({ length: 120 }).map((_, i) => (
-                <Float key={i} speed={Math.random() * 2 + 1} rotationIntensity={Math.random() * 3} floatIntensity={Math.random() * 3}>
-                    <mesh position={[
-                        (Math.random() - 0.5) * 16,
-                        (Math.random() - 0.5) * 16,
-                        (Math.random() - 0.5) * 12
-                    ]}>
-                        <sphereGeometry args={[0.035 + Math.random() * 0.02, 12, 12]} />
-                        <meshStandardMaterial
-                            color="#C5A059"
-                            emissive="#C5A059"
-                            emissiveIntensity={3 + Math.random() * 5}
-                            transparent
-                            opacity={0.7 + Math.random() * 0.3}
-                        />
-                    </mesh>
-                </Float>
-            ))}
+            {/* Glowing gold dust particles using Instanced Sparkles for high performance */}
+            <Sparkles 
+                count={120} 
+                scale={[16, 16, 12]} 
+                size={3.5} 
+                speed={0.4} 
+                opacity={0.8} 
+                color="#C5A059" 
+                noise={1}
+            />
         </group>
     );
 }

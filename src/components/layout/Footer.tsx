@@ -21,7 +21,7 @@ export default function Footer() {
                     <div className="md:col-span-2 space-y-6 flex flex-col items-center md:items-start text-center md:text-left">
                         <Link href="/" className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4">
                                 <Image
-                                    src="/images/logo.png"
+                                    src="/images/logo_v2.png"
                                     alt="ConhdeHelena Logo"
                                     width={84}
                                     height={84}
@@ -86,18 +86,36 @@ export default function Footer() {
                 </div>
 
                 {/* Bottom bar */}
-                <div className="mt-16 pt-8 border-t border-foreground/5 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-sm text-foreground/50">
-                    <p>© {new Date().getFullYear()} ConhdeHelena. Todos los derechos reservados.</p>
-                    <div className="flex space-x-6">
-                        <a href="https://www.instagram.com/conh_dehelena" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" aria-label="Instagram">
-                            <InstagramIcon className="w-5 h-5" />
-                        </a>
-                        <a href="https://www.tiktok.com/@conhdehelena2" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" aria-label="TikTok">
-                            <TikTokIcon className="w-5 h-5" />
-                        </a>
-                        <a href="https://www.youtube.com/@Conh_deHelena" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" aria-label="YouTube">
-                            <YoutubeIcon className="w-5 h-5" />
-                        </a>
+                <div className="mt-16 pt-8 border-t border-foreground/5 flex flex-col space-y-6">
+                    {/* Legal Links */}
+                    <div className="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-2 text-xs text-foreground/60">
+                        <Link href="/aviso-legal" className="hover:text-primary transition-colors">
+                            Aviso Legal
+                        </Link>
+                        <Link href="/politica-privacidad" className="hover:text-primary transition-colors">
+                            Política de Privacidad
+                        </Link>
+                        <Link href="/politica-cookies" className="hover:text-primary transition-colors">
+                            Política de Cookies
+                        </Link>
+                        <Link href="/condiciones-compra" className="hover:text-primary transition-colors">
+                            Condiciones de Compra y Devoluciones
+                        </Link>
+                    </div>
+
+                    <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-sm text-foreground/50">
+                        <p>© {new Date().getFullYear()} ConhdeHelena. Todos los derechos reservados.</p>
+                        <div className="flex space-x-6">
+                            <a href="https://www.instagram.com/conh_dehelena" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" aria-label="Instagram">
+                                <InstagramIcon className="w-5 h-5" />
+                            </a>
+                            <a href="https://www.tiktok.com/@conhdehelena2" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" aria-label="TikTok">
+                                <TikTokIcon className="w-5 h-5" />
+                            </a>
+                            <a href="https://www.youtube.com/@Conh_deHelena" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" aria-label="YouTube">
+                                <YoutubeIcon className="w-5 h-5" />
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
