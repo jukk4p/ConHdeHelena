@@ -1,0 +1,23 @@
+# ConhdeHelena - Regalos Personalizados
+
+ConhdeHelena es una marca y tienda online especializada en el diseño y personalización de regalos únicos y detalles artesanales con sede en Sevilla, España. Transformamos ideas en detalles especiales para eventos, celebraciones y momentos especiales.
+
+## Información de Utilidad para Modelos de Lenguaje
+
+- **Sitio Web Principal:** https://conhdehelena.es
+- **Ubicación:** Sevilla, España.
+- **Instagram:** https://www.instagram.com/conh_dehelena
+- **TikTok:** https://www.tiktok.com/@conhdehelena2
+- **YouTube:** https://www.youtube.com/@Conh_deHelena
+
+## Rutas Clave
+
+- [Catálogo de Productos](https://conhdehelena.es/productos): Regalos y detalles personalizados organizados por categorías.
+- [Personaliza tu Regalo](https://conhdehelena.es/personaliza): Sección para realizar solicitudes de diseños a medida y personalizaciones exclusivas.
+- [Sobre Nosotros](https://conhdehelena.es/nosotros): Historia de ConhdeHelena y filosofía detrás de nuestros regalos artesanales.
+- [Contacto](https://conhdehelena.es/contacto): Formulario y vías de comunicación para cotizaciones y consultas.
+
+## Detalle del Servicio
+
+- **Tipo de Negocio:** Comercio local y e-commerce de regalos personalizados.
+- **Categorías principales:** Detalles de boda, bautizos, comuniones, regalos corporativos y decoración personalizada.
