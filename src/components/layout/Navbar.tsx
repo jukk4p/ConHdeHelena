@@ -78,7 +78,7 @@ export default function Navbar() {
                                 initial={{ x: -20, opacity: 0 }}
                                 animate={{ x: 0, opacity: 1 }}
                                 transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
-                                className="font-serif text-2xl font-normal tracking-tight text-[#8c6b2d] ml-3"
+                                className="font-serif text-2xl font-normal tracking-tight text-foreground -ml-1 translate-y-[3px]"
                             >
                                 ConhdeHelena
                             </motion.span>
@@ -158,14 +158,14 @@ export default function Navbar() {
                     >
                         {/* Close / Logo row inside overlay */}
                         <div className="flex justify-between items-center px-6 pt-6 pb-4 shrink-0">
-                            <Link href="/" className="flex items-center space-x-3" onClick={() => setIsMobileMenuOpen(false)}>
+                            <Link href="/" className="flex items-center space-x-2" onClick={() => setIsMobileMenuOpen(false)}>
                                 <Image
                                     src="/images/logo_rosa.png"
                                     alt="ConhdeHelena Logo"
                                     width={48}
                                     height={48}
                                 />
-                                <span className="font-serif text-xl font-normal tracking-tight text-[#8c6b2d]">
+                                <span className="font-serif text-xl font-normal tracking-tight text-foreground">
                                     ConhdeHelena
                                 </span>
                             </Link>

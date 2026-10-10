@@ -19,7 +19,7 @@ export default function Footer() {
 
                     {/* Brand */}
                     <div className="md:col-span-2 space-y-6 flex flex-col items-center md:items-start text-center md:text-left">
-                        <Link href="/" className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4">
+                        <Link href="/" className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-2">
                                 <Image
                                     src="/images/logo_rosa.png"
                                     alt="ConhdeHelena Logo"
@@ -27,7 +27,7 @@ export default function Footer() {
                                     height={84}
                                     className="object-contain hover:scale-105 transition-transform duration-300"
                                     priority
-                                /><span className="font-serif text-2xl font-normal tracking-tight text-[#8c6b2d]">
+                                /><span className="font-serif text-2xl font-normal tracking-tight text-foreground">
                                 ConhdeHelena
                             </span>
                         </Link>
