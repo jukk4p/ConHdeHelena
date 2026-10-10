@@ -3,8 +3,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
-import { ArrowRight, Sparkles, Heart, Gift } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import HeroScene from "./HeroScene";
 
 export default function HomePageClient() {
@@ -109,48 +108,6 @@ export default function HomePageClient() {
                         />
                         <div className="absolute inset-0 ring-1 ring-inset ring-foreground/10 rounded-[2.5rem] pointer-events-none" />
                     </motion.div>
-                </div>
-            </section>
-
-            {/* Sneak Peek Productos */}
-            <section className="relative z-10 py-32 bg-surface">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex justify-between items-end mb-16">
-                        <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground">
-                            Selección
-                            <br /><span className="text-secondary italic font-light">para ti</span>
-                        </h2>
-                        <Link href="/productos" className="hidden sm:inline-flex items-center text-primary font-medium hover:underline underline-offset-4">
-                            Ver todos <ArrowRight className="ml-1 w-4 h-4" />
-                        </Link>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {[
-                            { id: 1, title: "Copa Personalizada", price: "15€", img: "Copa-personalizada-cumpleaños.webp" },
-                            { id: 2, title: "Llavero Personalizado", price: "10€", img: "Llavero-personalizado-dia-del-padre.webp" },
-                            { id: 3, title: "Joyero Personalizado", price: "30€", img: "Joyero-personalizado.webp" }
-                        ].map((item) => (
-                            <motion.div
-                                key={item.id}
-                                whileHover={{ y: -5 }}
-                                className="group relative cursor-pointer"
-                            >
-                                <div className="aspect-[4/3] bg-foreground/5 rounded-2xl overflow-hidden mb-6 relative">
-                                    <Image
-                                        src={`/images/assets/${item.img}`}
-                                        alt={item.title}
-                                        fill
-                                        sizes="(max-width: 768px) 100vw, 33vw"
-                                        className="object-cover transition-transform duration-700 group-hover:scale-110"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/20" />
-                                </div>
-                                <h3 className="font-medium text-lg text-foreground">{item.title}</h3>
-                                <p className="text-foreground/60 text-sm mt-1">Desde {item.price}</p>
-                            </motion.div>
-                        ))}
-                    </div>
                 </div>
             </section>
 
