@@ -43,3 +43,6 @@ next-env.d.ts
 # GEO/SEO Reports
 GEO-AUDIT-REPORT.md
 
+# CodeGraph local index
+.codegraph/
+
