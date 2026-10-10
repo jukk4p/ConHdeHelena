@@ -64,7 +64,7 @@ export default function Navbar() {
                                 className="relative z-10"
                             >
                                 <Image
-                                    src="/images/logo.png"
+                                    src="/images/logo_v2.png"
                                     alt="ConhdeHelena Logo"
                                     width={60}
                                     height={60}
@@ -160,7 +160,7 @@ export default function Navbar() {
                         <div className="flex justify-between items-center px-6 pt-6 pb-4 shrink-0">
                             <Link href="/" className="flex items-center space-x-3" onClick={() => setIsMobileMenuOpen(false)}>
                                 <Image
-                                    src="/images/logo.png"
+                                    src="/images/logo_v2.png"
                                     alt="ConhdeHelena Logo"
                                     width={48}
                                     height={48}

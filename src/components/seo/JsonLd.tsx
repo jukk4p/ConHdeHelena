@@ -5,7 +5,7 @@ export default function JsonLd() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "ConhdeHelena",
-    "image": "https://conhdehelena.es/images/logo.png",
+    "image": "https://conhdehelena.es/images/logo_v2.png",
     "@id": "https://conhdehelena.es",
     "url": "https://conhdehelena.es",
     "telephone": "+34000000000",

@@ -21,7 +21,7 @@ export default function Footer() {
                     <div className="md:col-span-2 space-y-6 flex flex-col items-center md:items-start text-center md:text-left">
                         <Link href="/" className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4">
                                 <Image
-                                    src="/images/logo.png"
+                                    src="/images/logo_v2.png"
                                     alt="ConhdeHelena Logo"
                                     width={84}
                                     height={84}
