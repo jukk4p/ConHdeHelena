@@ -120,6 +120,30 @@ export default function PersonalizaPage() {
                     </div>
                 </div>
             </section>
+
+            {/* CTA Section */}
+            <motion.section
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8 }}
+                className="relative z-10 py-32 bg-foreground text-background"
+            >
+                <div className="max-w-7xl mx-auto px-4 text-center">
+                    <h2 className="font-serif text-4xl md:text-6xl font-bold mb-8">
+                        ¿Le ponemos <span className="italic text-primary font-light">nombre</span> a tu idea?
+                    </h2>
+                    <p className="text-background/70 max-w-2xl mx-auto mb-12 text-lg">
+                        Cuéntanos qué tienes en mente y te decimos cómo lo haríamos realidad, sin compromiso.
+                    </p>
+                    <Link
+                        href="/contacto"
+                        className="inline-flex items-center bg-primary text-white px-10 py-5 rounded-full text-lg font-medium hover:bg-primary-hover transition-colors shadow-xl shadow-primary/20"
+                    >
+                        Cuéntanos tu idea
+                    </Link>
+                </div>
+            </motion.section>
         </div>
     );
 }
