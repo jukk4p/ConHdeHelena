@@ -1,13 +1,16 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import dynamic from "next/dynamic";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Sparkles } from "lucide-react";
-import HeroScene from "./HeroScene";
+
+const HeroScene = dynamic(() => import("./HeroScene"), { ssr: false });
 
 export default function HomePageClient() {
     const containerRef = useRef<HTMLDivElement>(null);
+    const [showVideo, setShowVideo] = useState(false);
     const { scrollYProgress } = useScroll({
         target: containerRef,
         offset: ["start start", "end start"],
@@ -29,8 +32,8 @@ export default function HomePageClient() {
                 className="relative z-10 min-h-[90vh] flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 text-center"
             >
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    initial={{ y: 30 }}
+                    animate={{ y: 0 }}
                     transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                     className="max-w-4xl space-y-8"
                 >
@@ -91,21 +94,25 @@ export default function HomePageClient() {
                         </motion.p>
                     </div>
 
-                    <motion.div 
+                    <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, margin: "200px" }}
+                        onViewportEnter={() => setShowVideo(true)}
                         transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                         className="relative max-w-5xl mx-auto aspect-video rounded-[2.5rem] overflow-hidden shadow-2xl border border-foreground/5 bg-background/50 backdrop-blur-sm"
                     >
-                        <video 
-                            src="/images/process/Gift_box_creation_202603252347.mp4"
-                            autoPlay
-                            loop
-                            muted
-                            playsInline
-                            className="w-full h-full object-cover scale-[1.15] object-[40%_40%]"
-                        />
+                        {showVideo && (
+                            <video
+                                src="/images/process/Gift_box_creation_202603252347.mp4"
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
+                                preload="none"
+                                className="w-full h-full object-cover scale-[1.15] object-[40%_40%]"
+                            />
+                        )}
                         <div className="absolute inset-0 ring-1 ring-inset ring-foreground/10 rounded-[2.5rem] pointer-events-none" />
                     </motion.div>
                 </div>

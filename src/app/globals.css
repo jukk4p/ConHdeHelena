@@ -23,6 +23,7 @@
   --background: var(--color-background-light);
   --foreground: var(--color-foreground-light);
   --surface: var(--color-surface-light);
+  --background-rgb: 255, 252, 249;
 }
 
 body {
