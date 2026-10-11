@@ -55,9 +55,9 @@ export default function Navbar() {
                         href="/"
                         className="flex items-center space-x-4 group relative z-50 shrink-0"
                     >
-                        <div className="flex items-center">
+                        <div className="flex items-center space-x-2">
                             {/* Static Logo Image */}
-                            <motion.div 
+                            <motion.div
                                 initial={{ scale: 0.8, opacity: 0 }}
                                 animate={{ scale: 1, opacity: 1 }}
                                 transition={{ duration: 0.8, ease: "easeOut" }}
@@ -74,11 +74,11 @@ export default function Navbar() {
                             </motion.div>
 
                             {/* Brand Text with slide-in animation */}
-                            <motion.span 
+                            <motion.span
                                 initial={{ x: -20, opacity: 0 }}
                                 animate={{ x: 0, opacity: 1 }}
                                 transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
-                                className="font-serif text-2xl font-normal tracking-tight text-foreground -ml-1 translate-y-[3px]"
+                                className="font-serif text-2xl font-normal tracking-tight text-foreground"
                             >
                                 ConhdeHelena
                             </motion.span>
