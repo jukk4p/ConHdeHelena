@@ -55,7 +55,7 @@ export default function Navbar() {
                         href="/"
                         className="flex items-center space-x-4 group relative z-50 shrink-0"
                     >
-                        <div className="flex items-center space-x-2">
+                        <div className="flex items-center space-x-3">
                             {/* Static Logo Image */}
                             <motion.div
                                 initial={{ scale: 0.8, opacity: 0 }}
