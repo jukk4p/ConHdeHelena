@@ -3,8 +3,9 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/utils/supabase/client'
-import { Clock, Hammer, Truck, CheckCircle2, Phone, Sparkles, ChevronDown, Plus } from 'lucide-react'
+import { Clock, Hammer, Truck, CheckCircle2, Phone, Sparkles, ChevronDown, Plus, Trash2 } from 'lucide-react'
 import OrderFormModal from './OrderFormModal'
+import { deleteOrder } from './actions'
 
 const statusConfig = {
   pending: { 
@@ -90,6 +91,24 @@ export default function OrdersKanban({ initialOrders, products }: OrdersKanbanPr
     }
   }
 
+  const handleDelete = async (orderId: string, customerName: string) => {
+    if (!confirm(`¿Eliminar el pedido de "${customerName}"? Esta acción no se puede deshacer.`)) {
+      return
+    }
+
+    const previousOrders = [...orders]
+    setOrders(prev => prev.filter(o => o.id !== orderId))
+    setUpdatingId(orderId)
+
+    const res = await deleteOrder(orderId)
+    setUpdatingId(null)
+
+    if (!res.success) {
+      alert(`Error al eliminar el pedido: ${res.error}`)
+      setOrders(previousOrders)
+    }
+  }
+
   const handleModalSuccess = () => {
     router.refresh()
   }
@@ -169,11 +188,12 @@ export default function OrdersKanban({ initialOrders, products }: OrdersKanbanPr
 
           <div className="space-y-4">
             {groupedOrders[activeTab].map(order => (
-              <OrderCard 
-                key={order.id} 
-                order={order} 
+              <OrderCard
+                key={order.id}
+                order={order}
                 updating={updatingId === order.id}
-                onStatusChange={handleStatusChange} 
+                onStatusChange={handleStatusChange}
+                onDelete={handleDelete}
               />
             ))}
             {groupedOrders[activeTab].length === 0 && (
@@ -204,11 +224,12 @@ export default function OrdersKanban({ initialOrders, products }: OrdersKanbanPr
 
                 <div className="space-y-4 flex-1 overflow-y-auto max-h-[calc(100vh-280px)] px-1 pb-4">
                   {groupedOrders[status].map(order => (
-                    <OrderCard 
-                      key={order.id} 
-                      order={order} 
+                    <OrderCard
+                      key={order.id}
+                      order={order}
                       updating={updatingId === order.id}
-                      onStatusChange={handleStatusChange} 
+                      onStatusChange={handleStatusChange}
+                      onDelete={handleDelete}
                     />
                   ))}
                   {groupedOrders[status].length === 0 && (
@@ -232,14 +253,16 @@ export default function OrdersKanban({ initialOrders, products }: OrdersKanbanPr
   )
 }
 
-function OrderCard({ 
-  order, 
-  updating, 
-  onStatusChange 
-}: { 
+function OrderCard({
+  order,
+  updating,
+  onStatusChange,
+  onDelete
+}: {
   order: Order
   updating: boolean
-  onStatusChange: (id: string, status: typeof columns[number]) => void 
+  onStatusChange: (id: string, status: typeof columns[number]) => void
+  onDelete: (id: string, customerName: string) => void
 }) {
   const config = statusConfig[order.status]
 
@@ -247,12 +270,21 @@ function OrderCard({
     <div className={`bg-surface p-6 rounded-[2rem] shadow-xl shadow-foreground/5 border border-foreground/5 hover:-translate-y-0.5 hover:shadow-2xl hover:shadow-foreground/10 transition-all duration-300 relative overflow-hidden group ${updating ? 'opacity-50 pointer-events-none' : ''}`}>
       {/* Left indicator line */}
       <div className={`absolute left-0 top-0 bottom-0 w-1.5 ${config.indicator} opacity-60 group-hover:opacity-100 transition-opacity`} />
-      
+
       <div className="flex justify-between items-start mb-3">
         <h3 className="font-bold text-lg text-foreground truncate max-w-[150px] sm:max-w-none">{order.customer_name}</h3>
-        <span className="text-xs font-medium text-foreground/40 bg-background px-2.5 py-1 rounded-md border border-foreground/5">
-          {new Date(order.created_at).toLocaleDateString('es-ES', { day: '2-digit', month: 'short' })}
-        </span>
+        <div className="flex items-center gap-2 shrink-0">
+          <span className="text-xs font-medium text-foreground/40 bg-background px-2.5 py-1 rounded-md border border-foreground/5">
+            {new Date(order.created_at).toLocaleDateString('es-ES', { day: '2-digit', month: 'short' })}
+          </span>
+          <button
+            onClick={() => onDelete(order.id, order.customer_name)}
+            className="p-1.5 text-foreground/30 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors cursor-pointer min-h-[28px] min-w-[28px] flex items-center justify-center touch-manipulation"
+            aria-label="Eliminar pedido"
+          >
+            <Trash2 className="w-3.5 h-3.5" />
+          </button>
+        </div>
       </div>
       
       <p className="text-xs font-bold text-primary mb-4 truncate bg-primary/5 inline-block px-3 py-1 rounded-full border border-primary/10">

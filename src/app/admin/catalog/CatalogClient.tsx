@@ -133,7 +133,7 @@ export default function CatalogClient({ initialProducts }: CatalogClientProps) {
                           {product.category}
                         </span>
                       </td>
-                      <td className="p-6 font-serif font-bold text-lg text-foreground">{Number(product.price).toFixed(0)}€</td>
+                      <td className="p-6 font-serif font-bold text-lg text-foreground">{Number(product.price) > 0 ? `${Number(product.price).toFixed(0)}€` : "Consultar"}</td>
                       <td className="p-6 text-center">
                         <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold ${product.is_active ? 'bg-green-50 text-green-700 border border-green-200' : 'bg-background text-foreground/40 border border-foreground/10'}`}>
                           {product.is_active && <div className="w-1.5 h-1.5 rounded-full bg-green-500" />}
@@ -141,7 +141,7 @@ export default function CatalogClient({ initialProducts }: CatalogClientProps) {
                         </span>
                       </td>
                       <td className="p-6 text-right">
-                        <div className="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <div className="flex items-center justify-end gap-2">
                           <button
                             onClick={() => handleOpenEditModal(product)}
                             className="w-10 h-10 flex items-center justify-center text-foreground/40 hover:text-primary hover:bg-primary/10 rounded-xl transition-colors cursor-pointer"
@@ -184,7 +184,7 @@ export default function CatalogClient({ initialProducts }: CatalogClientProps) {
                     <div className="min-w-0 flex-1">
                       <div className="flex justify-between items-start gap-2 mb-1">
                         <h4 className="font-bold text-foreground text-base truncate">{product.name}</h4>
-                        <span className="font-serif font-bold text-base text-foreground shrink-0">{Number(product.price).toFixed(0)}€</span>
+                        <span className="font-serif font-bold text-base text-foreground shrink-0">{Number(product.price) > 0 ? `${Number(product.price).toFixed(0)}€` : "Consultar"}</span>
                       </div>
                       <p className="text-xs text-foreground/40 font-medium truncate mb-2">{product.description || "Sin descripción"}</p>
                       <span className="bg-primary/5 text-primary px-2.5 py-0.5 rounded-md font-medium text-[10px] border border-primary/10 inline-block">

@@ -5,51 +5,43 @@ import { revalidatePath } from 'next/cache'
 
 const initialProducts = [
   {
-    name: "Copa Personalizada",
-    category: "Eventos",
-    price: 15.00,
-    description: "Una copa de cristal elegante personalizada para tus celebraciones más especiales. Ideal para aniversarios, cumpleaños o cualquier evento inolvidable. Grabada con vinilo metálico de alta calidad y excelente adherencia.",
-    image_url: "/images/assets/Copa-personalizada-cumpleaños.webp",
+    name: "Pack Nacimiento Básico",
+    category: "Nacimiento",
+    price: 9.00,
+    description: "Un pack de nacimiento tierno y artesanal para dar la bienvenida a los más pequeños. Incluye perchas de madera y un peine personalizados con el nombre del bebé, junto con una bolsita de tela a juego. Un recuerdo único hecho con cariño en nuestro taller.",
+    image_url: "/images/assets/Pack-nacimiento-basico.webp",
     is_active: true
   },
   {
-    name: "Llavero Personalizado",
-    category: "Día a día",
-    price: 10.00,
-    description: "Un detalle único y duradero para llevar tus recuerdos siempre contigo. Llaveros de cuero natural grabados con mensajes dedicados, perfectos para regalos especiales como el Día del Padre, cumpleaños o eventos.",
-    image_url: "/images/assets/Llavero-personalizado-dia-del-padre.webp",
-    is_active: true
-  },
-  {
-    name: "Joyero Personalizado",
-    category: "Especiales",
-    price: 30.00,
-    description: "Un elegante y práctico joyero de viaje personalizado con tu inicial y nombre en acabados metalizados. Su interior acolchado de terciopelo mantiene tus joyas organizadas, seguras y protegidas allá donde vayas.",
-    image_url: "/images/assets/Joyero-personalizado.webp",
-    is_active: true
-  },
-  {
-    name: "Percha de Comunión",
-    category: "Comuniones",
-    price: 15.00,
-    description: "El complemento ideal para colgar el traje o vestido de su Primera Comunión. Una percha de madera lacada en blanco, decorada con un lazo delicado y personalizada artesanalmente con su nombre para conservar un recuerdo inolvidable de ese día.",
-    image_url: "/images/assets/Percha-personalizada-comunión.webp",
+    name: "Pack Nacimiento Premium",
+    category: "Nacimiento",
+    price: 12.00,
+    description: "La versión más completa para celebrar un nacimiento inolvidable. Incluye perchas de madera con lazo, una bolsita de tela personalizada con el nombre del bebé y una caja guarda-cordón umbilical de madera. Materiales naturales y acabado artesanal de alta calidad.",
+    image_url: "/images/assets/Pack-nacimiento-premium.webp",
     is_active: true
   },
   {
     name: "Bolas de Navidad",
     category: "Temporada",
-    price: 15.00,
+    price: 10.00,
     description: "Añade magia y personalización a tu árbol con estas hermosas bolas navideñas transparentes rellenas de nieve o purpurina. Personalizadas con los nombres de tus seres queridos para crear una decoración única.",
     image_url: "/images/assets/Bolas-de-Navidad-personalizadas.webp",
     is_active: true
   },
   {
-    name: "Peine Personalizado",
-    category: "Cuidado",
-    price: 15.00,
-    description: "Un pack de aseo ideal y tierno que incluye un peine y un cepillo de madera natural grabados, acompañados de una bolsita de tela personalizada a juego. Suave con el cabello y perfecto como detalle de nacimiento o cuidado infantil.",
-    image_url: "/images/assets/Peine-personalizado.webp",
+    name: "Joyero de Viaje",
+    category: "Especiales",
+    price: 0,
+    description: "Joyero de viaje personalizado con tu inicial y nombre en acabados dorados, a juego con un llavero porta pinta labios con espejo. Compacto y práctico, perfecto para llevar tus joyas y esenciales allá donde vayas.",
+    image_url: "/images/assets/Joyero-de-viaje-personalizado.webp",
+    is_active: true
+  },
+  {
+    name: "Espejo Personalizado",
+    category: "Eventos",
+    price: 0,
+    description: "Un detalle único que hace de tu evento un momento inolvidable. Espejo decorativo totalmente personalizable con nombre, fecha y mensaje, ideal para bodas, bautizos, comuniones y cumpleaños.",
+    image_url: "/images/assets/Espejo-personalizado-para-eventos.webp",
     is_active: true
   }
 ]

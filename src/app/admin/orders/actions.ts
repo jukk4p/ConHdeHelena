@@ -39,3 +39,25 @@ export async function createOrder(orderData: {
   revalidatePath('/admin/orders')
   return { success: true }
 }
+
+export async function deleteOrder(id: string) {
+  const supabase = await createClient()
+
+  const { data: { user }, error: authError } = await supabase.auth.getUser()
+  if (authError || !user) {
+    return { success: false, error: 'Acceso no autorizado. Por favor inicie sesión.' }
+  }
+
+  const { error } = await supabase
+    .from('orders')
+    .delete()
+    .eq('id', id)
+
+  if (error) {
+    console.error('Error deleting order:', error)
+    return { success: false, error: error.message }
+  }
+
+  revalidatePath('/admin/orders')
+  return { success: true }
+}
