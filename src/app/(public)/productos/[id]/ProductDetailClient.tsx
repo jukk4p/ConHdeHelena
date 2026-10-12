@@ -1,9 +1,11 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowLeft, ShoppingBag, Heart, Share2, Check } from "lucide-react";
+import OrderModal from "@/components/shop/OrderModal";
 
 interface Product {
     id: string | number;
@@ -17,6 +19,9 @@ interface Product {
 }
 
 export default function ProductDetailClient({ product }: { product: Product }) {
+    const [isOrderOpen, setIsOrderOpen] = useState(false);
+    const hasFixedPrice = product.price !== "Consultar precio";
+
     const getProductImage = (product: Product) => {
         return product.image_url || `/images/assets/${product.img}`;
     };
@@ -45,7 +50,7 @@ export default function ProductDetailClient({ product }: { product: Product }) {
                                 src={getProductImage(product)}
                                 alt={product.title}
                                 fill
-                                className="object-cover"
+                                className="object-contain"
                                 priority
                             />
                         </div>
@@ -92,13 +97,13 @@ export default function ProductDetailClient({ product }: { product: Product }) {
                         </div>
 
                         <div className="pt-8 flex flex-col sm:flex-row gap-4">
-                            <Link
-                                href="/contacto"
-                                className="flex-1 bg-foreground text-background px-8 py-4 rounded-full text-center text-lg font-bold hover:bg-primary transition-all duration-300 shadow-xl shadow-foreground/5 flex items-center justify-center space-x-3"
+                            <button
+                                onClick={() => setIsOrderOpen(true)}
+                                className="flex-1 bg-foreground text-background px-8 py-4 rounded-full text-center text-lg font-bold hover:bg-primary transition-all duration-300 shadow-xl shadow-foreground/5 flex items-center justify-center space-x-3 cursor-pointer"
                             >
                                 <ShoppingBag className="w-5 h-5" />
-                                <span>Pedir presupuesto</span>
-                            </Link>
+                                <span>{hasFixedPrice ? "Pedir por WhatsApp" : "Solicitar presupuesto"}</span>
+                            </button>
                             <div className="flex gap-4">
                                 <button className="p-4 rounded-full border border-foreground/10 hover:border-primary hover:text-primary transition-all group">
                                     <Heart className="w-6 h-6 group-hover:fill-current" />
@@ -108,6 +113,12 @@ export default function ProductDetailClient({ product }: { product: Product }) {
                                 </button>
                             </div>
                         </div>
+
+                        <OrderModal
+                            product={{ id: product.id, title: product.title, price: product.price, category: product.category }}
+                            isOpen={isOrderOpen}
+                            onClose={() => setIsOrderOpen(false)}
+                        />
 
                         <div className="bg-surface p-8 rounded-3xl border border-foreground/5 space-y-4">
                             <h4 className="font-serif text-lg font-bold italic">Pieza única y personalizada</h4>

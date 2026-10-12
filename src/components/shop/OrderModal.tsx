@@ -35,6 +35,9 @@ interface OrderModalProps {
 const WHATSAPP_NUMBER = "34678973988"; // Número real de ConhdeHelena
 
 export default function OrderModal({ product, isOpen, onClose }: OrderModalProps) {
+    const unitPrice = parseFloat(product.price.replace("€", "").trim());
+    const hasFixedPrice = !isNaN(unitPrice);
+
     const [mounted, setMounted] = useState(false);
     const [name, setName] = useState("");
     const [phone, setPhone] = useState("");
@@ -221,9 +224,11 @@ export default function OrderModal({ product, isOpen, onClose }: OrderModalProps
                                         >
                                             <Plus className="w-4 h-4" />
                                         </button>
-                                        <span className="ml-2 text-sm text-foreground/40 font-medium">
-                                            = {(parseFloat(product.price.replace("€", "").trim()) * quantity).toFixed(0)}€
-                                        </span>
+                                        {hasFixedPrice && (
+                                            <span className="ml-2 text-sm text-foreground/40 font-medium">
+                                                = {(unitPrice * quantity).toFixed(0)}€
+                                            </span>
+                                        )}
                                     </div>
                                 </div>
 

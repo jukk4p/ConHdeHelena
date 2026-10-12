@@ -4,12 +4,11 @@ import ProductosClient from "./ProductosClient";
 export const revalidate = 60;
 
 const FALLBACK_PRODUCTS = [
-    { id: "1", title: "Copa Personalizada", category: "Eventos", price: "15€", img: "Copa-personalizada-cumpleaños.webp", image_url: "/images/assets/Copa-personalizada-cumpleaños.webp" },
-    { id: "2", title: "Llavero Personalizado", category: "Día a día", price: "10€", img: "Llavero-personalizado-dia-del-padre.webp", image_url: "/images/assets/Llavero-personalizado-dia-del-padre.webp" },
-    { id: "3", title: "Joyero Personalizado", category: "Especiales", price: "30€", img: "Joyero-personalizado.webp", image_url: "/images/assets/Joyero-personalizado.webp" },
-    { id: "4", title: "Percha de Comunión", category: "Comuniones", price: "15€", img: "Percha-personalizada-comunión.webp", image_url: "/images/assets/Percha-personalizada-comunión.webp" },
-    { id: "5", title: "Bolas de Navidad", category: "Temporada", price: "15€", img: "Bolas-de-Navidad-personalizadas.webp", image_url: "/images/assets/Bolas-de-Navidad-personalizadas.webp" },
-    { id: "6", title: "Peine Personalizado", category: "Cuidado", price: "15€", img: "Peine-personalizado.webp", image_url: "/images/assets/Peine-personalizado.webp" },
+    { id: "1", title: "Pack Nacimiento Básico", category: "Nacimiento", price: "9€", img: "Pack-nacimiento-basico.webp", image_url: "/images/assets/Pack-nacimiento-basico.webp" },
+    { id: "2", title: "Pack Nacimiento Premium", category: "Nacimiento", price: "12€", img: "Pack-nacimiento-premium.webp", image_url: "/images/assets/Pack-nacimiento-premium.webp" },
+    { id: "3", title: "Bolas de Navidad", category: "Temporada", price: "10€", img: "Bolas-de-Navidad-personalizadas.webp", image_url: "/images/assets/Bolas-de-Navidad-personalizadas.webp" },
+    { id: "4", title: "Joyero de Viaje", category: "Especiales", price: "Consultar precio", img: "Joyero-de-viaje-personalizado.webp", image_url: "/images/assets/Joyero-de-viaje-personalizado.webp" },
+    { id: "5", title: "Espejo Personalizado", category: "Eventos", price: "Consultar precio", img: "Espejo-personalizado-para-eventos.webp", image_url: "/images/assets/Espejo-personalizado-para-eventos.webp" },
 ];
 
 export default async function ProductosPage() {
@@ -30,7 +29,7 @@ export default async function ProductosPage() {
             id: p.id,
             title: p.name,
             category: p.category,
-            price: `${Number(p.price).toFixed(0)}€`,
+            price: Number(p.price) > 0 ? `${Number(p.price).toFixed(0)}€` : "Consultar precio",
             image_url: p.image_url,
         }))
         : FALLBACK_PRODUCTS;

@@ -7,84 +7,63 @@ export const revalidate = 60;
 const FALLBACK_PRODUCTS = [
     {
         id: "1",
-        title: "Copa Personalizada",
-        category: "Eventos",
-        price: "15€",
-        img: "Copa-personalizada-cumpleaños.webp",
-        image_url: "/images/assets/Copa-personalizada-cumpleaños.webp",
-        description: "Una copa de cristal elegante personalizada para tus celebraciones más especiales. Ideal para aniversarios, cumpleaños o cualquier evento inolvidable. Grabada con vinilo metálico de alta calidad y excelente adherencia."
+        title: "Pack Nacimiento Básico",
+        category: "Nacimiento",
+        price: "9€",
+        img: "Pack-nacimiento-basico.webp",
+        image_url: "/images/assets/Pack-nacimiento-basico.webp",
+        description: "Un pack de nacimiento tierno y artesanal para dar la bienvenida a los más pequeños. Incluye perchas de madera y un peine personalizados con el nombre del bebé, junto con una bolsita de tela a juego. Un recuerdo único hecho con cariño en nuestro taller."
     },
     {
         id: "2",
-        title: "Llavero Personalizado",
-        category: "Día a día",
-        price: "10€",
-        img: "Llavero-personalizado-dia-del-padre.webp",
-        image_url: "/images/assets/Llavero-personalizado-dia-del-padre.webp",
-        description: "Un detalle único y duradero para llevar tus recuerdos siempre contigo. Llaveros de cuero natural grabados con mensajes dedicados, perfectos para regalos especiales como el Día del Padre, cumpleaños o eventos."
+        title: "Pack Nacimiento Premium",
+        category: "Nacimiento",
+        price: "12€",
+        img: "Pack-nacimiento-premium.webp",
+        image_url: "/images/assets/Pack-nacimiento-premium.webp",
+        description: "La versión más completa para celebrar un nacimiento inolvidable. Incluye perchas de madera con lazo, una bolsita de tela personalizada con el nombre del bebé y una caja guarda-cordón umbilical de madera. Materiales naturales y acabado artesanal de alta calidad."
     },
     {
         id: "3",
-        title: "Joyero Personalizado",
-        category: "Especiales",
-        price: "30€",
-        img: "Joyero-personalizado.webp",
-        image_url: "/images/assets/Joyero-personalizado.webp",
-        description: "Un elegante y práctico joyero de viaje personalizado con tu inicial y nombre en acabados metalizados. Su interior acolchado de terciopelo mantiene tus joyas organizadas, seguras y protegidas allá donde vayas."
-    },
-    {
-        id: "4",
-        title: "Percha de Comunión",
-        category: "Comuniones",
-        price: "15€",
-        img: "Percha-personalizada-comunión.webp",
-        image_url: "/images/assets/Percha-personalizada-comunión.webp",
-        description: "El complemento ideal para colgar el traje o vestido de su Primera Comunión. Una percha de madera lacada en blanco, decorada con un lazo delicado y personalizada artesanalmente con su nombre para conservar un recuerdo inolvidable de ese día."
-    },
-    {
-        id: "5",
         title: "Bolas de Navidad",
         category: "Temporada",
-        price: "15€",
+        price: "10€",
         img: "Bolas-de-Navidad-personalizadas.webp",
         image_url: "/images/assets/Bolas-de-Navidad-personalizadas.webp",
         description: "Añade magia y personalización a tu árbol con estas hermosas bolas navideñas transparentes rellenas de nieve o purpurina. Personalizadas con los nombres de tus seres queridos para crear una decoración única."
     },
     {
-        id: "6",
-        title: "Peine Personalizado",
-        category: "Cuidado",
-        price: "15€",
-        img: "Peine-personalizado.webp",
-        image_url: "/images/assets/Peine-personalizado.webp",
-        description: "Un pack de aseo ideal y tierno que incluye un peine y un cepillo de madera natural grabados, acompañados de una bolsita de tela personalizada a juego. Suave con el cabello y perfecto como detalle de nacimiento o cuidado infantil."
+        id: "4",
+        title: "Joyero de Viaje",
+        category: "Especiales",
+        price: "Consultar precio",
+        img: "Joyero-de-viaje-personalizado.webp",
+        image_url: "/images/assets/Joyero-de-viaje-personalizado.webp",
+        description: "Joyero de viaje personalizado con tu inicial y nombre en acabados dorados, a juego con un llavero porta pinta labios con espejo. Compacto y práctico, perfecto para llevar tus joyas y esenciales allá donde vayas."
+    },
+    {
+        id: "5",
+        title: "Espejo Personalizado",
+        category: "Eventos",
+        price: "Consultar precio",
+        img: "Espejo-personalizado-para-eventos.webp",
+        image_url: "/images/assets/Espejo-personalizado-para-eventos.webp",
+        description: "Un detalle único que hace de tu evento un momento inolvidable. Espejo decorativo totalmente personalizable con nombre, fecha y mensaje, ideal para bodas, bautizos, comuniones y cumpleaños."
     },
 ];
 
 const PRODUCT_DETAILS_LOOKUP: Record<string, string[]> = {
-    "Copa Personalizada": [
-        "Cristal de alta calidad y brillo",
-        "Personalización con nombre, edad o frase",
-        "Diseño elegante y ergonómico",
-        "Ideal para regalar en fechas señaladas"
-    ],
-    "Llavero Personalizado": [
-        "Cuero genuino de alta calidad",
-        "Grabado personalizado de precisión",
-        "Remaches y anilla reforzados en acabado bronce",
+    "Pack Nacimiento Básico": [
+        "Perchas de madera natural personalizadas",
+        "Peine de madera grabado con el nombre",
+        "Bolsita de tela a juego incluida",
         "Hecho a mano en nuestro taller"
     ],
-    "Joyero Personalizado": [
-        "Piel sintética de textura suave y fácil limpieza",
-        "Interior de terciopelo protector anti-arañazos",
-        "Personalización en foil dorado de gran durabilidad",
-        "Cierre de cremallera seguro y compartimentos específicos"
-    ],
-    "Percha de Comunión": [
-        "Madera maciza lacada en blanco",
-        "Personalización artesanal con nombre y evento",
-        "Lazo decorativo de gasa/organza incluido",
-        "Ideal para reportajes fotográficos"
+    "Pack Nacimiento Premium": [
+        "Perchas de madera con lazo decorativo",
+        "Bolsita de tela personalizada con nombre",
+        "Caja guarda-cordón umbilical de madera",
+        "Materiales naturales y acabado artesanal"
     ],
     "Bolas de Navidad": [
         "Esfera de acrílico transparente de alta resistencia",
@@ -92,11 +71,17 @@ const PRODUCT_DETAILS_LOOKUP: Record<string, string[]> = {
         "Lazo de gasa o terciopelo incluido",
         "Personalización duradera de nombres y detalles"
     ],
-    "Peine Personalizado": [
-        "Madera natural con cerdas suaves",
-        "Efecto antiestático y respetuoso con el cuero cabelludo",
-        "Bolsita de algodón 100% personalizada con nombre",
-        "Grabado de alta precisión duradero"
+    "Joyero de Viaje": [
+        "Piel sintética de textura suave y fácil limpieza",
+        "Llavero porta pinta labios con espejo a juego",
+        "Personalización en foil dorado de gran durabilidad",
+        "Compacto y práctico para llevar de viaje"
+    ],
+    "Espejo Personalizado": [
+        "Totalmente personalizable: nombre, fecha y mensaje",
+        "Diseño elegante ideal para bodas, bautizos y comuniones",
+        "Materiales de alta calidad y acabados cuidados",
+        "Un recuerdo especial que tus invitados conservarán"
     ]
 };
 
@@ -127,7 +112,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                 id: data.id,
                 title: data.name,
                 category: data.category,
-                price: `${Number(data.price).toFixed(0)}€`,
+                price: Number(data.price) > 0 ? `${Number(data.price).toFixed(0)}€` : "Consultar precio",
                 image_url: data.image_url,
                 description: data.description,
                 details: PRODUCT_DETAILS_LOOKUP[data.name] || DEFAULT_PRODUCT_DETAILS,

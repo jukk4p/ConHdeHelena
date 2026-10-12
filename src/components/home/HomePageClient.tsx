@@ -3,12 +3,20 @@
 import { useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Sparkles } from "lucide-react";
 
 const HeroScene = dynamic(() => import("./HeroScene"), { ssr: false });
 
-export default function HomePageClient() {
+interface FeaturedProduct {
+    id: string | number;
+    title: string;
+    price: string;
+    image_url: string;
+}
+
+export default function HomePageClient({ featuredProducts = [] }: { featuredProducts?: FeaturedProduct[] }) {
     const containerRef = useRef<HTMLDivElement>(null);
     const [showVideo, setShowVideo] = useState(false);
     const { scrollYProgress } = useScroll({
@@ -117,6 +125,50 @@ export default function HomePageClient() {
                     </motion.div>
                 </div>
             </section>
+
+            {/* Sneak Peek Productos */}
+            {featuredProducts.length > 0 && (
+                <section className="relative z-10 py-32">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div className="flex justify-between items-end mb-16">
+                            <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground">
+                                Selección
+                                <br /><span className="text-primary italic font-light">para ti</span>
+                            </h2>
+                            <Link href="/productos" className="hidden sm:inline-flex items-center text-primary font-medium hover:underline underline-offset-4">
+                                Ver todos <ArrowRight className="ml-1 w-4 h-4" />
+                            </Link>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            {featuredProducts.map((item) => (
+                                <Link key={item.id} href={`/productos/${item.id}`}>
+                                    <motion.div
+                                        whileHover={{ y: -5 }}
+                                        className="group relative cursor-pointer"
+                                    >
+                                        <div className="aspect-[4/3] bg-foreground/5 rounded-2xl overflow-hidden mb-6 relative">
+                                            <Image
+                                                src={item.image_url}
+                                                alt={item.title}
+                                                fill
+                                                sizes="(max-width: 768px) 100vw, 33vw"
+                                                className="object-contain transition-transform duration-700 group-hover:scale-110"
+                                            />
+                                        </div>
+                                        <h3 className="font-medium text-lg text-foreground">{item.title}</h3>
+                                        <p className="text-foreground/60 text-sm mt-1">Desde {item.price}</p>
+                                    </motion.div>
+                                </Link>
+                            ))}
+                        </div>
+
+                        <Link href="/productos" className="sm:hidden mt-10 flex items-center justify-center text-primary font-medium hover:underline underline-offset-4">
+                            Ver todos <ArrowRight className="ml-1 w-4 h-4" />
+                        </Link>
+                    </div>
+                </section>
+            )}
 
             {/* CTA Section */}
             <section className="relative z-10 py-32 bg-foreground text-background">
