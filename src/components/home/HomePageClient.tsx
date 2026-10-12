@@ -157,7 +157,9 @@ export default function HomePageClient({ featuredProducts = [] }: { featuredProd
                                             />
                                         </div>
                                         <h3 className="font-medium text-lg text-foreground">{item.title}</h3>
-                                        <p className="text-foreground/60 text-sm mt-1">Desde {item.price}</p>
+                                        <p className="text-foreground/60 text-sm mt-1">
+                                            {item.price === "Consultar precio" ? item.price : `Desde ${item.price}`}
+                                        </p>
                                     </motion.div>
                                 </Link>
                             ))}
