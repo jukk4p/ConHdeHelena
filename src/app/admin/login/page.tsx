@@ -3,12 +3,25 @@ import { redirect } from 'next/navigation'
 import { LogIn, Sparkles } from 'lucide-react'
 import Image from 'next/image'
 
-export default async function LoginPage() {
+export default async function LoginPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ error?: string }>
+}) {
+  const { error } = await searchParams
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
 
   if (user) {
-    redirect('/admin/orders')
+    const { data: profile } = await supabase
+      .from('profiles')
+      .select('role')
+      .eq('id', user.id)
+      .single()
+
+    if (profile?.role === 'admin') {
+      redirect('/admin/orders')
+    }
   }
 
   return (
@@ -39,8 +52,17 @@ export default async function LoginPage() {
           <p className="text-foreground/60 font-light mb-10">
             Inicia sesión para gestionar la magia.
           </p>
-          
+
+          {error && (
+            <div className="mb-6 px-4 py-3 rounded-2xl bg-red-50 border border-red-100 text-red-600 text-sm font-semibold">
+              {error === 'NotAuthorized'
+                ? 'Esta cuenta no tiene permisos de administrador.'
+                : 'Correo o contraseña incorrectos.'}
+            </div>
+          )}
+
           <form action="/auth/login" method="post" className="space-y-5 text-left">
+            <input type="hidden" name="redirect_to" value="/admin/orders" />
             <div className="space-y-2">
               <label className="text-sm font-medium text-foreground/70 ml-2">Correo Electrónico</label>
               <input 

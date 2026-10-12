@@ -5,7 +5,7 @@ import { createPortal } from "react-dom";
 import Link from "next/link";
 import Image from "next/image";
 import LogoSVG from "./LogoSVG";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { Menu, X, ArrowRight, User } from "lucide-react";
 import { InstagramIcon, TikTokIcon, YoutubeIcon } from "./SocialIcons";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -97,6 +97,13 @@ export default function Navbar() {
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
                             </Link>
                         ))}
+                        <Link
+                            href="/cuenta"
+                            className="p-2 text-foreground/70 hover:text-primary transition-colors duration-300"
+                            aria-label="Mi cuenta"
+                        >
+                            <User className="w-5 h-5" />
+                        </Link>
                         <Link
                             href="/contacto"
                             className="bg-primary text-white px-8 py-3 rounded-full text-sm font-bold shadow-lg shadow-primary/20 hover:scale-105 transition-all duration-300 active:scale-95"
@@ -213,6 +220,15 @@ export default function Navbar() {
                                     onClick={() => setIsMobileMenuOpen(false)}
                                 >
                                     Hablemos
+                                </Link>
+
+                                <Link
+                                    href="/cuenta"
+                                    className="flex items-center justify-center gap-2 text-foreground/60 hover:text-primary transition-colors text-sm font-semibold"
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                >
+                                    <User className="w-4 h-4" />
+                                    Mi cuenta
                                 </Link>
 
                                 <div className="flex justify-center space-x-8 text-foreground/40">
